@@ -1,0 +1,738 @@
+GIAI ĐOẠN 1: CHIẾN LƯỢC BAO BÌ (LÀM LẠI)
+1. Tiêu đề đề xuất:
+
+Option 1 (The Reframe - Định nghĩa lại): "NGỦ KHÔNG HẾT MỆT: Sự thật tàn khốc về 'Kiệt sức tâm hồn' (Burnout)." -> Lựa chọn tốt nhất để đánh trúng insight.
+
+Option 2 (The Diagnosis - Chẩn đoán): "Bạn không Lười, bạn đang 'Sập nguồn': 5 dấu hiệu Tâm hồn đã chết."
+
+Option 3 (The Warning - Cảnh báo): "Dừng ngay việc 'NGHỈ NGƠI': Tại sao càng ngủ càng kiệt sức?"
+
+2. Chiến lược Thumbnail & 3 Prompt (Đã hiệu chỉnh):
+
+Option A: Style The Glitch (Sự sụp đổ)
+
+Concept: Một cái đầu người đang tan biến thành các mảnh dữ liệu số.
+
+Text: "LỖI HỆ THỐNG".
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube thumbnail.
+
+[SUBJECT]: A central silhouette of a human head in profile. The back of the head is shattering and dissolving into geometric digital pixels and shards.
+
+[ACTION/EFFECT]: The shards are Glitching in Glowing Electric Purple (#BF00FF) neon style against the void.
+
+[TEXT]: Typography text saying "LỖI HỆ THỐNG" in bold sans-serif font, glowing white, large size.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast, Negative space composition.
+
+[NEGATIVE]: No shading, no 3d render, no complex details, no messy background, no realistic face.
+
+Option B: Style The Trap (Sự giam cầm)
+
+Concept: Cơ thể người bị nhốt trong một khối pin cạn kiệt năng lượng.
+
+Text: "PIN CHẾT".
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube thumbnail.
+
+[SUBJECT]: A central giant silhouette of a tired person curling up inside a transparent vertical battery outline.
+
+[ACTION/EFFECT]: The battery level is at 1% red, but the surrounding bars are forming a cage/trap in Glowing Electric Purple (#BF00FF).
+
+[TEXT]: Typography text saying "PIN CHẾT" in bold sans-serif font, glowing white, large size.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast, Negative space composition.
+
+[NEGATIVE]: No shading, no 3d render, no complex details, no messy background, no realistic face.
+
+Option C: Style The X-Ray (Soi chiếu)
+
+Concept: Bên ngoài bình thản, bên trong lồng ngực là sự hỗn loạn.
+
+Text: "RỖNG TUẾCH".
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube thumbnail.
+
+[SUBJECT]: A central giant silhouette of a person standing straight. Inside the chest area, there is a complex mess of tangled sharp geometric lines.
+
+[ACTION/EFFECT]: The tangled lines are pulsing and rotating in Glowing Electric Purple (#BF00FF) neon style, representing internal chaos.
+
+[TEXT]: Typography text saying "RỖNG TUẾCH" in bold sans-serif font, glowing white, large size.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast, Negative space composition.
+
+[NEGATIVE]: No shading, no 3d render, no complex details, no messy background, no realistic face.
+
+
+
+GIAI ĐOẠN 2: KỊCH BẢN SẢN XUẤT (PART 1: THE HOOK) - LÀM LẠI
+🔴 PASS 1: THE MONOLOGUE (NGUYÊN LIỆU THÔ - MỞ RỘNG)
+Tổng số từ: 368 từ (Đạt chuẩn >300 từ cho phần Hook)
+
+Hãy thành thật với nhau trong giây lát. Đã bao lâu rồi bạn thức dậy vào buổi sáng mà thực sự cảm thấy mình đang "sống"? Hay kịch bản mỗi ngày đều giống hệt nhau: Chuông báo thức reo, và bạn mở mắt ra với một cảm giác nặng trĩu vô hình đè nát lồng ngực, như thể trọng lực trong phòng ngủ bỗng nhiên tăng gấp mười lần. Bạn đã ngủ đủ 8 tiếng. Thậm chí bạn đã dành cả ngày chủ nhật chỉ để nằm dài trên giường, không làm gì cả. Nhưng kỳ lạ thay, càng nằm, bạn càng thấy cơ thể mình rã rời. Càng cố gắng nghỉ ngơi, đầu óc bạn càng mụ mẫm và quay cuồng trong những dòng suy nghĩ lo âu không hồi kết.
+
+Người ngoài nhìn vào sẽ nói gì? "Mày lười quá", "Sao lúc nào cũng ủ rũ thế", "Đi du lịch đi cho khuây khỏa". Và tệ nhất là, chính bạn cũng bắt đầu tin vào điều đó. Bạn tự dán nhãn cho mình là kẻ yếu đuối, kém cỏi, và vô kỷ luật. Bạn ép bản thân uống thêm caffeine, ép cơ thể phải chạy tiếp dù đèn báo nhiên liệu đã về vạch đỏ từ lâu.
+
+Nhưng hãy nghe kỹ điều này: Sự kiệt quệ mà bạn đang cảm thấy không phải là mệt mỏi thể xác. Nó không nằm ở cơ bắp. Nó nằm ở linh hồn. Khoa học gọi đây là Burnout - một trạng thái "chết lâm sàng" của cảm xúc. Việc bạn cố ngủ để chữa Burnout cũng vô vọng như việc bạn cố sạc pin cho một chiếc điện thoại đã bị hỏng chân sạc vậy. Vấn đề không phải là nguồn điện, vấn đề là sự kết nối đã bị đứt gãy. Bạn không cần ngủ thêm. Bạn cần thức tỉnh. Trong 15 phút tới, tôi sẽ không đưa ra những lời khuyên sáo rỗng về việc "yêu bản thân". Chúng ta sẽ cùng nhau thực hiện một cuộc giải phẫu tâm lý lạnh lùng để tìm ra chính xác "lỗ rò rỉ" năng lượng trong bạn, và quan trọng hơn, tôi sẽ chỉ cho bạn cách hàn gắn nó lại. Hãy tắt hết thông báo điện thoại. Đây là lúc dành cho bạn.
+
+🔴 PASS 2: THE SLICER (CẮT CẢNH LOSSLESS & VEO3 STRICT)
+Trạng thái: Đã kiểm tra đối chiếu. Cover 100% nội dung Pass 1. Không cắt bỏ từ nào.
+
+Scene 1 🗣️ Lời bình: Hãy thành thật với nhau trong giây lát. Đã bao lâu rồi bạn thức dậy vào buổi sáng mà thực sự cảm thấy mình đang "sống"?
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A white outline of a person sitting on the edge of a bed, head down, motionless while the surroundings are slightly vibrating. OLED deep black background, high contrast, neon glow effects. Slow smooth zoom in.
+
+Scene 2 🗣️ Lời bình: Hay kịch bản mỗi ngày đều giống hệt nhau: Chuông báo thức reo, và bạn mở mắt ra với một cảm giác nặng trĩu vô hình đè nát lồng ngực...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Close up on the chest of the silhouette. A heavy purple geometric cube is slowly sinking into the chest cavity, compressing the white lines. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 3 🗣️ Lời bình: ...như thể trọng lực trong phòng ngủ bỗng nhiên tăng gấp mười lần. Bạn đã ngủ đủ 8 tiếng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The entire room's perspective warps and stretches downwards, visually representing heavy gravity pulling the silhouette into the floor. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 4 🗣️ Lời bình: Thậm chí bạn đã dành cả ngày chủ nhật chỉ để nằm dài trên giường, không làm gì cả. Nhưng kỳ lạ thay, càng nằm, bạn càng thấy cơ thể mình rã rời.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Top-down view of the silhouette lying on bed. The body outline is slowly disintegrating and drifting away like smoke/particles into the black void. OLED deep black background, high contrast, neon glow effects. Slow zoom out.
+
+Scene 5 🗣️ Lời bình: Càng cố gắng nghỉ ngơi, đầu óc bạn càng mụ mẫm và quay cuồng trong những dòng suy nghĩ lo âu không hồi kết.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Extreme close up on the head. Inside, a chaotic storm of sharp purple geometric lines is swirling and tangling rapidly. OLED deep black background, high contrast, neon glow effects. Static camera with pulsing focus.
+
+Scene 6 🗣️ Lời bình: Người ngoài nhìn vào sẽ nói gì? "Mày lười quá", "Sao lúc nào cũng ủ rũ thế", "Đi du lịch đi cho khuây khỏa".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Multiple faceless silhouettes appear around the main character, their mouths are emitting sharp white speech bubbles that strike the character like arrows. OLED deep black background, high contrast, neon glow effects. Shaky camera movement.
+
+Scene 7 🗣️ Lời bình: Và tệ nhất là, chính bạn cũng bắt đầu tin vào điều đó. Bạn tự dán nhãn cho mình là kẻ yếu đuối, kém cỏi, và vô kỷ luật.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The main character picks up a glowing purple label tag and slaps it onto their own forehead, the label burns/glows intensely. OLED deep black background, high contrast, neon glow effects. Slow smooth zoom in.
+
+Scene 8 🗣️ Lời bình: Bạn ép bản thân uống thêm caffeine, ép cơ thể phải chạy tiếp dù đèn báo nhiên liệu đã về vạch đỏ từ lâu.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A minimalist fuel gauge icon appearing. The needle is at empty, flickering red/purple, but the engine gears keep forcing to spin and grinding sparks. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 9 🗣️ Lời bình: Nhưng hãy nghe kỹ điều này: Sự kiệt quệ mà bạn đang cảm thấy không phải là mệt mỏi thể xác. Nó không nằm ở cơ bắp. Nó nằm ở linh hồn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. An X-ray view of a human body. The muscles (white lines) are intact, but the core essence (purple flame in the center) is flickering and dying out. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 10 🗣️ Lời bình: Khoa học gọi đây là Burnout - một trạng thái "chết lâm sàng" của cảm xúc.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The text "BURNOUT" appears in giant typography, then glitches and fractures like broken glass. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 11 🗣️ Lời bình: Việc bạn cố ngủ để chữa Burnout cũng vô vọng như việc bạn cố sạc pin cho một chiếc điện thoại đã bị hỏng chân sạc vậy.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A plug trying to insert into a socket, but the socket hole is sealed shut with a purple cross. Sparks fly futilely. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 12 🗣️ Lời bình: Vấn đề không phải là nguồn điện, vấn đề là sự kết nối đã bị đứt gãy. Bạn không cần ngủ thêm. Bạn cần thức tỉnh.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Two disconnected glowing wires floating in the void. They spark, trying to reach each other but failing. OLED deep black background, high contrast, neon glow effects. Slow zoom out.
+
+Scene 13 (Commitment Anchor) 🗣️ Lời bình: Trong 15 phút tới, tôi sẽ không đưa ra những lời khuyên sáo rỗng về việc "yêu bản thân".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A hand sweeps away a pile of books labeled "Self-help" into the darkness. OLED deep black background, high contrast, neon glow effects. Fast lateral movement.
+
+Scene 14 🗣️ Lời bình: Chúng ta sẽ cùng nhau thực hiện một cuộc giải phẫu tâm lý lạnh lùng để tìm ra chính xác "lỗ rò rỉ" năng lượng trong bạn...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A scalpel made of light cuts through the darkness, revealing a complex glowing geometric map underneath. OLED deep black background, high contrast, neon glow effects. Top-down view.
+
+Scene 15 🗣️ Lời bình: ...và quan trọng hơn, tôi sẽ chỉ cho bạn cách hàn gắn nó lại. Hãy tắt hết thông báo điện thoại. Đây là lúc dành cho bạn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A "Do Not Disturb" moon icon glows brightly in purple, pulsating like a heartbeat against the black screen. OLED deep black background, high contrast, neon glow effects. Slow smooth zoom in.
+
+GIAI ĐOẠN 2: KỊCH BẢN SẢN XUẤT (TIẾP THEO)
+🔴 BƯỚC 2: DEEP WHY - CHƯƠNG 1: THE STORY (CÂU CHUYỆN & GIẢI PHẪU CẢM XÚC)
+Mục tiêu: Kể lại một trải nghiệm Burnout điển hình nhưng dưới góc nhìn vi mô (Micro-perspective) để khán giả thấy chính mình đang ngồi trong đó.
+
+🔴 PASS 1: THE MONOLOGUE (NGUYÊN LIỆU THÔ)
+(Định mức: ~600 từ. Tập trung vào cảm giác vật lý và tiếng nói nội tâm)
+
+Hãy cùng tôi tua ngược thời gian về một thời điểm cụ thể. Không phải là ngày bạn gục ngã hoàn toàn, mà là những vết nứt nhỏ bé trước đó. Hãy tưởng tượng đó là chiều thứ Ba. 14 giờ 30 phút. Bạn đang ngồi tại bàn làm việc, hoặc có thể là góc bàn ăn tại nhà nếu bạn làm từ xa. Ánh sáng màn hình máy tính xanh lét hắt lên khuôn mặt vô cảm của bạn. Một tệp tài liệu đang mở trước mặt. Một dòng tin nhắn từ sếp hoặc khách hàng vừa hiện lên góc phải màn hình: "Em ơi, cái này xong chưa?".
+
+Đó là một câu hỏi bình thường. Một yêu cầu công việc bình thường. Nhưng phản ứng của cơ thể bạn lúc này lại không hề bình thường chút nào. Hãy quan sát kỹ. Ngón tay bạn đặt trên bàn phím nhưng không thể gõ. Bạn nhìn chằm chằm vào dòng chữ đó, đọc đi đọc lại nó 5 lần, 10 lần, nhưng não bộ bạn hoàn toàn không xử lý được ý nghĩa của nó. Giống như có một lớp sương mù dày đặc màu xám xịt phủ kín lấy vỏ não của bạn. Bạn muốn trả lời, bạn muốn làm việc, nhưng hệ điều hành trong đầu bạn đang hiện lên cái vòng tròn xoay tít của sự treo máy.
+
+Rồi tim bạn bắt đầu đập. Không phải nhịp đập mạnh mẽ của sự phấn khích, mà là nhịp đập loạn xạ, hụt hơi của sự hoảng loạn ngầm. Bạn cảm thấy hơi thở của mình nông dần, chỉ dừng lại ở cổ họng chứ không xuống được phổi. Dạ dày bạn thắt lại như có ai đó đang vắt kiệt một miếng giẻ khô.
+
+Và đây là lúc "Kẻ Chỉ Trích" (The Inner Critic) trong đầu bạn thức giấc. Nó bắt đầu thì thầm, ban đầu nhỏ nhẹ, sau đó gào thét. Nó bảo: "Mày bị sao thế này? Có mỗi cái mail thôi mà? Tại sao mọi người làm được còn mày thì không? Mày thật vô dụng. Mày đang lừa dối mọi người rằng mày giỏi giang, nhưng thực ra mày là một kẻ thất bại rỗng tuếch". Bạn nhìn sang đồng nghiệp bên cạnh, hoặc lướt Facebook thấy bạn bè đang khoe thành tích "Closing Deal", "Họp hành năng suất". Sự so sánh ấy như axit tạt vào vết thương hở.
+
+Bạn muốn khóc. Nhưng nước mắt không chảy ra được. Vì bạn đã quá mệt để khóc. Đó là trạng thái "Numbness" - sự tê liệt cảm xúc. Bạn không buồn, bạn không vui, bạn không giận dữ. Bạn chỉ... trống rỗng. Bạn đang tồn tại ở chế độ "Tiết kiệm pin tối đa", nơi mọi chức năng cảm xúc đã bị ngắt cầu dao để bảo vệ phần năng lượng sống cuối cùng. Bạn nhìn vào tay mình và cảm thấy nó xa lạ, như thể bạn đang điều khiển một con rối chứ không phải cơ thể mình. Đây không phải là mệt. Mệt ngủ sẽ hết. Còn cảm giác này, nó là sự "mục rữa" từ bên trong. Bạn đang ngồi đó, nguyên vẹn hình hài, nhưng bên trong, cấu trúc tâm lý của bạn đang sụp đổ âm thầm như một tòa nhà bị nổ mìn ở móng.
+
+🔴 PASS 2: THE SLICER (CẮT CẢNH LOSSLESS & VEO3 STRICT)
+Trạng thái: Đã cắt nhỏ câu dài, giữ nguyên 100% từ ngữ và sắc thái Noir.
+
+Scene 16 🗣️ Lời bình: Hãy cùng tôi tua ngược thời gian về một thời điểm cụ thể. Không phải là ngày bạn gục ngã hoàn toàn, mà là những vết nứt nhỏ bé trước đó.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A digital clock on a black wall rewinding rapidly, blurring the numbers. Tiny purple cracks appear on the wall surface. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 17 🗣️ Lời bình: Hãy tưởng tượng đó là chiều thứ Ba. 14 giờ 30 phút. Bạn đang ngồi tại bàn làm việc, hoặc có thể là góc bàn ăn tại nhà nếu bạn làm từ xa.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Wide shot of a lonely silhouette sitting at a geometric desk in a vast empty dark space. A single cone of light shines down from above. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 18 🗣️ Lời bình: Ánh sáng màn hình máy tính xanh lét hắt lên khuôn mặt vô cảm của bạn. Một tệp tài liệu đang mở trước mặt.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Close up on the silhouette's face, illuminated by a cold white screen glow. No facial features, just a blank outline. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 19 🗣️ Lời bình: Một dòng tin nhắn từ sếp hoặc khách hàng vừa hiện lên góc phải màn hình: "Em ơi, cái này xong chưa?".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A sharp, jagged notification bubble pops up aggressively in glowing purple, pulsating like a warning signal. OLED deep black background, high contrast, neon glow effects. Quick zoom in.
+
+Scene 20 🗣️ Lời bình: Đó là một câu hỏi bình thường. Một yêu cầu công việc bình thường. Nhưng phản ứng của cơ thể bạn lúc này lại không hề bình thường chút nào.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The silhouette freezes. Inside the body outline, white flow lines (representing calmness) suddenly turn purple and chaotic. OLED deep black background, high contrast, neon glow effects. Static camera with changing colors.
+
+Scene 21 🗣️ Lời bình: Hãy quan sát kỹ. Ngón tay bạn đặt trên bàn phím nhưng không thể gõ.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Extreme close up on geometric fingers hovering over a keyboard. They are trembling (vibrating effect). OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 22 🗣️ Lời bình: Bạn nhìn chằm chằm vào dòng chữ đó, đọc đi đọc lại nó 5 lần, 10 lần, nhưng não bộ bạn hoàn toàn không xử lý được ý nghĩa của nó.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The text on the screen starts to scramble, blur, and melt into meaningless purple symbols. OLED deep black background, high contrast, neon glow effects. Distortion effect.
+
+Scene 23 🗣️ Lời bình: Giống như có một lớp sương mù dày đặc màu xám xịt phủ kín lấy vỏ não của bạn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Inside the silhouette's head, a thick, swirling grey/purple smoke fills the cranium, obscuring any geometric thought structures. OLED deep black background, high contrast, neon glow effects. Slow motion smoke flow.
+
+Scene 24 🗣️ Lời bình: Bạn muốn trả lời, bạn muốn làm việc, nhưng hệ điều hành trong đầu bạn đang hiện lên cái vòng tròn xoay tít của sự treo máy.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A giant "Loading" circle spins endlessly in the center of the head, glitching occasionally. OLED deep black background, high contrast, neon glow effects. Static camera with rotating element.
+
+Scene 25 🗣️ Lời bình: Rồi tim bạn bắt đầu đập. Không phải nhịp đập mạnh mẽ của sự phấn khích, mà là nhịp đập loạn xạ, hụt hơi của sự hoảng loạn ngầm.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Close up on the chest area. A jagged purple line (ECG signal) spikes erratically and violently across the chest. OLED deep black background, high contrast, neon glow effects. Pulsing zoom.
+
+Scene 26 🗣️ Lời bình: Bạn cảm thấy hơi thở của mình nông dần, chỉ dừng lại ở cổ họng chứ không xuống được phổi.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A visual representation of air (white mist) entering the throat but hitting an invisible barrier, unable to reach the lungs. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 27 🗣️ Lời bình: Dạ dày bạn thắt lại như có ai đó đang vắt kiệt một miếng giẻ khô.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Abstract geometric representation of a knot tightening aggressively in the stomach area, turning purple. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 28 🗣️ Lời bình: Và đây là lúc "Kẻ Chỉ Trích" (The Inner Critic) trong đầu bạn thức giấc. Nó bắt đầu thì thầm, ban đầu nhỏ nhẹ, sau đó gào thét.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A second shadow silhouette emerges from behind the main character, larger and menacing, whispering into the character's ear. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 29 🗣️ Lời bình: Nó bảo: "Mày bị sao thế này? Có mỗi cái mail thôi mà? Tại sao mọi người làm được còn mày thì không?".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Sharp, spike-like text bubbles attack the main character from all sides. OLED deep black background, high contrast, neon glow effects. Shaky camera.
+
+Scene 30 🗣️ Lời bình: "Mày thật vô dụng. Mày đang lừa dối mọi người rằng mày giỏi giang, nhưng thực ra mày là một kẻ thất bại rỗng tuếch".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The main character's silhouette shrinks in size while the shadow grows larger, engulfing the screen. OLED deep black background, high contrast, neon glow effects. Slow zoom out.
+
+Scene 31 🗣️ Lời bình: Bạn nhìn sang đồng nghiệp bên cạnh, hoặc lướt Facebook thấy bạn bè đang khoe thành tích "Closing Deal", "Họp hành năng suất".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A floating screen shows geometric icons of trophies and thumbs-up in bright white, contrasting with the character's darkness. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 32 🗣️ Lời bình: Sự so sánh ấy như axit tạt vào vết thương hở. Bạn muốn khóc. Nhưng nước mắt không chảy ra được. Vì bạn đã quá mệt để khóc.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Extreme close up on the eye. A tear forms but instantly evaporates/turns into steam before falling. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 33 🗣️ Lời bình: Đó là trạng thái "Numbness" - sự tê liệt cảm xúc. Bạn không buồn, bạn không vui, bạn không giận dữ. Bạn chỉ... trống rỗng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The character's face becomes a literal void (black hole), absorbing all light around it. OLED deep black background, high contrast, neon glow effects. Slow smooth zoom in.
+
+Scene 34 🗣️ Lời bình: Bạn đang tồn tại ở chế độ "Tiết kiệm pin tối đa", nơi mọi chức năng cảm xúc đã bị ngắt cầu dao để bảo vệ phần năng lượng sống cuối cùng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A schematic of a building's electrical system shutting down one by one, lights going out, leaving only one dim emergency light. OLED deep black background, high contrast, neon glow effects. Top-down view.
+
+Scene 35 🗣️ Lời bình: Bạn nhìn vào tay mình và cảm thấy nó xa lạ, như thể bạn đang điều khiển một con rối chứ không phải cơ thể mình.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. First-person POV looking at hands. The hands are drawn in wireframe style, revealing strings attached to the fingers going up into the darkness. OLED deep black background, high contrast, neon glow effects. Hand-held camera shake.
+
+Scene 36 🗣️ Lời bình: Đây không phải là mệt. Mệt ngủ sẽ hết. Còn cảm giác này, nó là sự "mục rữa" từ bên trong.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A solid geometric block representing the core self begins to crumble into dust/sand from the center outwards. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 37 🗣️ Lời bình: Bạn đang ngồi đó, nguyên vẹn hình hài, nhưng bên trong, cấu trúc tâm lý của bạn đang sụp đổ âm thầm như một tòa nhà bị nổ mìn ở móng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A skyscraper silhouette stands tall, but the foundation explodes silently in purple light, and the building implodes slowly in a controlled demolition style. OLED deep black background, high contrast, neon glow effects. Wide shot.
+
+GIAI ĐOẠN 2: KỊCH BẢN SẢN XUẤT (TIẾP THEO)
+🔴 BƯỚC 3: DEEP WHY - CHƯƠNG 2: THE BIOLOGY & THE SKEPTIC
+(Cơ chế sinh học & Sự hoài nghi)
+
+🔴 PASS 1: THE MONOLOGUE (NGUYÊN LIỆU THÔ)
+(Định mức: ~600 từ. Tone: Lạnh lùng, Phân tích, Tranh biện)
+
+Bây giờ, hãy tắt tiếng nói của cảm xúc đi một chút. Hãy nhìn vào bộ não của bạn như một kỹ sư nhìn vào một bảng mạch điện tử đang bốc khói. Tại sao nó lại sập nguồn? Tại sao nó lại phản bội bạn đúng vào lúc bạn cần nó nhất? Câu trả lời nằm ở một cơ chế sinh học tàn nhẫn mà khoa học gọi là "Lỗi Dự Đoán Phần Thưởng" (Reward Prediction Error).
+
+Về cơ bản, não bộ của chúng ta hoạt động dựa trên nhiên liệu là Dopamine. Nhưng xin đừng hiểu nhầm, Dopamine không phải là hóa chất của sự sung sướng, nó là hóa chất của "động lực". Nó là lời hứa của não bộ rằng: "Hãy làm đi, rồi sẽ có thưởng". Khi bạn bỏ công sức (Input) và nhận được kết quả (Output), vòng lặp này khép kín, Dopamine được tái nạp. Nhưng trong trạng thái Burnout, bạn đã nỗ lực liên tục trong một thời gian dài mà không nhận được phần thưởng tương xứng - dù là tiền bạc, sự công nhận, hay đơn giản là cảm giác hoàn thành. Bạn gõ phím, nhưng dự án không xong. Bạn cố gắng, nhưng sếp vẫn không hài lòng.
+
+Lúc này, não bộ nhận diện "Công việc" không phải là cơ hội kiếm ăn, mà là một cỗ máy ngốn năng lượng vô ích. Và để bảo vệ bạn khỏi việc chết đói vì kiệt sức, nó kích hoạt "Phản ứng Đóng băng" (Freeze Response) thuộc hệ thần kinh phế vị lưng (Dorsal Vagal Complex). Nó ra lệnh cho cơ thể: "Ngừng lại ngay. Đừng đốt thêm năng lượng nữa". Cảm giác trì trệ, lười biếng mà bạn đang thấy thực chất là một cơ chế phanh khẩn cấp sinh học.
+
+Nhưng chờ đã. Tôi biết trong đầu bạn đang có một tiếng nói phản biện gay gắt. Một giọng nói đầy hoài nghi: "Thôi đi! Đừng dùng mấy từ ngữ khoa học đao to búa lớn để bao biện cho sự lười biếng. Mày chỉ là đứa vô kỷ luật thôi. Thời ông bà ta làm việc bán mặt cho đất, bán lưng cho trời có ai bị 'Burnout' đâu? Sao giới trẻ bây giờ hơi tí là tổn thương, hơi tí là kiệt sức? Mày đang nuông chiều bản thân quá mức rồi đấy!".
+
+Đó là một lập luận nghe rất thuyết phục, phải không? Nhưng nó SAI HOÀN TOÀN về mặt bản chất. Hãy để tôi phân biệt rạch ròi cho bạn thấy: Sự khác biệt giữa "Lười biếng" (Laziness) và "Burnout" nằm ở khả năng lựa chọn. Khi bạn lười, bạn CHỌN không làm việc, và bạn cảm thấy thoải mái, vui vẻ với sự nhàn rỗi đó. Bạn nằm xem phim và thấy sướng. Nhưng khi bạn bị Burnout, bạn MUỐN làm việc, bạn khao khát được làm việc, nhưng cơ thể bạn từ chối tuân lệnh. Bạn nằm xem phim nhưng lòng đầy tội lỗi và sợ hãi. Lười biếng là một sự hưởng thụ. Còn Burnout là một nhà tù. Đừng bao giờ nhầm lẫn giữa một kẻ đang nghỉ ngơi trên bãi biển và một kẻ đang bị trói chặt trong phòng giam, dù thoạt nhìn cả hai đều đang nằm im. Bạn không lười. Bạn đang bị thương. Và vết thương ở hệ thần kinh thì đau đớn không kém gì gãy chân cả.
+
+🔴 PASS 2: THE SLICER (CẮT CẢNH LOSSLESS & VEO3 STRICT)
+Trạng thái: Giữ nguyên thuật ngữ khoa học (Reward Prediction Error, Dorsal Vagal, Freeze Response).
+
+Scene 38 🗣️ Lời bình: Bây giờ, hãy tắt tiếng nói của cảm xúc đi một chút. Hãy nhìn vào bộ não của bạn như một kỹ sư nhìn vào một bảng mạch điện tử đang bốc khói.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A human head silhouette opens up like a mechanical blueprint. Inside, complex geometric circuits are sparking and emitting thin trails of purple smoke. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 39 🗣️ Lời bình: Tại sao nó lại sập nguồn? Tại sao nó lại phản bội bạn đúng vào lúc bạn cần nó nhất?
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The glowing circuits suddenly go dark one by one, cascading downwards like a power outage in a city. OLED deep black background, high contrast, neon glow effects. Top-down view.
+
+Scene 40 🗣️ Lời bình: Câu trả lời nằm ở một cơ chế sinh học tàn nhẫn mà khoa học gọi là "Lỗi Dự Đoán Phần Thưởng" (Reward Prediction Error).
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Typography text "REWARD PREDICTION ERROR" appears in bold, glitching font. An equation "INPUT > OUTPUT" appears and breaks apart. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 41 🗣️ Lời bình: Về cơ bản, não bộ của chúng ta hoạt động dựa trên nhiên liệu là Dopamine. Nhưng xin đừng hiểu nhầm...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A drop of glowing white liquid (Dopamine) falls into a complex engine, making it rev up briefly. OLED deep black background, high contrast, neon glow effects. Extreme close up.
+
+Scene 42 🗣️ Lời bình: ...Dopamine không phải là hóa chất của sự sung sướng, nó là hóa chất của "động lực". Nó là lời hứa của não bộ rằng: "Hãy làm đi, rồi sẽ có thưởng".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A geometric stick figure running on a treadmill, chasing a glowing purple star that is always just out of reach. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 43 🗣️ Lời bình: Khi bạn bỏ công sức (Input) và nhận được kết quả (Output), vòng lặp này khép kín, Dopamine được tái nạp.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The figure touches the star. A circle completes, glowing brightly in white. The battery icon recharges. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 44 🗣️ Lời bình: Nhưng trong trạng thái Burnout, bạn đã nỗ lực liên tục trong một thời gian dài mà không nhận được phần thưởng tương xứng...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The figure runs faster on the treadmill, sweating purple drops, but the star moves further away and fades into darkness. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot speed up.
+
+Scene 45 🗣️ Lời bình: ...dù là tiền bạc, sự công nhận, hay đơn giản là cảm giác hoàn thành. Bạn gõ phím, nhưng dự án không xong. Bạn cố gắng, nhưng sếp vẫn không hài lòng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Papers pile up on a desk, turning into a giant wall that blocks the view. A thumbs-down icon appears repeatedly. OLED deep black background, high contrast, neon glow effects. Slow zoom out.
+
+Scene 46 🗣️ Lời bình: Lúc này, não bộ nhận diện "Công việc" không phải là cơ hội kiếm ăn, mà là một cỗ máy ngốn năng lượng vô ích.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The desk transforms into a giant mouth with sharp geometric teeth, consuming energy bars. OLED deep black background, high contrast, neon glow effects. Morphing animation.
+
+Scene 47 🗣️ Lời bình: Và để bảo vệ bạn khỏi việc chết đói vì kiệt sức, nó kích hoạt "Phản ứng Đóng băng" (Freeze Response) thuộc hệ thần kinh phế vị lưng (Dorsal Vagal Complex).
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Ice crystals (geometric shards) rapidly grow from the feet of the silhouette upwards, encasing the body in a purple geometric block. OLED deep black background, high contrast, neon glow effects. Fast motion.
+
+Scene 48 🗣️ Lời bình: Nó ra lệnh cho cơ thể: "Ngừng lại ngay. Đừng đốt thêm năng lượng nữa". Cảm giác trì trệ, lười biếng mà bạn đang thấy thực chất là một cơ chế phanh khẩn cấp sinh học.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A giant red/purple emergency lever is pulled down. All moving gears in the background grind to a complete halt. Sparks fly. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 49 🗣️ Lời bình: Nhưng chờ đã. Tôi biết trong đầu bạn đang có một tiếng nói phản biện gay gắt. Một giọng nói đầy hoài nghi...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The screen splits. On the right, a distorted, spiky shadow version of the character appears, pointing a finger accusatorily. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 50 🗣️ Lời bình: "Thôi đi! Đừng dùng mấy từ ngữ khoa học đao to búa lớn để bao biện cho sự lười biếng. Mày chỉ là đứa vô kỷ luật thôi."
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The shadow mouth moves rapidly. Sharp sound waves (zigzag lines) hit the main character, pushing them back. OLED deep black background, high contrast, neon glow effects. Shaky camera.
+
+Scene 51 🗣️ Lời bình: "Thời ông bà ta làm việc bán mặt cho đất, bán lưng cho trời có ai bị 'Burnout' đâu? Sao giới trẻ bây giờ hơi tí là tổn thương, hơi tí là kiệt sức?..."
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Background fills with images of old clocks and heavy geometric hammers (representing old labor) contrasting with a small fragile smartphone icon. OLED deep black background, high contrast, neon glow effects. Lateral slide.
+
+Scene 52 🗣️ Lời bình: "...Mày đang nuông chiều bản thân quá mức rồi đấy!". Đó là một lập luận nghe rất thuyết phục, phải không? Nhưng nó SAI HOÀN TOÀN về mặt bản chất.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The main character suddenly raises a hand. A bright white shield appears, blocking the sound waves. The text "WRONG" stamps across the screen. OLED deep black background, high contrast, neon glow effects. Sudden zoom in.
+
+Scene 53 🗣️ Lời bình: Hãy để tôi phân biệt rạch ròi cho bạn thấy: Sự khác biệt giữa "Lười biếng" (Laziness) và "Burnout" nằm ở khả năng lựa chọn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Two geometric doors appear. One labeled "A" (Laziness), one labeled "B" (Burnout). OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 54 🗣️ Lời bình: Khi bạn lười, bạn CHỌN không làm việc, và bạn cảm thấy thoải mái, vui vẻ với sự nhàn rỗi đó. Bạn nằm xem phim và thấy sướng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Door A opens. Inside, a silhouette is lounging, soft curved lines float around (comfort). No tension. OLED deep black background, high contrast, neon glow effects. Slow zoom into Door A.
+
+Scene 55 🗣️ Lời bình: Nhưng khi bạn bị Burnout, bạn MUỐN làm việc, bạn khao khát được làm việc, nhưng cơ thể bạn từ chối tuân lệnh.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Door B opens. A silhouette tries to stand up but is chained to the floor by heavy purple geometric weights. It struggles visibly. OLED deep black background, high contrast, neon glow effects. Slow zoom into Door B.
+
+Scene 56 🗣️ Lời bình: Bạn nằm xem phim nhưng lòng đầy tội lỗi và sợ hãi. Lười biếng là một sự hưởng thụ. Còn Burnout là một nhà tù.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Split screen again. Left: Soft bubbles. Right: Sharp vertical bars (cage) forming around the silhouette. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 57 🗣️ Lời bình: Đừng bao giờ nhầm lẫn giữa một kẻ đang nghỉ ngơi trên bãi biển và một kẻ đang bị trói chặt trong phòng giam, dù thoạt nhìn cả hai đều đang nằm im.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A visual morphing transition: A sunbed morphs into a cold hard slab with shackles. OLED deep black background, high contrast, neon glow effects. Morphing animation.
+
+Scene 58 🗣️ Lời bình: Bạn không lười. Bạn đang bị thương. Và vết thương ở hệ thần kinh thì đau đớn không kém gì gãy chân cả.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. An X-ray of the brain showing a glowing purple crack running through the center, pulsing like a fresh wound. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+GIAI ĐOẠN 2: KỊCH BẢN SẢN XUẤT (TIẾP THEO)
+🔴 BƯỚC 4: DEEP WHY - CHƯƠNG 3: THE MODERN TRAP & FUTURE CASTING
+(Cái bẫy hiện đại & Viễn cảnh tương lai)
+
+🔴 PASS 1: THE MONOLOGUE (NGUYÊN LIỆU THÔ)
+(Định mức: ~600 từ. Tone: Cảnh báo, U tối, Triết lý)
+
+Nhưng bi kịch chưa dừng lại ở cơ chế sinh học. Nếu bộ não của bạn là một cỗ máy đã lỗi thời từ thời kỳ đồ đá, thì thế giới hiện đại chính là một phần mềm độc hại (Malware) khổng lồ đang ép xung nó đến chết. Hãy nhìn vào thứ bạn đang cầm trên tay ngay lúc này. Chiếc điện thoại thông minh. Nó không phải công cụ, nó là một cổng kết nối thẳng vào hệ thần kinh của bạn. Mỗi tiếng "Ting" thông báo, mỗi chấm đỏ trên Facebook, mỗi email gửi đến lúc 10 giờ đêm... chúng giống như những mũi kim tiêm cực nhỏ, bơm liên tục Cortisol và Dopamine rẻ tiền vào mạch máu bạn.
+
+Chúng ta đang sống trong một nền văn hóa tôn sùng sự bận rộn. "Hustle Culture" dạy bạn rằng ngủ là dành cho kẻ yếu, rằng bạn phải luôn "On-Air", luôn sẵn sàng phản hồi. Chúng ta đã biến sự kiệt sức thành một tấm huy chương danh dự để đeo lên ngực. Nhưng hãy nhìn kỹ cái giá phải trả. Tổ tiên chúng ta chỉ kích hoạt phản ứng căng thẳng (Stress Response) khi gặp thú dữ - một sự kiện ngắn hạn, sống hoặc chết. Còn bạn? Bạn đang kích hoạt nó 24/7. Sếp của bạn không phải hổ dữ, nhưng não bộ bạn không phân biệt được điều đó. Nó giữ cơ thể bạn ở trạng thái báo động đỏ triền miên, ngày này qua tháng khác, năm này qua năm khác.
+
+Và đây là phần đáng sợ nhất mà tôi buộc phải nói cho bạn biết. Đây là "Future Casting" - viễn cảnh tương lai của chính bạn nếu bạn không dừng lại ngay hôm nay. Hãy tưởng tượng 5 năm nữa. Bạn vẫn tiếp tục gồng mình. Bạn có thể sẽ được thăng chức. Bạn có thể sẽ có nhiều tiền hơn. Nhưng một ngày nọ, bạn thức dậy và nhận ra mình đã mắc phải chứng "Anhedonia" - hay còn gọi là "Mất khả năng cảm thụ niềm vui".
+
+Đó là khi bạn đứng trước một hoàng hôn tuyệt đẹp, nhưng bạn chẳng cảm thấy gì ngoài những bước sóng ánh sáng đập vào võng mạc. Đó là khi bạn ăn món ngon nhất thế giới, nhưng nó có vị như rơm rác. Đó là khi bạn ôm người mình yêu thương nhất, nhưng cảm giác lạnh lẽo như đang ôm một ma nơ canh. Thế giới của bạn sẽ không sụp đổ ầm ĩ. Nó sẽ phai màu dần. Từ một bức tranh rực rỡ, nó biến thành một bộ phim trắng đen nhiễu hạt. Bạn trở thành một bóng ma (Ghost) trong chính cuộc đời mình - vẫn đi lại, vẫn làm việc, vẫn cười nói xã giao, nhưng bên trong đã hoàn toàn chết lặng. Bạn sẽ không chết vì kiệt sức, bạn sẽ chết vì sự vô cảm. Và tin tôi đi, cái chết của linh hồn khi thể xác vẫn còn sống... đó mới là địa ngục thực sự.
+
+🔴 PASS 2: THE SLICER (CẮT CẢNH LOSSLESS & VEO3 STRICT)
+Trạng thái: Giữ nguyên thuật ngữ (Anhedonia, Hustle Culture, Stress Response). Chia nhỏ câu dài thành nhiều Scene.
+
+Scene 59 🗣️ Lời bình: Nhưng bi kịch chưa dừng lại ở cơ chế sinh học. Nếu bộ não của bạn là một cỗ máy đã lỗi thời từ thời kỳ đồ đá...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A rough, primitive stone wheel spinning slowly in the darkness. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 60 🗣️ Lời bình: ...thì thế giới hiện đại chính là một phần mềm độc hại (Malware) khổng lồ đang ép xung nó đến chết.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The stone wheel is suddenly entangled by glowing purple digital vines/cables, forcing it to spin at impossible speeds until cracks appear. OLED deep black background, high contrast, neon glow effects. Speed ramp.
+
+Scene 61 🗣️ Lời bình: Hãy nhìn vào thứ bạn đang cầm trên tay ngay lúc này. Chiếc điện thoại thông minh. Nó không phải công cụ, nó là một cổng kết nối thẳng vào hệ thần kinh của bạn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A hand holding a glowing rectangle (phone). A purple cable shoots out from the screen and plugs directly into the wrist (vein). OLED deep black background, high contrast, neon glow effects. Extreme close up.
+
+Scene 62 🗣️ Lời bình: Mỗi tiếng "Ting" thông báo, mỗi chấm đỏ trên Facebook, mỗi email gửi đến lúc 10 giờ đêm...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Red dots and envelope icons rain down rapidly like a digital storm, hitting the silhouette. OLED deep black background, high contrast, neon glow effects. Top-down view.
+
+Scene 63 🗣️ Lời bình: ...chúng giống như những mũi kim tiêm cực nhỏ, bơm liên tục Cortisol và Dopamine rẻ tiền vào mạch máu bạn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Geometric needles pierce the skin surface (vector abstract), injecting a flowing glowing purple liquid. OLED deep black background, high contrast, neon glow effects. Macro shot.
+
+Scene 64 🗣️ Lời bình: Chúng ta đang sống trong một nền văn hóa tôn sùng sự bận rộn. "Hustle Culture" dạy bạn rằng ngủ là dành cho kẻ yếu, rằng bạn phải luôn "On-Air".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A giant neon sign saying "HUSTLE" flashes violently. Below, faceless figures march in unison like robots. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 65 🗣️ Lời bình: Chúng ta đã biến sự kiệt sức thành một tấm huy chương danh dự để đeo lên ngực. Nhưng hãy nhìn kỹ cái giá phải trả.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A medal is pinned onto a chest. The medal is shaped like a skull or a dead battery. As it touches, purple cracks spread from the pin point. OLED deep black background, high contrast, neon glow effects. Zoom in.
+
+Scene 66 🗣️ Lời bình: Tổ tiên chúng ta chỉ kích hoạt phản ứng căng thẳng (Stress Response) khi gặp thú dữ - một sự kiện ngắn hạn, sống hoặc chết.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A caveman silhouette throwing a spear at a giant geometric tiger shadow. Short, intense burst of action. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 67 🗣️ Lời bình: Còn bạn? Bạn đang kích hoạt nó 24/7. Sếp của bạn không phải hổ dữ, nhưng não bộ bạn không phân biệt được điều đó.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The tiger shadow morphs into a giant silhouette of a man in a suit (Boss), but the claws and teeth remain. It looms over the desk. OLED deep black background, high contrast, neon glow effects. Morphing animation.
+
+Scene 68 🗣️ Lời bình: Nó giữ cơ thể bạn ở trạng thái báo động đỏ triền miên, ngày này qua tháng khác, năm này qua năm khác.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A red siren light spins continuously, never stopping, while pages of a calendar fly off rapidly in the background. OLED deep black background, high contrast, neon glow effects. Time-lapse effect.
+
+Scene 69 🗣️ Lời bình: Và đây là phần đáng sợ nhất mà tôi buộc phải nói cho bạn biết. Đây là "Future Casting" - viễn cảnh tương lai của chính bạn nếu bạn không dừng lại ngay hôm nay.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The screen goes completely black. A single white line draws a path leading into a deep purple abyss. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 70 🗣️ Lời bình: Hãy tưởng tượng 5 năm nữa. Bạn vẫn tiếp tục gồng mình. Bạn có thể sẽ được thăng chức. Bạn có thể sẽ có nhiều tiền hơn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A silhouette climbing a steep mountain of gold coins. It reaches the top, but the character is hunched over and trembling. OLED deep black background, high contrast, neon glow effects. Low angle shot.
+
+Scene 71 🗣️ Lời bình: Nhưng một ngày nọ, bạn thức dậy và nhận ra mình đã mắc phải chứng "Anhedonia" - hay còn gọi là "Mất khả năng cảm thụ niềm vui".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The word "ANHEDONIA" fades in, looking like it's made of grey smoke. It passes through the character, turning the character from white to dull grey. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 72 🗣️ Lời bình: Đó là khi bạn đứng trước một hoàng hôn tuyệt đẹp, nhưng bạn chẳng cảm thấy gì ngoài những bước sóng ánh sáng đập vào võng mạc.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A beautiful sun graphic (vector) is on screen. The character looks at it, but the POV shows code lines and hex colors (#FF0000) instead of the sun. OLED deep black background, high contrast, neon glow effects. POV shot.
+
+Scene 73 🗣️ Lời bình: Đó là khi bạn ăn món ngon nhất thế giới, nhưng nó có vị như rơm rác.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The character takes a bite of a glowing fruit. As it enters the mouth, the fruit turns into grey ash/dust falling down. OLED deep black background, high contrast, neon glow effects. Close up side profile.
+
+Scene 74 🗣️ Lời bình: Đó là khi bạn ôm người mình yêu thương nhất, nhưng cảm giác lạnh lẽo như đang ôm một ma nơ canh.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Two silhouettes hug. The other person is warm/glowing, but the main character's arms turn into rigid, cold geometric stone blocks upon contact. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 75 🗣️ Lời bình: Thế giới của bạn sẽ không sụp đổ ầm ĩ. Nó sẽ phai màu dần. Từ một bức tranh rực rỡ, nó biến thành một bộ phim trắng đen nhiễu hạt.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The purple highlights in the scene slowly drain away, leaving only stark black and white, then adding a heavy grain/noise filter. OLED deep black background, high contrast, neon glow effects. Saturation drop.
+
+Scene 76 🗣️ Lời bình: Bạn trở thành một bóng ma (Ghost) trong chính cuộc đời mình - vẫn đi lại, vẫn làm việc, vẫn cười nói xã giao, nhưng bên trong đã hoàn toàn chết lặng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The character walks through a crowd. The crowd is solid, but the character is semi-transparent, flickering like a dying hologram. OLED deep black background, high contrast, neon glow effects. Tracking shot.
+
+Scene 77 🗣️ Lời bình: Bạn sẽ không chết vì kiệt sức, bạn sẽ chết vì sự vô cảm. Và tin tôi đi, cái chết của linh hồn khi thể xác vẫn còn sống... đó mới là địa ngục thực sự.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A tombstone appears with the character's name, but the character is standing next to it, looking down, unable to cry. The tombstone cracks. OLED deep black background, high contrast, neon glow effects. Static camera with rain effect.
+
+GIAI ĐOẠN 2: KỊCH BẢN SẢN XUẤT (PHẦN CUỐI)
+🔴 BƯỚC 5: SOLUTION & OUTRO (THE SHIFT)
+(Giải pháp Tái kết nối & Lời kết)
+
+🔴 PASS 1: THE MONOLOGUE (NGUYÊN LIỆU THÔ)
+(Định mức: ~1400 từ. Tone: Hướng dẫn, Trầm ổn, Thực chiến)
+
+Chúng ta đã nhìn thẳng vào vực thẳm. Và bây giờ, hãy bắt đầu leo lên. Nhưng hãy nhớ nguyên tắc này: Bạn không thể leo lên đỉnh núi Everest bằng cách chạy nước rút. Bạn phải đi từng bước một, chậm rãi, có tính toán. Đừng cố gắng "nghỉ ngơi" theo kiểu nằm ườn ra đó và mong chờ phép màu. Hệ thống của bạn không cần nghỉ, nó cần "Tái kết nối" (Reconnection). Dưới đây là 3 giao thức can thiệp sinh học để khởi động lại cỗ máy tâm hồn của bạn.
+
+Giải pháp 1: Tái kết nối với GIÁC QUAN (Somatic Reconnection). Nguyên lý ở đây rất đơn giản nhưng thường bị bỏ qua: Burnout là trạng thái bạn bị nhốt 100% trong "Cái đầu" (suy nghĩ, lo âu, dự đoán) và mất kết nối hoàn toàn với "Cơ thể". Bạn trở thành một cái đầu bay lơ lửng. Để thoát khỏi nhà tù tâm trí, bạn phải neo mình lại vào thực tại vật lý. Cách làm: Kỹ thuật "Chạm vào bề mặt" (Texture Grounding). Ngay bây giờ, đừng chỉ nghe tôi nói. Hãy thực hiện Bài tập tương tác này cùng tôi. Dừng mọi việc bạn đang làm lại. (Interactive Pause) Hít vào thật sâu... và thở ra. Bây giờ, hãy dùng ngón tay cái của bạn, chà xát thật mạnh vào đầu ngón trỏ. Bạn có cảm thấy vân tay của mình không? Độ nhám, nhiệt độ? Hãy dồn 100% sự chú ý vào điểm tiếp xúc đó. Tiếp theo, hãy nhìn xung quanh và tìm một vật thể có màu tím hoặc xanh. Nhìn chằm chằm vào nó. Đừng đặt tên cho nó. Chỉ nhìn "cấu trúc" của nó thôi. Bạn thấy gì không? Trong 10 giây vừa rồi, tiếng nói chỉ trích trong đầu bạn đã im bặt. Đó là khoảng nghỉ sinh học. Cạm bẫy sai lầm: Đừng cố gắng "thiền" hay "làm rỗng đầu óc" khi đang Burnout. Việc ép buộc não bộ ngừng suy nghĩ chỉ khiến nó chống đối mạnh hơn. Thay vào đó, hãy đánh lạc hướng nó bằng xúc giác mạnh.
+
+Giải pháp 2: Tái kết nối với QUYỀN LỰC (Agency Reconnection) bằng quy tắc "Làm Tệ Cũng Được". Burnout sinh ra từ cảm giác bất lực (Learned Helplessness). Bạn cảm thấy mình không kiểm soát được kết quả. Để sửa lỗi này, bạn cần nạp lại Dopamine bằng những chiến thắng nhỏ. Cách làm: Hãy áp dụng quy tắc "Do it badly" (Hãy làm nó một cách tệ hại). Bạn không muốn viết báo cáo? Hãy tự nhủ: "Mình sẽ viết một bản báo cáo rác rưởi trong 5 phút". Bạn không muốn dọn nhà? "Mình sẽ chỉ nhặt đúng 3 cái rác vứt vào thùng". Khi bạn hạ thấp tiêu chuẩn xuống mức sàn nhà, bạn triệt tiêu nỗi sợ hãi của sự hoàn hảo. Và khi bạn bắt đầu làm (dù làm tệ), não bộ sẽ nhận được tín hiệu: "A, mình đã hành động". Dopamine sẽ tiết ra. Đó là mồi lửa để bạn làm tiếp. Cạm bẫy sai lầm: Sau khi làm được một chút, bạn ngay lập tức quay lại kỳ vọng bản thân phải làm thật hoàn hảo. Dừng lại ngay. Hãy cho phép mình làm dở. Một bản nháp tồi tệ vẫn tốt hơn là một trang giấy trắng hoàn hảo.
+
+Giải pháp 3: Tái kết nối với GIÁ TRỊ (Value Reconnection) - Cuộc đại phẫu thuật "Ma cà rồng". Đây là bước đau đớn nhất. Bạn Burnout không hẳn vì bạn làm nhiều, mà vì bạn đang làm những việc không thuộc về mình, để làm hài lòng những người bạn không thích. Bạn đang đốt nhiên liệu xịn cho một động cơ rỉ sét. Cách làm: Hãy thực hiện một cuộc "Kiểm toán năng lượng" (Energy Audit). Lấy một tờ giấy, kẻ làm hai cột. Cột trái: Những thứ RÚT năng lượng (Người hay than vãn, họp hành vô nghĩa, lướt mạng xã hội). Cột phải: Những thứ NẠP năng lượng (Viết lách, chơi nhạc, nấu ăn, đi dạo một mình). Nhiệm vụ của bạn: Trong 7 ngày tới, hãy tàn nhẫn cắt bỏ hoặc giảm thiểu tối đa cột bên trái. Nếu đó là sếp hay đồng nghiệp độc hại, hãy học cách thiết lập ranh giới (Boundaries). "Không" là một câu hoàn chỉnh. Đồng thời, hãy bắt buộc chèn vào lịch trình mỗi ngày 15 phút cho cột bên phải. Đó không phải là phần thưởng, đó là nhiên liệu sinh tồn. Cạm bẫy sai lầm: Bạn nghĩ rằng "đợi khi nào rảnh sẽ làm". Bạn sẽ không bao giờ rảnh. Bạn phải tranh đấu để giành lại thời gian cho chính mình.
+
+Lời kết (Outro): Cuối cùng, tôi muốn bạn thay đổi góc nhìn về Burnout. Đừng coi nó là kẻ thù. Hãy coi nó là một người bảo vệ thầm lặng. Burnout là cách cơ thể bạn gào lên rằng: "Cách sống cũ của mày không ổn rồi. Phải thay đổi đi". Nó là một cuộc cưỡng chế khởi động lại (Forced Reboot) để bạn nâng cấp hệ điều hành của mình. Đừng cố gắng quay lại là con người cũ của bạn trước khi bị Burnout. Con người đó đã sụp đổ vì một lý do. Hãy xây dựng một con người mới: Biết lắng nghe cơ thể, biết đặt ra giới hạn, và biết trân trọng giá trị của chính mình. Bạn không cần phải tỏa sáng rực rỡ mọi lúc. Đôi khi, chỉ cần leo lét như một ngọn nến trong đêm bão cũng đã là một sự kiên cường vĩ đại rồi. Bạn đã vất vả rồi. Bây giờ, hãy bắt đầu sống cho chính mình.
+
+🔴 PASS 2: THE SLICER (CẮT CẢNH LOSSLESS & VEO3 STRICT)
+Trạng thái: Đã tích hợp bài tập tương tác, giữ nguyên thuật ngữ và không khí Noir.
+
+Scene 78 🗣️ Lời bình: Chúng ta đã nhìn thẳng vào vực thẳm. Và bây giờ, hãy bắt đầu leo lên. Nhưng hãy nhớ nguyên tắc này...
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Low angle shot from inside a deep dark pit looking up at a small opening of light. A small silhouette begins to climb the wall. OLED deep black background, high contrast, neon glow effects. Slow tilt up.
+
+Scene 79 🗣️ Lời bình: ...Bạn không thể leo lên đỉnh núi Everest bằng cách chạy nước rút. Bạn phải đi từng bước một, chậm rãi, có tính toán.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The silhouette slips slightly, then places a hand firmly on a geometric rock, securing the grip. Dust particles fall. OLED deep black background, high contrast, neon glow effects. Close up on hand.
+
+Scene 80 🗣️ Lời bình: Đừng cố gắng "nghỉ ngơi" theo kiểu nằm ườn ra đó và mong chờ phép màu. Hệ thống của bạn không cần nghỉ, nó cần "Tái kết nối" (Reconnection).
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. An unplugged cable hanging loosely is grabbed by a glowing hand and moved purposefully towards a port. OLED deep black background, high contrast, neon glow effects. Static camera with moving elements.
+
+Scene 81 🗣️ Lời bình: Dưới đây là 3 giao thức can thiệp sinh học để khởi động lại cỗ máy tâm hồn của bạn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Three purple holographic data cards appear on screen, labelled "PROTOCOL 1", "PROTOCOL 2", "PROTOCOL 3". OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 82 (Solution 1 Starts) 🗣️ Lời bình: Giải pháp 1: Tái kết nối với GIÁC QUAN (Somatic Reconnection).
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Title card "SOMATIC RECONNECTION" forms from floating nerve endings. OLED deep black background, high contrast, neon glow effects. Animation.
+
+Scene 83 🗣️ Lời bình: Nguyên lý ở đây rất đơn giản: Burnout là trạng thái bạn bị nhốt 100% trong "Cái đầu" và mất kết nối hoàn toàn với "Cơ thể".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A silhouette with a giant, glowing, overactive head, but the body is faded, almost invisible and disconnected at the neck. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 84 🗣️ Lời bình: Bạn trở thành một cái đầu bay lơ lửng. Để thoát khỏi nhà tù tâm trí, bạn phải neo mình lại vào thực tại vật lý.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Heavy purple chains shoot up from the ground, wrapping around the floating head and pulling it firmly back down to the shoulders. OLED deep black background, high contrast, neon glow effects. Fast motion.
+
+Scene 85 (Interactive Exercise) 🗣️ Lời bình: Cách làm: Kỹ thuật "Chạm vào bề mặt". Ngay bây giờ, đừng chỉ nghe tôi nói. Hãy thực hiện cùng tôi. Dừng mọi việc bạn đang làm lại.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A "PAUSE" symbol (two vertical bars) glows in the center of the screen. The background visual noise slows down to a halt. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 86 🗣️ Lời bình: Hít vào thật sâu... và thở ra. (Để khoảng lặng 3 giây).
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A circle expands slowly (inhale) and contracts slowly (exhale) in sync with the instruction. OLED deep black background, high contrast, neon glow effects. Smooth motion.
+
+Scene 87 🗣️ Lời bình: Bây giờ, hãy dùng ngón tay cái của bạn, chà xát thật mạnh vào đầu ngón trỏ. Bạn có cảm thấy vân tay của mình không?
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Extreme close up on two vector fingers rubbing together. Sparks/ripples of purple light emanate from the contact point. OLED deep black background, high contrast, neon glow effects. Macro shot.
+
+Scene 88 🗣️ Lời bình: Độ nhám, nhiệt độ? Hãy dồn 100% sự chú ý vào điểm tiếp xúc đó.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The contact point between fingers glows brighter, illuminating the surrounding darkness. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 89 🗣️ Lời bình: Bạn thấy gì không? Trong 10 giây vừa rồi, tiếng nói chỉ trích trong đầu bạn đã im bặt. Đó là khoảng nghỉ sinh học.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The chaotic jagged lines in the head area smooth out into a straight, peaceful horizontal line. OLED deep black background, high contrast, neon glow effects. Morphing animation.
+
+Scene 90 🗣️ Lời bình: Cạm bẫy sai lầm: Đừng cố gắng "thiền" hay "làm rỗng đầu óc". Thay vào đó, hãy đánh lạc hướng nó bằng xúc giác mạnh.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. An icon of a brain trying to meditate gets crossed out. Replaced by an icon of a hand touching a rough surface. OLED deep black background, high contrast, neon glow effects. Lateral slide.
+
+Scene 91 (Solution 2 Starts) 🗣️ Lời bình: Giải pháp 2: Tái kết nối với QUYỀN LỰC (Agency Reconnection) bằng quy tắc "Làm Tệ Cũng Được".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Title card "AGENCY RECONNECTION" appears. A small gear starts turning a giant rusted gear. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 92 🗣️ Lời bình: Burnout sinh ra từ cảm giác bất lực. Bạn cảm thấy mình không kiểm soát được kết quả. Để sửa lỗi này, bạn cần nạp lại Dopamine bằng những chiến thắng nhỏ.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A tiny flag is planted on a small hill. Fireworks of purple pixels erupt. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 93 🗣️ Lời bình: Hãy áp dụng quy tắc "Do it badly". Bạn không muốn viết báo cáo? Hãy tự nhủ: "Mình sẽ viết một bản báo cáo rác rưởi trong 5 phút".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A crumpled piece of paper (representing bad work) is thrown onto a desk. It glows, signifying a completed task. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 94 🗣️ Lời bình: Khi bạn hạ thấp tiêu chuẩn xuống mức sàn nhà, bạn triệt tiêu nỗi sợ hãi của sự hoàn hảo.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A high jump bar is lowered all the way down to the ground. The silhouette steps over it easily. OLED deep black background, high contrast, neon glow effects. Side view.
+
+Scene 95 🗣️ Lời bình: Và khi bạn bắt đầu làm (dù làm tệ), não bộ sẽ nhận được tín hiệu: "A, mình đã hành động". Dopamine sẽ tiết ra.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A spark plugs ignites in the engine. A small drop of fuel hits it, causing a small but steady purple flame. OLED deep black background, high contrast, neon glow effects. Close up.
+
+Scene 96 (Solution 3 Starts) 🗣️ Lời bình: Giải pháp 3: Tái kết nối với GIÁ TRỊ (Value Reconnection) - Cuộc đại phẫu thuật "Ma cà rồng".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. Title card "VALUE RECONNECTION". Bat-like geometric shapes (vampires) are swarming. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 97 🗣️ Lời bình: Bạn Burnout không hẳn vì bạn làm nhiều, mà vì bạn đang làm những việc không thuộc về mình, để làm hài lòng những người bạn không thích.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The silhouette is pouring glowing purple liquid from their own chest into a black bottomless pit held by faceless figures. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 98 🗣️ Lời bình: Cách làm: Hãy thực hiện một cuộc "Kiểm toán năng lượng". Lấy một tờ giấy, kẻ làm hai cột.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A piece of paper splits in half by a laser line. Left side is dark/glitchy. Right side is glowing/clean. OLED deep black background, high contrast, neon glow effects. Top-down view.
+
+Scene 99 🗣️ Lời bình: Cột trái: Những thứ RÚT năng lượng. Cột phải: Những thứ NẠP năng lượng. Nhiệm vụ của bạn: tàn nhẫn cắt bỏ cột bên trái.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A geometric scissor cuts off the left side of the paper. The left side falls into the void. OLED deep black background, high contrast, neon glow effects. Animation.
+
+Scene 100 🗣️ Lời bình: Đồng thời, hãy bắt buộc chèn vào lịch trình mỗi ngày 15 phút cho cột bên phải. Đó không phải là phần thưởng, đó là nhiên liệu sinh tồn.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A battery icon being charged by a "Joy" symbol (music note or book icon). The purple liquid level rises. OLED deep black background, high contrast, neon glow effects. Zoom in.
+
+Scene 101 (Outro) 🗣️ Lời bình: Cuối cùng, tôi muốn bạn thay đổi góc nhìn về Burnout. Đừng coi nó là kẻ thù. Hãy coi nó là một người bảo vệ thầm lặng.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The monster/shadow that was chasing the character throughout the video stops, bows down, and offers a hand. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 102 🗣️ Lời bình: Burnout là cách cơ thể bạn gào lên rằng: "Cách sống cũ của mày không ổn rồi. Phải thay đổi đi".
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The silhouette sheds its old, cracked skin (like a shell), revealing a new, slightly smaller but glowing solid core underneath. OLED deep black background, high contrast, neon glow effects. Morphing animation.
+
+Scene 103 🗣️ Lời bình: Nó là một cuộc cưỡng chế khởi động lại (Forced Reboot) để bạn nâng cấp hệ điều hành của mình.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A progress bar "SYSTEM UPDATE" reaches 100%. A bright flash of white light. OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Scene 104 🗣️ Lời bình: Đừng cố gắng quay lại là con người cũ của bạn. Con người đó đã sụp đổ vì một lý do. Hãy xây dựng một con người mới.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The new silhouette stands up, looking different, simpler, but sturdier. It walks away from the rubble of the old building. OLED deep black background, high contrast, neon glow effects. Lateral tracking shot.
+
+Scene 105 🗣️ Lời bình: Bạn không cần phải tỏa sáng rực rỡ mọi lúc. Đôi khi, chỉ cần leo lét như một ngọn nến trong đêm bão cũng đã là một sự kiên cường vĩ đại rồi.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. A single small candle flame in the vast darkness. The wind blows (purple streaks), the flame flickers violently but does not go out. OLED deep black background, high contrast, neon glow effects. Slow zoom in.
+
+Scene 106 🗣️ Lời bình: Bạn đã vất vả rồi. Bây giờ, hãy bắt đầu sống cho chính mình.
+
+🎬 Video Prompt (Veo3 Optimized): Cinematic minimalist 2D vector animation, premium flat noir style. Spot color method with only Pitch-Black (#000000), Glowing Electric Purple (#BF00FF), and White. The candle flame stabilizes and turns into the channel logo. Text "GÓC KHUẤT TÂM LÝ" appears. Fade to black.
+
+GIAI ĐOẠN 3: ECOSYSTEM EXTRACTION (3 VIRAL SHORTS)
+📱 SHORT 1: THE DIAGNOSIS (CHẨN ĐOÁN LỖI)
+Focus: Phân biệt giữa Lười Biếng và Burnout. Đánh vào cảm giác tội lỗi của người xem.
+
+1. Title Hook (Text on Video): BẠN KHÔNG LƯỜI. BẠN ĐANG "HỎNG". 2. Kịch bản (Duration: ~55s):
+
+(0-3s) The Loop Hook: 🗣️ Lời bình: Nếu bạn đang nằm lướt điện thoại cả ngày, nhưng trong lòng lại thấy tội lỗi và sợ hãi... thì chúc mừng, bạn KHÔNG hề lười biếng. (3-45s) The Meat: 🗣️ Lời bình: Kẻ lười biếng thực sự sẽ tận hưởng việc không làm gì cả. Họ thấy sướng. Còn bạn, bạn MUỐN làm việc, nhưng cơ thể bạn không tuân lệnh. Bạn đang bị "Burnout" - Kiệt sức tâm hồn. Khoa học gọi đây là "Lỗi dự đoán phần thưởng". Bạn đã cố gắng quá lâu mà không được đền đáp, nên não bộ đã tự động ngắt cầu dao để ngăn bạn "đốt" thêm năng lượng. Bạn không cần kỷ luật hơn. Bạn cần sửa lại hệ thống dây điện trong đầu mình. (45-55s) CTA: 🗣️ Lời bình: Đừng ép mình chạy tiếp. Hãy xem video dài 10 phút tôi ghim ở dưới để biết cách "đấu dây" lại từ đầu.
+
+3. Visual Strategy (Vertical Adaptation - 9:16):
+
+Prompt 1 (Opening):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. Split screen top/bottom. Top: A silhouette lounging happily (Lazy). Bottom: A silhouette chained to a bed, struggling and sweating purple drops (Burnout). OLED deep black background, high contrast, neon glow effects. Static camera.
+
+Prompt 2 (The Science):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A giant geometric switch labeled "BRAIN" sparks and shuts down (OFF position). Purple smoke rises. OLED deep black background, high contrast, neon glow effects. Zoom in.
+
+Prompt 3 (CTA):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A severed glowing purple wire slowly reconnecting and sparking bright white light. OLED deep black background, high contrast, neon glow effects. Slow motion.
+
+📱 SHORT 2: THE BIOLOGY TRICK (THỦ THUẬT SINH HỌC)
+Focus: Giải thích cơ chế "Đóng băng" và đưa ra giải pháp thở (Physiological Sigh) ngay lập tức.
+
+1. Title Hook (Text on Video): ĐỪNG NGỦ NỮA. HÃY THỞ ĐI. 2. Kịch bản (Duration: ~50s):
+
+(0-3s) The Loop Hook: 🗣️ Lời bình: Ngủ 10 tiếng dậy vẫn mệt? Dừng lại ngay. Bạn đang chữa sai bệnh rồi. (3-40s) The Meat: 🗣️ Lời bình: Bạn không mệt ở cơ bắp. Bạn đang bị kẹt ở trạng thái "Đóng băng" (Freeze Response) của hệ thần kinh. Cơ thể bạn đang tưởng nhầm sếp của bạn là hổ dữ, nên nó giả chết để bảo vệ bạn. Để thoát ra, đừng ngủ. Hãy làm điều này ngay bây giờ: Hít vào 2 lần liên tiếp bằng mũi, rồi thở dài ra bằng miệng. (Hiệu ứng âm thanh hít thở) Hành động này kích hoạt dây thần kinh phế vị, gửi tín hiệu "An toàn" lên não ngay lập tức. (40-50s) CTA: 🗣️ Lời bình: Đây chỉ là cấp cứu tạm thời thôi. Để chữa dứt điểm, hãy xem phác đồ điều trị chi tiết trong video ghim ở bình luận.
+
+3. Visual Strategy (Vertical Adaptation - 9:16):
+
+Prompt 1 (The Trap):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A silhouette lying in a block of transparent purple ice. The eyes are wide open in fear. OLED deep black background, high contrast, neon glow effects. Slow rotation.
+
+Prompt 2 (The Action):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. Abstract geometric lungs expanding twice (double inhale) then deflating slowly. Glowing white air flow. OLED deep black background, high contrast, neon glow effects. Smooth motion.
+
+Prompt 3 (The Relief):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. The ice shattering into geometric shards, releasing the silhouette. OLED deep black background, high contrast, neon glow effects. Explosion effect.
+
+📱 SHORT 3: THE DARK FUTURE (VIỄN CẢNH ĐEN TỐI)
+Focus: Đánh vào nỗi sợ Anhedonia (Mất cảm giác vui) để thúc đẩy hành động.
+
+1. Title Hook (Text on Video): CÁI CHẾT CỦA CẢM XÚC (ANHEDONIA). 2. Kịch bản (Duration: ~58s):
+
+(0-5s) The Loop Hook: 🗣️ Lời bình: Bạn có tiền, có công việc, nhưng nhìn vào món ăn ngon nhất, bạn thấy như nhai rơm rác? Cẩn thận, linh hồn bạn đang chết dần. (5-45s) The Meat: 🗣️ Lời bình: Đó là Anhedonia - Mất khả năng cảm thụ niềm vui. Đây là giai đoạn cuối của Burnout. Bạn biến thành một con ma trong chính cuộc đời mình. Bạn cười nói, đi lại, nhưng bên trong hoàn toàn rỗng tuếch. Mọi thứ chỉ còn là màu xám. Đừng đợi đến lúc đó mới sửa. Hãy làm một cuộc "Kiểm toán năng lượng" ngay hôm nay. Cắt bỏ tàn bạo những kẻ đang hút máu cảm xúc của bạn. (45-58s) CTA: 🗣️ Lời bình: Làm sao để cắt bỏ mà không thấy tội lỗi? Tôi đã hướng dẫn chi tiết từng câu thoại từ chối trong video dài này. Bấm vào xem ngay trước khi quá muộn.
+
+3. Visual Strategy (Vertical Adaptation - 9:16):
+
+Prompt 1 (The Problem):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A hand holding a delicious glowing fruit, but as it enters the mouth, it turns into grey ash falling down. OLED deep black background, high contrast, neon glow effects. Close up.
+
+Prompt 2 (The Ghost):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A crowd of solid black figures walking, but the main character is a flickering, semi-transparent glitchy outline. OLED deep black background, high contrast, neon glow effects. Tracking shot.
+
+Prompt 3 (The Solution):
+
+Cinematic minimalist 2D vector animation, premium flat noir style. Vertical composition, 9:16 aspect ratio. A giant pair of scissors cutting a thick purple cable labeled "DRAMA". Sparks fly. OLED deep black background, high contrast, neon glow effects. Fast motion.
+
+
+GIAI ĐOẠN 3: BỔ SUNG ASSETS CHO 3 VIRAL SHORTS
+📱 SHORT 1: THE DIAGNOSIS (CHẨN ĐOÁN LỖI)
+Mục tiêu: Đánh trúng tâm lý "Oan ức" của người xem (Bị coi là lười nhưng thực ra đang kiệt sức).
+
+1. Thumbnail Prompt (Vertical 9:16 or Square 1:1 for FB):
+
+Text trên ảnh: "KHÔNG PHẢI LƯỜI"
+
+Ý tưởng: Hình ảnh ẩn dụ về một cục pin bị rò rỉ năng lượng dù đang cắm sạc.
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube/Facebook thumbnail.
+
+[SUBJECT]: A central minimalist silhouette of a human sitting with head down, connected to a giant charging cable.
+
+[ACTION/EFFECT]: The energy is not filling up but leaking out in jagged Glowing Electric Purple (#BF00FF) geometric lines, looking like bleeding.
+
+[TEXT]: Typography text saying "KHÔNG PHẢI LƯỜI" in bold sans-serif font, glowing white, large size at the center.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast, negative space.
+
+[NEGATIVE]: No shading, no 3d render, no complex details, no messy background, no realistic face.
+
+2. Facebook Pinned Comment (Điều hướng về YouTube):
+Bạn nằm trên giường cả ngày, nhưng đầu óc thì tra tấn bản thân vì cảm giác tội lỗi?
+Sự thật là: Kẻ lười biếng sẽ tận hưởng việc "không làm gì". Còn bạn, bạn đau khổ vì nó. Đó là dấu hiệu của việc "Hỏng bộ điều hòa Dopamine".
+Đừng ép bản thân kỷ luật lúc này. Nó sẽ giết chết bạn. Hãy xem cách "đấu dây" lại hệ thần kinh trong video đầy đủ tại đây: 👉 [LINK VIDEO YOUTUBE] (Lưu ý: 5 phút đầu tiên của video sẽ thay đổi cách bạn nhìn nhận sự nghỉ ngơi mãi mãi)
+
+📱 SHORT 2: THE BIOLOGY TRICK (THỦ THUẬT SINH HỌC)
+Mục tiêu: Cung cấp giá trị nhanh (thở) nhưng bán giải pháp lâu dài (trị liệu).
+
+1. Thumbnail Prompt (Vertical 9:16 or Square 1:1 for FB):
+
+Text trên ảnh: "NÃO ĐÓNG BĂNG"
+
+Ý tưởng: Một cái đầu người bị nhốt trong một khối lập phương trong suốt, thể hiện sự tê liệt.
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube/Facebook thumbnail.
+
+[SUBJECT]: A central giant white silhouette of a human head encased in a sharp geometric cube.
+
+[ACTION/EFFECT]: The cube is glowing Electric Purple (#BF00FF) with static glitch effects, symbolizing a 'frozen' nervous system.
+
+[TEXT]: Typography text saying "NÃO ĐÓNG BĂNG" in bold sans-serif font, glowing white, large size.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast.
+
+[NEGATIVE]: No shading, no 3d render, no ice texture, no realistic water, no messy background.
+
+2. Facebook Pinned Comment (Điều hướng về YouTube):
+Ngủ 10 tiếng dậy vẫn thấy kiệt sức như vừa chạy marathon?
+Vấn đề không nằm ở cơ bắp. Vấn đề nằm ở việc não bạn đang kẹt ở chế độ "Freeze Response" (Giả chết). Bạn đang ngủ với một hệ thần kinh đang gào thét báo động.
+Kỹ thuật thở trong video ngắn này chỉ là thuốc giảm đau tạm thời. Để tắt hoàn toàn chiếc còi báo động trong đầu, bạn cần phác đồ 3 bước này: 👉 [LINK VIDEO YOUTUBE] (Xem ngay trước khi hệ thần kinh của bạn sập nguồn hoàn toàn)
+
+📱 SHORT 3: THE DARK FUTURE (VIỄN CẢNH ĐEN TỐI)
+Mục tiêu: Gây sợ hãi về sự vô cảm (Anhedonia) để kích thích hành động.
+
+1. Thumbnail Prompt (Vertical 9:16 or Square 1:1 for FB):
+
+Text trên ảnh: "RỖNG TUẾCH"
+
+Ý tưởng: Một gương mặt vô diện, nơi phần mắt và miệng bị thay thế bằng các vạch nhiễu sóng (glitch).
+
+PROMPT:
+
+(Masterpiece, best quality, minimal vector art), YouTube/Facebook thumbnail.
+
+[SUBJECT]: A close-up of a faceless white silhouette head in the center.
+
+[ACTION/EFFECT]: The area where eyes and mouth should be is replaced by heavy Electric Purple (#BF00FF) signal noise and glitch pixels, representing emptiness.
+
+[TEXT]: Typography text saying "RỖNG TUẾCH" in bold sans-serif font, glowing white, large size overlay.
+
+[ATMOSPHERE]: Pitch-black background (#000000), OLED theme, High contrast.
+
+[NEGATIVE]: No shading, no 3d render, no horror gore, no realistic eyes, no complex hair.
+
+2. Facebook Pinned Comment (Điều hướng về YouTube):
+Có tiền, có công việc, nhưng ăn món ngon nhất trần đời vẫn thấy nhạt như nước ốc?
+Chào mừng đến với Anhedonia (Mất khả năng cảm thụ niềm vui). Đây là giai đoạn cuối của Burnout. Bạn không buồn, bạn cũng không vui. Bạn chỉ đang "tồn tại" như một bóng ma.
+Nếu bạn thấy mình trong đó, hãy dừng mọi việc lại. Chúng ta cần làm một cuộc "Đại phẫu thuật năng lượng" ngay lập tức.
+Hướng dẫn cắt bỏ những nguồn hút cạn cảm xúc của bạn nằm ở đây: 👉 [LINK VIDEO YOUTUBE] (Đừng để đến lúc bạn không còn cảm thấy gì nữa, kể cả nỗi đau)
