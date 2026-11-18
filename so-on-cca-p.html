@@ -1,0 +1,1269 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sổ ôn CCA-P</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sổ tay ôn thi — header dính (tab + tìm kiếm + tiến độ), mục lục trái (desktop) / thả xuống (mobile), nội dung chia "Phần"; tab Flashcard lật thẻ; tab Luyện tập chấm điểm từng câu */
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --ink: #16232b;
+  --muted: #5b6b74;
+  --line: #dbe2e6;
+  --accent: #0f6e78;
+  --accent-soft: #e2f1f2;
+  --good: #2f7d4f;
+  --good-soft: #e3f3e8;
+  --bad: #b3412e;
+  --bad-soft: #f8e6e2;
+  --mark: #ffe58a;
+  --code-bg: #eef2f4;
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1619; --surface: #162126; --ink: #e3ecef; --muted: #93a6ae; --line: #2a3a41;
+    --accent: #5cc3cc; --accent-soft: #173b40; --good: #6fcf94; --good-soft: #17352a;
+    --bad: #f08a76; --bad-soft: #3d201b; --mark: #6b5a12; --code-bg: #1d2c32; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1619; --surface: #162126; --ink: #e3ecef; --muted: #93a6ae; --line: #2a3a41;
+  --accent: #5cc3cc; --accent-soft: #173b40; --good: #6fcf94; --good-soft: #17352a;
+  --bad: #f08a76; --bad-soft: #3d201b; --mark: #6b5a12; --code-bg: #1d2c32; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 130px); }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15.5px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--surface); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.top-inner { max-width: 1180px; margin: 0 auto; padding-block: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.brand { display: flex; flex-direction: column; min-width: 0; margin-right: auto; }
+.brand b { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+.brand span { font-size: 12px; color: var(--muted); }
+.tabs { display: flex; gap: 4px; background: var(--code-bg); padding: 3px; border-radius: 8px; max-width: 100%; overflow-x: auto; }
+.tabs button { border: 0; background: transparent; color: var(--muted); font: 600 14px var(--font-body); padding: 6px 12px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
+.search { flex: 1 1 260px; display: flex; }
+.search input { width: 100%; font: 15px var(--font-body); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+input:focus-visible, button:focus-visible, select:focus-visible, .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.progress { width: 100%; display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { flex: 1; height: 5px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--good); transition: width .3s; }
+
+.layout { max-width: 1180px; margin: 0 auto; padding-block: 24px 64px; display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 32px; align-items: start; }
+nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 120px); max-height: calc(100vh - 140px); overflow: auto; }
+.toc h3 { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.toc a { display: grid; grid-template-columns: 26px 1fr 16px; gap: 6px; align-items: baseline; padding: 6px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; font-size: 13.5px; line-height: 1.35; }
+.toc a:hover { background: var(--accent-soft); }
+.toc a .n { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.toc a .ok { color: var(--good); font-weight: 700; visibility: hidden; }
+.toc a.done .ok { visibility: visible; }
+.toc a.dim { opacity: .35; }
+details.toc-m { display: none; }
+details.toc-m ol { list-style: none; padding: 0; margin: 0; }
+
+main { min-width: 0; }
+.intro { color: var(--muted); font-size: 14px; margin: 0 0 18px; max-width: 75ch; }
+section.part { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 20px; }
+section.part.done { border-color: color-mix(in srgb, var(--good) 45%, var(--line)); }
+.part-head { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 4px; }
+.part-head h2 { margin: 0; font-size: 21px; font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; line-height: 1.3; }
+.part-head h2 small { display: block; font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; margin-bottom: 2px; }
+.done-btn { border: 1px solid var(--line); background: var(--bg); color: var(--muted); font: 600 13px var(--font-body); padding: 6px 12px; border-radius: 99px; cursor: pointer; white-space: nowrap; }
+.done .done-btn { background: var(--good-soft); color: var(--good); border-color: transparent; }
+.part h3 { font-size: 16.5px; margin: 22px 0 6px; font-weight: 700; }
+.part p, .part li { max-width: 78ch; }
+.part ul, .part ol { padding-left: 1.3em; }
+.part li { margin: 4px 0; }
+.part li::marker { color: var(--accent); }
+code { font-family: var(--font-mono); font-size: .86em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.q { font-family: var(--font-mono); font-size: .78em; color: var(--muted); background: var(--code-bg); padding: 0 4px; border-radius: 3px; white-space: nowrap; }
+.tbl { overflow-x: auto; margin: 10px 0 14px; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+th { background: var(--code-bg); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; min-width: 130px; }
+mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.empty { color: var(--muted); padding: 30px 0; text-align: center; }
+
+/* Flashcards + Quiz shared */
+.narrow { max-width: 760px; margin: 0 auto; padding-block: 24px 64px; display: grid; gap: 16px; }
+.ctrl { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.ctrl select { font: 14px var(--font-body); padding: 7px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); max-width: 100%; }
+.stats { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; min-height: 280px; padding: 28px; display: flex; flex-direction: column; gap: 14px; cursor: pointer; user-select: none; }
+.lbl { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.card .front { font-size: 21px; font-weight: 700; line-height: 1.4; text-wrap: balance; }
+.card .back { border-top: 1px dashed var(--line); padding-top: 14px; font-size: 16px; }
+.card .back .lbl { color: var(--accent); margin-bottom: 4px; }
+.hint { margin-top: auto; font-size: 12.5px; color: var(--muted); }
+.deckname { font-size: 12px; color: var(--accent); font-weight: 600; }
+.actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.actions button, .btn { font: 600 14px var(--font-body); padding: 11px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.actions .know, .btn.primary { background: var(--accent); color: var(--surface); border-color: transparent; }
+.actions .again { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.linkbtn { background: none; border: 0; color: var(--accent); font: 600 13px var(--font-body); cursor: pointer; padding: 0; }
+
+.qbox { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 14px; }
+.qstem { font-size: 16.5px; font-weight: 600; line-height: 1.55; }
+.qmulti { font-size: 12.5px; color: var(--accent); font-weight: 600; }
+.opts { display: grid; gap: 8px; }
+.opt { display: grid; grid-template-columns: 28px 1fr; gap: 8px; text-align: left; font: 15px/1.5 var(--font-body); padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.opt .k { font-family: var(--font-mono); font-weight: 600; color: var(--muted); }
+.opt.sel { border-color: var(--accent); background: var(--accent-soft); }
+.opt.right { border-color: var(--good); background: var(--good-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt:disabled { cursor: default; }
+.verdict { font-weight: 700; }
+.verdict.ok { color: var(--good); }
+.verdict.no { color: var(--bad); }
+.expl { background: var(--code-bg); border-radius: 10px; padding: 12px 14px; font-size: 14.5px; }
+.qnav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: space-between; }
+.dots { display: flex; flex-wrap: wrap; gap: 5px; }
+.dots button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: 600 11px var(--font-mono); cursor: pointer; padding: 0; }
+.dots button.r { background: var(--good-soft); color: var(--good); border-color: transparent; }
+.dots button.w { background: var(--bad-soft); color: var(--bad); border-color: transparent; }
+.dots button.cur { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 12px; padding-top: 14px; }
+  nav.toc { display: none; }
+  details.toc-m { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; }
+  details.toc-m summary { font-weight: 700; cursor: pointer; }
+  section.part { padding: 16px; }
+  .part-head h2 { font-size: 18.5px; }
+  .card { padding: 20px; min-height: 240px; }
+  .card .front { font-size: 18.5px; }
+  .actions { grid-template-columns: repeat(2, 1fr); }
+  .qbox { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<header class="top wrap">
+  <div class="top-inner">
+    <div class="brand"><b>Sổ ôn CCA-P</b><span>Claude Certified Architect – Professional</span></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" data-view="delta">Trọng tâm F→P</button>
+      <button role="tab" data-view="base">Nguyên lý 160 câu</button>
+      <button role="tab" data-view="cards">Flashcard</button>
+      <button role="tab" data-view="quiz">Luyện tập</button>
+    </div>
+    <label class="search" id="searchBox"><input id="q" type="search" placeholder="Tìm: caching, RBAC, SLO, Q62…" autocomplete="off" aria-label="Tìm trong tài liệu"></label>
+    <div class="progress" id="progWrap"><span id="progTxt"></span><div class="bar"><i id="progBar"></i></div></div>
+  </div>
+</header>
+
+<div class="wrap view" id="view-delta" hidden>
+  <div class="layout">
+    <nav class="toc" aria-label="Mục lục"><h3>Mục lục</h3><ol data-toc></ol></nav>
+    <main>
+      <details class="toc-m"><summary>Mục lục</summary><nav class="toc" aria-label="Mục lục"><ol data-toc></ol></nav></details>
+      <p class="intro" data-intro></p>
+      <div data-parts></div>
+      <p class="empty" data-nohit hidden>Không có phần nào khớp từ khóa.</p>
+    </main>
+  </div>
+</div>
+
+<div class="wrap view" id="view-base" hidden>
+  <div class="layout">
+    <nav class="toc" aria-label="Mục lục"><h3>Mục lục</h3><ol data-toc></ol></nav>
+    <main>
+      <details class="toc-m"><summary>Mục lục</summary><nav class="toc" aria-label="Mục lục"><ol data-toc></ol></nav></details>
+      <p class="intro" data-intro></p>
+      <div data-parts></div>
+      <p class="empty" data-nohit hidden>Không có phần nào khớp từ khóa.</p>
+    </main>
+  </div>
+</div>
+
+<div class="wrap view" id="view-cards" hidden>
+  <div class="narrow">
+    <div class="ctrl">
+      <select id="deck" aria-label="Chọn bộ thẻ"></select>
+      <span class="stats" id="fcStats"></span>
+    </div>
+    <div class="card" id="card" tabindex="0" role="button" aria-label="Lật thẻ">
+      <div class="deckname" id="cDeck"></div>
+      <div><div class="lbl" id="cFL"></div><div class="front" id="cFront"></div></div>
+      <div class="back" id="cBack" hidden><div class="lbl" id="cBL"></div><div id="cBackTxt"></div></div>
+      <div class="hint" id="cHint"></div>
+    </div>
+    <div class="actions">
+      <button id="bPrev">← Trước</button>
+      <button id="bAgain" class="again">Chưa thuộc</button>
+      <button id="bKnow" class="know">Đã thuộc</button>
+      <button id="bNext">Sau →</button>
+    </div>
+    <div class="foot">
+      <span>Phím tắt: Space lật · ← → chuyển · K đã thuộc · J chưa thuộc</span>
+      <span><button class="linkbtn" id="bShuffle">Xáo trộn</button> · <button class="linkbtn" id="bOnlyNew">Chỉ thẻ chưa thuộc: tắt</button> · <button class="linkbtn" id="bReset">Xóa đánh dấu</button></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap view" id="view-quiz" hidden>
+  <div class="narrow">
+    <div class="ctrl">
+      <select id="qpart" aria-label="Chọn phần"></select>
+      <span class="stats" id="qStats"></span>
+    </div>
+    <div class="dots" id="qDots"></div>
+    <div class="qbox">
+      <div class="deckname" id="qPartName"></div>
+      <div class="qstem" id="qStem"></div>
+      <div class="qmulti" id="qMulti" hidden></div>
+      <div class="opts" id="qOpts"></div>
+      <div id="qResult" hidden><div class="verdict" id="qVerdict"></div><div class="expl" id="qExpl"></div></div>
+      <div class="qnav">
+        <button class="btn" id="qPrev">← Câu trước</button>
+        <button class="btn primary" id="qCheck">Kiểm tra</button>
+        <button class="btn" id="qNext">Câu sau →</button>
+      </div>
+    </div>
+    <div class="foot">
+      <span>Câu hỏi bằng tiếng Anh như đề thật; giải thích tiếng Việt. Đây là câu tự soạn, không phải đề chính thức.</span>
+      <span><button class="linkbtn" id="qOnlyWrong">Chỉ câu sai: tắt</button> · <button class="linkbtn" id="qShuffle">Xáo trộn</button> · <button class="linkbtn" id="qReset">Làm lại từ đầu</button></span>
+    </div>
+  </div>
+</div>
+
+<script type="text/markdown" id="src-delta"># Trọng tâm CCA-P – Phần chênh lệch so với CCA-F
+
+> Dành cho người đã vững CCA-F và dùng Claude Code hằng ngày. Bỏ qua kiến thức nền, chỉ giữ những gì CCA-P đòi hỏi thêm. Bản đồ này suy ra từ 160 câu ôn tập và danh sách domain CCA-F; hãy đối chiếu exam guide chính thức (nội dung thi được cho là cập nhật từ 07/12/2026).
+
+## PHẦN A – Bản đồ chênh lệch F → P
+
+### A.1 Câu hỏi thay đổi thế nào
+CCA-F hỏi **"cấu hình/viết cái này thế nào cho đúng?"**. CCA-P hỏi **"nên quyết định gì, với bằng chứng nào, cho ai, và đánh đổi gì?"**. Đáp án đúng ở P thường không phải đáp án kỹ thuật nhất, mà là đáp án **có bằng chứng, có ràng buộc, có người chịu trách nhiệm**.
+
+### A.2 Từ domain CCA-F sang yêu cầu CCA-P
+| Bạn đã có ở CCA-F | CCA-P đòi thêm |
+|---|---|
+| Agentic architecture | Chọn mẫu theo **cost, latency, audit**; tách năng lực theo miền nghiệp vụ; managed vs self-hosted; ranh giới dữ liệu là điều kiện tiên quyết |
+| Claude Code configuration | **Rollout cho tổ chức**: managed/server-managed settings, telemetry OTEL, analytics, kiểm soát chi phí, Bedrock/Vertex/gateway, thiết kế pilot |
+| Prompt engineering | **Lặp prompt dựa trên eval**: A/B có MDE, held-out set, regression khi đổi model |
+| Tool design & MCP | Chọn kiểu tích hợp (direct API / MCP / agent handoff); **bảo mật tool**: exfiltration, credential, RBAC, least privilege |
+| Context management | **Kinh tế học token** (caching, batch, routing); **thiết kế RAG** (chunking, hybrid, reranking, citations) |
+| *(không có)* | Discovery & requirements, giao tiếp stakeholder, business value |
+| *(không có)* | Governance, compliance, ethics, fairness |
+| *(không có)* | Vận hành: SLI/SLO/SLA, observability, runbook, model lifecycle |
+| *(không có)* | Human-in-the-loop, tài liệu & bàn giao |
+
+### A.3 Thứ tự ưu tiên ôn
+1. **Chi phí & độ trễ có tính toán** (Phần C, D) – hay ra dạng tình huống có số liệu.
+2. **Evaluation engineering** (Phần F) – xuất hiện xuyên suốt mọi domain.
+3. **Security & governance** (Phần G, H) – nhiều câu nhất trong bộ đề.
+4. **RAG** (Phần E).
+5. **Vận hành, HITL, enterprise rollout** (Phần I, J, K).
+6. **Discovery, giao tiếp, tài liệu** (Phần B, L) – dễ ăn điểm nếu thuộc khung.
+
+## PHẦN B – Discovery & Requirements
+
+### B.1 Khung phân rã một yêu cầu mơ hồ
+| Câu hỏi | Mục đích |
+|---|---|
+| Ai là người dùng / người bị ảnh hưởng? | Xác định population và slice cho eval |
+| Quyết định / hành trình nào đang thất bại? | Biến "cải thiện CX" thành vấn đề cụ thể |
+| Trigger là gì? | Xác định đầu vào và tần suất |
+| "Tốt" trông thế nào, đo bằng gì? | Success criteria + metric mục tiêu |
+| Ngưỡng thất bại nào chặn go-live? | Failure threshold, gate production |
+| Ràng buộc: latency, cost, audit, độ nhạy dữ liệu, quy định? | NFR – giới hạn không gian giải pháp |
+| Phần nào AI làm, phần nào người giữ quyền? | Delegation scope |
+
+### B.2 Thứ tự chuẩn
+Workshop stakeholder → mục tiêu kinh doanh + success criteria + user population → NFR → **(validate với stakeholder)** → tài liệu hợp nhất có traceability → chọn kiến trúc/model → ADR.
+- Bẫy: chọn model theo kinh nghiệm cũ trước khi có input; prototype thay cho yêu cầu viết; hoãn ràng buộc để "tránh scope creep".
+
+### B.3 Claude có phải giải pháp chính không?
+- **Có**: hiểu/sinh ngôn ngữ, tài liệu dài, phân loại có lý do, trích xuất có cấu trúc, soạn nháp cho người duyệt.
+- **Không làm thành phần chính**: yêu cầu độ trễ cỡ mili giây (fraud scoring < 50 ms), tính toán quyết định cần chính xác tuyệt đối (thuế, kế toán → code), thay vector index/database, quyết định cuối cùng tác động lớn không có người.
+
+## PHẦN C – Business Value & Mô hình chi phí
+
+### C.1 Năm trụ giá trị (taxonomy của đề)
+| Pillar | Câu hỏi nhận diện |
+|---|---|
+| Efficiency | Mỗi đơn vị việc có tốn ít thời gian/công sức hơn không? |
+| Productivity | **Đầu ra thực tế** (doanh thu, billable, số việc hoàn thành) có tăng không? |
+| Transformation | Cách tổ chức công việc, vai trò có thay đổi không? |
+| Solution cost | Chi phí API/hạ tầng/vận hành so với dự toán |
+| Performance SLA | So với cam kết latency/uptime/chất lượng |
+- Bẫy kinh điển: thời gian giảm nhưng output không tăng → efficiency có, **productivity chưa đạt**. Thời gian sửa lỗi AI → **efficiency loss** bù trừ.
+
+### C.2 Công thức chi phí một request
+`cost = input_tokens × giá_input + output_tokens × giá_output` (+ cache write/read nếu có). Ước tính năm = cost/request × volume. Luôn tách **phần tĩnh lặp lại** (system prompt, tool defs, tài liệu tham chiếu) khỏi **phần động** (câu hỏi, retrieved chunks) – đây là chỗ quyết định dùng caching hay cắt context.
+
+### C.3 Kinh tế học prompt caching (kiểm tra lại hệ số trên trang pricing)
+- Hệ số thường dùng: **ghi cache ≈ 1.25× giá input** (TTL 5 phút), **≈ 2×** (TTL 1 giờ); **đọc cache ≈ 0.1×**.
+- Thứ tự prefix: **tools → system → messages**. Thay đổi ở một tầng làm mất cache của mọi thứ phía sau.
+- Có giới hạn số breakpoint và độ dài tối thiểu để được cache – đọc docs cho model cụ thể.
+- **Ví dụ tính (như câu hồ sơ 80k token × 14 câu hỏi):**
+  - Không cache: 14 × 80k = **1.120k** token-tương-đương.
+  - Cache 5 phút, mọi câu hỏi trúng TTL: 1 × 1.25 × 80k + 13 × 0.1 × 80k = 100k + 104k = **204k** → tiết kiệm ~82%.
+  - Nhưng nếu 14 câu hỏi rải rác nhiều ngày → mỗi lần đều phải ghi lại cache → **đắt hơn không cache**. Vì vậy câu trả lời chuẩn ở P luôn kèm điều kiện: *cache hit trong TTL* và *đúng ranh giới lưu trữ*.
+- Hòa vốn: với TTL 5 phút, chỉ cần **1 lần đọc** trong TTL là đã lời.
+
+### C.4 Các đòn bẩy chi phí khác và khi nào dùng
+| Đòn bẩy | Dùng khi | Không dùng khi |
+|---|---|---|
+| Prompt caching | Prefix lớn, tĩnh, lặp lại thường xuyên | Prefix thay đổi mỗi request |
+| Batch API (giảm ~50%, chờ tới 24h) | Việc không gấp: phân loại hàng loạt, eval, backfill | Người dùng đang chờ phản hồi |
+| Routing theo độ khó | Lưu lượng có nhiều truy vấn dễ | Chưa có eval chứng minh model nhỏ đạt chuẩn |
+| Hạ effort | Cùng model, lượt dễ chiếm đa số | Tác vụ cần suy luận sâu mà chưa benchmark |
+| Cắt retrieved context / top-k | Context động chiếm phần lớn token | Cắt làm mất bằng chứng cần thiết |
+| Giới hạn output | Output dài là nguồn chi phí và độ trễ chính | Cần nội dung đầy đủ |
+- Nguyên tắc ưu tiên khi stakeholder yêu cầu **giữ nguyên chất lượng**: chọn đòn bẩy **không đổi đầu vào ngữ nghĩa** trước (caching, batch), rồi mới tới đòn bẩy cần eval (routing, cắt context, đổi model).
+
+### C.5 Ra quyết định có ràng buộc
+1. **Lọc** theo ràng buộc cứng (SLA, ranh giới dữ liệu, quy định).
+2. **So sánh** các phương án còn lại theo ưu tiên đã nêu (accuracy trước? cost trước?).
+3. **Định lượng** chênh lệch (chi phí năm, % chất lượng) và tác động lên quy trình thật.
+4. Ghi lại trong ADR với trade-off đã chấp nhận.
+
+## PHẦN D – Model Selection & Latency Engineering
+
+### D.1 Giải phẫu độ trễ
+- **TTFT** (time to first token): phụ thuộc độ dài input, cache, hàng đợi.
+- **Thời gian sinh**: tỷ lệ với **số output token** (sinh tuần tự) → output dài là nguyên nhân chính của độ trễ tổng.
+- **Thinking tokens / effort cao**: tăng thời gian trước khi có câu trả lời.
+- **Streaming** giảm độ trễ *cảm nhận* (thấy chữ sớm), không giảm tổng thời gian.
+- Đo **p50 và p95/p99**, không đo trung bình – SLA thường đặt trên percentile.
+
+### D.2 Các nút giảm độ trễ (theo thứ tự ít rủi ro chất lượng)
+Caching prefix → cắt input thừa → giảm output (định dạng ngắn, structured output) → hạ effort → routing lượt dễ sang model nhỏ → đổi model nhỏ hơn cho toàn bộ (cần eval).
+
+### D.3 Bằng chứng để nâng / hạ model
+- **Nâng model**: điểm reasoning dưới ngưỡng **sau khi đã sửa prompt**; lỗi là lỗi suy luận thật (đã loại trừ input thiếu/bị cắt); chuỗi bước phụ thuộc dài.
+- **Hạ model**: eval trên mẫu đại diện cho thấy model nhẹ vẫn đạt quality bar ổn định.
+- **Không phải bằng chứng**: hóa đơn cao, timeout mạng, model mới vừa ra mắt, "model mạnh hơn thì tốt hơn".
+
+### D.4 Vòng đời model
+- Pin **phiên bản model cụ thể** trong production; alias có thể trỏ sang phiên bản mới → hành vi thay đổi âm thầm.
+- Deprecation → retirement: có thời hạn báo trước; lịch có thể khác nhau giữa Claude API, Bedrock, Vertex.
+- Mỗi lần đổi model: chạy **regression + adversarial eval** trước khi promote; ghi **model version** vào log mỗi lượt.
+
+## PHẦN E – RAG Architecture
+
+### E.1 Chọn chiến lược truy hồi
+| Nhu cầu | Chiến lược |
+|---|---|
+| Diễn đạt khác nhau, câu hỏi ngữ nghĩa | Dense embeddings |
+| Mã sản phẩm, ID, thuật ngữ hiếm | Sparse/BM25 |
+| Lọc, đếm, tổng hợp theo trường | Structured query (SQL) |
+| Kho hỗn hợp, cần cả hai | **Hybrid** + reranking |
+
+### E.2 Contextual Retrieval (Anthropic)
+- Thêm một đoạn ngữ cảnh ngắn (do Claude sinh, dùng prompt caching cho cả tài liệu) vào **trước mỗi chunk** trước khi embed và đánh chỉ mục BM25.
+- Anthropic báo cáo giảm tỷ lệ truy hồi thất bại ~49% (contextual embeddings + contextual BM25), ~67% khi thêm reranking.
+- Dùng khi chunk mất nghĩa khi đứng một mình ("doanh thu tăng 3%" – của công ty nào, quý nào?).
+
+### E.3 Chunking
+- Theo **ranh giới tự nhiên** (đoạn, điều khoản, hàm) + **overlap nhỏ** cho câu gần ranh giới.
+- Code: theo hàm/cây cú pháp. Tài liệu dài: theo section phân cấp. Bản ghi ngắn: mỗi bản ghi một chunk.
+- Kích thước và overlap phải **đo trên dữ liệu thật**, không có giá trị chuẩn.
+
+### E.4 Đánh giá RAG tách thành hai tầng
+| Tầng | Metric |
+|---|---|
+| Retrieval | Recall@k, precision@k, MRR – đoạn đúng có nằm trong top-k không? |
+| Generation | Faithfulness/groundedness (mọi khẳng định có nguồn?), answer relevance, citation accuracy |
+- Chẩn đoán: câu trả lời sai mà đoạn đúng **không có** trong context → lỗi retrieval; **có** trong context → lỗi generation/prompt.
+
+### E.5 Citations trong API
+- **Documents có citations bật**: trỏ tới đúng câu/đoạn trong tài liệu được đưa vào request (plain text, PDF, custom content).
+- **Search result blocks**: dành cho RAG tự xây – mỗi block mang source, title, content; Claude trích dẫn tự nhiên mà không cần gửi cả corpus.
+- Citation chỉ chứng minh *vị trí nguồn*, không chứng minh *suy luận đúng* → vẫn cần bước verification cho ứng dụng rủi ro cao.
+
+### E.6 Bảo mật RAG
+RBAC **trước khi vào context** (lọc theo danh tính đã xác thực ở tầng retrieval) · coi nội dung retrieve là **untrusted** · không đưa secret vào prompt · log truy vết document id được dùng cho mỗi câu trả lời.
+
+## PHẦN F – Evaluation Engineering
+
+### F.1 Success criteria tốt
+- **SMART**: cụ thể, đo được, khả thi, liên quan, có thời hạn.
+- **Đa chiều**: task fidelity, consistency, relevance, tone/style, privacy/safety, latency, cost.
+- **Khả thi**: dựa trên benchmark, thử nghiệm trước, hiệu suất ngành – không đặt 100% cho tác vụ mở.
+
+### F.2 Phương pháp chấm (ưu tiên từ trên xuống)
+| Phương pháp | Khi nào | Lưu ý |
+|---|---|---|
+| Code-based (exact match, regex, schema, so sánh số) | Đáp án xác định | Nhanh, rẻ, tin cậy nhất |
+| LLM-as-judge với **rubric rõ** | Đánh giá ngữ nghĩa, tone, completeness | Hiệu chuẩn với nhãn người; yêu cầu judge suy luận trước khi chấm; dùng model khác/prompt khác với model được chấm nếu được |
+| Human grading | Ca khó, hiệu chuẩn judge, quyết định rủi ro cao | Chậm, đắt – dùng có chọn lọc |
+- Anthropic khuyến nghị **nhiều test case tự động chấm** hơn là ít case chấm tay chất lượng cao.
+
+### F.3 Bộ dữ liệu
+- Slice: **representative, edge, adversarial**; bao phủ quần thể mục tiêu (vùng, nhóm người dùng, ngôn ngữ).
+- **Dev set** để lặp; **held-out test set** chỉ dùng để chốt – không tinh chỉnh trên nó.
+- **Reference set ổn định** qua các phiên bản để đo regression; mở rộng khi gặp lỗi production mới (reviewer label → eval set).
+
+### F.4 So sánh hai phiên bản
+Giả thuyết + metric chính → MDE + cỡ mẫu (power) → random assignment → phân tích với ngưỡng ý nghĩa → quyết định promote/reject/iterate → ghi lại. Chênh lệch 2% không phải "nhiễu" nếu chưa có khoảng tin cậy chứng minh điều đó.
+
+### F.5 Offline vs Online
+- **Offline**: eval set trước khi phát hành (gate release).
+- **Online**: telemetry, sampled review, feedback người dùng, A/B có kiểm soát sau phát hành.
+- Iteration phase dùng cả hai để chọn thay đổi tác động lớn nhất.
+
+### F.6 Bẫy metric (năng lực Discernment)
+- Acceptance rate ≠ correctness. Khớp với người ≠ không bias. Approval parity ≠ error-rate parity. BLEU/ROUGE ít ý nghĩa cho tóm tắt mở. Điểm cao trên slice hẹp ≠ chất lượng trên quần thể thật.
+
+## PHẦN G – Security & Threat Modeling
+
+### G.1 Quy trình đánh giá rủi ro
+Asset + độ nhạy → threat actor + attack vector → ghép threat × asset, ước lượng likelihood × impact → mitigation → **residual risk + người chấp nhận** → tài liệu, review định kỳ.
+
+### G.2 Bộ ba nguy hiểm của agent
+Khi một agent có đồng thời **(1) truy cập dữ liệu nhạy cảm**, **(2) tiếp xúc nội dung không tin cậy** (web, email, tài liệu), **(3) kênh gửi dữ liệu ra ngoài** (HTTP, email, ghi file công khai) → rủi ro exfiltration qua prompt injection gián tiếp. Kiến trúc an toàn **cắt ít nhất một cạnh**: allow-list đích, tách agent đọc nội dung bẩn khỏi agent có quyền, yêu cầu người duyệt hành động ra ngoài.
+
+### G.3 Ma trận rủi ro → kiểm soát
+| Rủi ro | Kiểm soát chính | Kiểm soát phụ |
+|---|---|---|
+| Direct jailbreak / tự xưng admin | Quyền cưỡng chế ngoài hội thoại | Harmlessness screen (model nhẹ), audit log |
+| Indirect prompt injection | Untrusted-data policy + input classifier | Output validation, tách quyền |
+| Exfiltration | Outbound allow-list + review từng lần | Bỏ tool không cần, DLP |
+| Rò rỉ dữ liệu giữa vai trò | RBAC ở retrieval | Log document id |
+| Lộ credential | Secret store phía server | Không log prompt chứa secret |
+| Không truy vết được | Per-user token + actor attribution | Correlation ID |
+| Drift an toàn sau nâng model | Adversarial eval ổn định gắn version | Canary rollout |
+| Hallucination gây hại | Grounding + citations + verification | HITL cho output rủi ro cao |
+| Prompt leak | Không đặt bí mật trong prompt | Lọc output |
+
+### G.4 Guardrail theo hướng dẫn của Anthropic
+- **Giảm hallucination**: cho phép nói "không biết"; trích quote trước rồi mới phân tích; yêu cầu citation và rút lại khẳng định không có nguồn; chain-of-verification; best-of-N so sánh.
+- **Chống jailbreak**: harmlessness screen bằng model nhẹ trước khi xử lý; input validation; nhiều lớp; giám sát liên tục.
+- **Tăng tính nhất quán**: chỉ định định dạng, structured outputs, ví dụ, retrieval để cố định ngữ cảnh.
+
+## PHẦN H – Governance, Compliance & Ethics
+
+### H.1 Khung pháp lý hay gặp
+| Quy định | Điểm cốt lõi trong đề |
+|---|---|
+| HIPAA (PHI) | BAA với nhà cung cấp; chỉ dùng tính năng nằm trong phạm vi BAA; RBAC; audit log; không đưa PHI vào huấn luyện; ZDR nếu yêu cầu |
+| GDPR | DPA; cơ sở pháp lý; **data minimization** (redaction); retention xác định; quyền chủ thể dữ liệu (truy cập, xóa); data residency |
+| Quy định ngành (tài chính) | Phạm vi cấm rõ (vd. khuyến nghị đầu tư) + output classifier + audit trail ở application layer |
+- Thứ tự: xác định **luật có áp dụng không** (loại dữ liệu, jurisdiction, đối tượng) + kiểm kê kiểm soát nhà cung cấp → map data flow vào điều khoản → gap analysis → remediation → residual risk sign-off.
+
+### H.2 Fairness
+| Khái niệm | Ý nghĩa |
+|---|---|
+| Demographic/approval parity | Tỷ lệ kết quả tích cực bằng nhau giữa nhóm |
+| Error-rate parity (equalized odds) | Tỷ lệ false positive/false negative bằng nhau giữa nhóm |
+| Paired/counterfactual testing | Cùng nội dung, chỉ đổi thuộc tính nhóm → so kết quả |
+- Bias có thể đến từ pretraining, từ dữ liệu lịch sử của người, từ prompt, từ cách sử dụng → **luôn phải đo trong bối cảnh triển khai**.
+
+### H.3 Accountability & Transparency
+- Quyết định tác động lớn: **con người chịu trách nhiệm giải trình**, không quy cho model.
+- Thông báo có AI tham gia; đường đến người thật; cho người bị ảnh hưởng biết yếu tố nào tác động tới kết quả của họ.
+- Delegation theo **loại rủi ro và khả năng đảo ngược**, không theo số tiền hay số dòng code.
+
+## PHẦN I – Human-in-the-Loop
+
+### I.1 Đặt người ở đâu
+Ma trận **impact × reversibility**:
+| | Đảo ngược được | Không đảo ngược |
+|---|---|---|
+| **Tác động thấp** | Tự động, lấy mẫu kiểm tra | Tự động + kiểm tra trước nếu rẻ |
+| **Tác động cao** | Tự động + review sau có SLA | **Người duyệt trước khi thực thi** |
+
+### I.2 Thiết kế
+- Điểm duyệt → tiêu chí duyệt rõ ràng → sampling (risk-stratified: toàn bộ low-confidence/high-impact + mẫu ngẫu nhiên nhỏ từ nhóm routine) → escalation criteria (ngưỡng confidence, loại quyết định, cờ classifier, user yêu cầu) → đào tạo reviewer → pilot → lặp.
+- Quyết định reviewer → **nhãn** cho eval set. Theo dõi **tỷ lệ override** như một metric chất lượng.
+- Bẫy: automation bias (reviewer bấm đồng ý theo thói quen) → cần tiêu chí cụ thể và kiểm tra chất lượng reviewer.
+
+## PHẦN J – Vận hành Production
+
+### J.1 SLI → SLO → SLA
+| Khái niệm | Ví dụ |
+|---|---|
+| SLI (chỉ số đo) | p95 latency, tỷ lệ request thành công, tỷ lệ output đạt schema |
+| SLO (mục tiêu nội bộ) | p95 < 800 ms trên 28 ngày, 99.9% thành công |
+| Error budget | 0.1% lỗi được phép → hết budget thì dừng thay đổi rủi ro |
+| SLA (cam kết với khách) | SLO + **hệ quả khi vi phạm** |
+- Trước khi instrument: định nghĩa metric/slice + SLO/error budget. Sau đó mới dashboard, alert, runbook.
+
+### J.2 Observability cho hệ LLM
+Mỗi lượt nên ghi: **correlation/request ID** (xuyên agent và tool), **model + version**, **prompt/template version**, input/output tokens (kể cả cache read/write), latency (TTFT, tổng), tool calls + kết quả (đã redact), document id được retrieve, quyết định guardrail, user/actor.
+
+### J.3 Độ tin cậy API
+- **429** (rate limit): tôn trọng `retry-after`, backoff có jitter, xếp hàng/giới hạn đồng thời.
+- **529** (overloaded) và 5xx: retry với backoff, có **fallback** (model khác, hàng đợi, thông báo xuống cấp).
+- Rate limit tính theo requests và tokens/phút; tách workload (interactive vs batch) để batch không ăn quota của interactive.
+- Theo dõi chi phí bằng **Usage & Cost Admin API** theo workspace/model; tách workspace theo môi trường hoặc sản phẩm để quy chi phí.
+
+### J.4 Chẩn đoán
+Minimal repro → giả thuyết từ thay đổi gần đây → so với **last known good** (prompt, schema, model version, config) → xem **raw output trước parser** → sửa có mục tiêu → ghi runbook. Khi nào **thiết kế lại**: yêu cầu mới buộc đổi trách nhiệm thành phần hoặc contract cốt lõi.
+
+## PHẦN K – Rollout Claude Code cho tổ chức (phần F chưa có)
+
+### K.1 Phân phối chính sách
+| Kênh | Dùng khi |
+|---|---|
+| Managed settings file / MDM (macOS plist, Windows policy) | Đã có quản lý thiết bị |
+| **Server-managed settings** (admin console) | Không có MDM, cần áp cho cả local và Claude Code on the web |
+| Project `.claude/settings.json` + `.mcp.json` + `CLAUDE.md` | Chuẩn chung của từng repo (không phải chính sách tổ chức) |
+
+### K.2 Provider và hạ tầng
+- **Teams/Enterprise**: một tài khoản tổ chức cho cả claude.ai và Claude Code, không tự vận hành hạ tầng, có analytics, SSO.
+- **Claude API (Console)**: trả theo token, quản lý bằng workspace/API key.
+- **Bedrock / Vertex**: dữ liệu ở trong tài khoản cloud của tổ chức, dùng IAM sẵn có (`CLAUDE_CODE_USE_BEDROCK=1`, `CLAUDE_CODE_USE_VERTEX=1`).
+- **LLM gateway** (`ANTHROPIC_BASE_URL`): tập trung xác thực, logging, quota, theo dõi chi phí.
+
+### K.3 Đo lường adoption & chi phí
+- **OpenTelemetry**: `CLAUDE_CODE_ENABLE_TELEMETRY=1` + `OTEL_METRICS_EXPORTER` / `OTEL_LOGS_EXPORTER` (vd. `otlp`) + endpoint/protocol. Metric gồm chi phí, token, phiên, dòng code, commit/PR.
+- Analytics dashboard của Teams/Enterprise cho mức độ sử dụng.
+- Gắn thuộc tính (team, cost center) để quy chi phí.
+
+### K.4 Kế hoạch rollout
+Xác định bước AI hỗ trợ / bước người giữ quyền → cấu hình (managed policy, project config, MCP, permissions, subagents) → pilot nhóm nhỏ với metric thành công → thu feedback & telemetry → mở rộng theo đợt.
+- CI không có người: headless + `dontAsk` + allow-list hẹp + credential tối thiểu.
+- PR: Claude review và comment; người phê duyệt theo branch protection; không bỏ review theo số dòng.
+
+## PHẦN L – Giao tiếp, Tài liệu & Quản lý kỳ vọng
+
+### L.1 Ma trận đối tượng
+| Đối tượng | Họ cần | Định dạng |
+|---|---|---|
+| Executive sponsor | Quyết định, outcome kinh doanh, trade-off, rủi ro cấp cao, chi phí | 1 trang, mở bằng quyết định |
+| CFO | Chi phí năm, ROI, độ nhạy chi phí theo volume | Bảng số liệu |
+| Legal / General counsel | Trách nhiệm, rủi ro pháp lý, hợp đồng dữ liệu | Rủi ro + kiểm soát |
+| Security / Compliance | Threat model, control mapping, residual risk, audit trail | Register + bảng map |
+| CIO / Platform | Tích hợp, vận hành, SLA, phụ thuộc | Kiến trúc + runbook |
+| Product manager | Capabilities, scope, roadmap dependencies | Danh sách tính năng |
+| Delivery team | Contracts, sequence, config + default, runbook, eval framework | Implementation guide |
+
+### L.2 Tài liệu bắt buộc
+- **ADR**: context, decision, alternatives + tiêu chí đánh giá, consequences/trade-offs, ngày, tác giả, owner, lịch xem lại.
+- **Handoff pack**: architecture overview, ADRs, component contracts & diagrams, config schema, eval framework + reference set, runbooks, on-call playbook, known limitations.
+- **Runbook**: alert → triage → escalation → rollback → dashboard/log.
+
+### L.3 Quản lý kỳ vọng
+- Scope thêm giữa chừng: ghi nhận → tác động minh bạch → đưa lựa chọn (hoãn / bỏ bớt / dời mốc) → stakeholder quyết.
+- Lo ngại về hiệu năng: đưa **số đo thật so với mục tiêu**; nếu mục tiêu không khả thi, **cùng sửa** SLA.
+- Feedback: agenda + tài liệu gửi trước + ghi quyết định, owner, ngày; lịch định kỳ xem lại giả định; giải quyết công khai bất đồng.
+</script>
+<script type="text/markdown" id="src-base"># CCA-P – Hệ thống nguyên lý từ 160 câu ôn tập
+
+> Tổng hợp từ `CCAR-P-offline.html`. Mỗi nguyên lý có ghi số câu (Qxx) để tra lại. Số câu theo thứ tự xuất hiện trong file.
+
+---
+
+## PHẦN 0 – Mẹo làm bài (áp dụng cho mọi câu)
+
+### 0.1 Những đáp án gần như luôn SAI
+| Dấu hiệu | Ví dụ trong đề |
+|---|---|
+| Tắt hết, xóa hết, bỏ hết kiểm soát | "Disable all permission rules", "Remove all human review", "Disable logging" |
+| Tin model tự xử lý | "Rely on the model to decline tools…", "trust the model to recognize bypass attempts" |
+| Chỉnh **temperature** để giải quyết safety/chất lượng/mâu thuẫn | Q1, Q2, Q67, Q80 – temperature không phải biện pháp kiểm soát |
+| Tăng **max_tokens / context window** để chữa lỗi không liên quan | Q31, Q80, Q155 |
+| "Luôn dùng model mạnh nhất" / chọn model theo bản mới ra / đổi model khi chưa đánh giá | Q5, Q20, Q76 |
+| Dùng **Batch API** cho việc cần realtime hoặc để "tiết kiệm cache" | Q131, Q143, Q144, Q155 |
+| Nhầm **Files API** là caching | Q155 (Files API chỉ tránh upload lại, không giảm xử lý token) |
+| Từ ngữ tuyệt đối: *always, regardless, categorically, never needs* | Q65, Q76, Q122 |
+| Thực hiện xong rồi mới kiểm tra (review sau hành động không đảo ngược, lọc sau khi model đã thấy dữ liệu) | Q62, Q88, Q92 |
+| Bỏ qua bằng chứng: chấp nhận ngay, đợi khiếu nại, dựa vào trí nhớ, nói miệng | Q36, Q61, Q83, Q101 |
+
+### 0.2 Đáp án ĐÚNG thường có tính chất
+1. **Đo lường / bằng chứng trước khi hành động** (baseline, tái hiện, lấy mẫu, so với bản tốt gần nhất).
+2. **Cưỡng chế bên ngoài model** (orchestration layer, code, credential, hook) thay vì chỉ dặn trong prompt.
+3. **Defense-in-depth** – nhiều lớp, mỗi lớp xử lý một điểm lỗi khác nhau.
+4. **Least privilege** – vừa đủ cho nhiệm vụ đã định, không thừa không thiếu.
+5. **Con người giữ quyền** với quyết định tác động lớn / không đảo ngược.
+6. **Nhắm trúng nguyên nhân chính** ("most directly") – đáp án đúng nhưng gián tiếp vẫn bị loại.
+7. **Minh bạch, có văn bản, có chủ sở hữu, có ngày.**
+
+### 0.3 Câu hỏi dạng "Which two steps must be completed BEFORE X?"
+Quy tắc: chọn **hai bước ngay trước X** trong chuỗi *Định nghĩa → Chuẩn bị → Thực thi → Phân tích → Quyết định → Tài liệu hóa → Lặp lại*. Loại mọi bước thuộc **sau** X (analyze, decide, document, publish, iterate, notify).
+
+| Trước khi… | Phải xong |
+|---|---|
+| Soạn từng phần guide (Q14) | Xác định audience + câu hỏi họ cần; lập dàn ý |
+| Đánh giá threat vs asset (Q19) | Liệt kê asset + độ nhạy; liệt kê threat actor + attack vector |
+| Instrument metric/trace (Q24) | Định nghĩa metric & slice; định nghĩa SLO & error budget |
+| Chạy thí nghiệm A/B prompt (Q63) | Giả thuyết + metric chính; MDE + cỡ mẫu |
+| Chạy mẫu đại diện trên model ứng viên (Q69) | Định nghĩa quality bar/latency/volume; chọn ứng viên theo profile |
+| Chạy deployment trên eval dataset (Q86) | Định nghĩa metric & slice; curate + label dataset |
+| Map data flow vào điều khoản luật (Q91) | Xác định luật có áp dụng không (data type, jurisdiction, audience); kiểm kê compliance tooling của vendor |
+| Pilot HITL workflow (Q97) | Xác định điểm cần người theo impact/reversibility; sampling + escalation criteria |
+| Validate requirement với stakeholder (Q100) | Business goal/success criteria/user population; NFR (latency, cost, audit, data, regulation) |
+| Pilot Claude Code workflow (Q113) | Xác định bước nào AI hỗ trợ / bước nào người giữ quyền; cấu hình MCP, permissions, subagents, CLAUDE.md |
+| Áp dụng fix (Q114) | Đặt giả thuyết root cause; tái hiện bằng minimal repro |
+
+### 0.4 Lưu ý về khóa đáp án
+Một số câu "Select all / Select 3" trong bộ đề chỉ đánh dấu **1** đáp án (Q127, Q128, Q130, Q133, Q143, Q147, Q150, Q151, Q157) – phần giải thích thừa nhận khóa thiếu. Khi thi thật, hãy chọn **tất cả đáp án đúng về mặt kỹ thuật** (đã ghi chú ở các phần dưới).
+
+---
+
+## PHẦN 1 – Bảo mật & Guardrails
+
+### 1.1 Defense-in-depth
+- Guardrail tốt = **prompt-level instruction + runtime content check (classifier) + schema validation + scoped tool permission + audit logging** (Q1, Q2, Q15, Q56).
+- Một system prompt dù "hardened" không thể liệt kê và cưỡng chế mọi trường hợp (Q1).
+- Schema hợp lệ ≠ nội dung an toàn → vẫn cần kiểm tra nội dung & quyền (Q1).
+- Guardrail mạnh = **allow-list theo vai trò cưỡng chế ở orchestration layer trước khi tool chạy** + **eval set có adversarial input, theo dõi regression** (Q56).
+
+### 1.2 Mọi nội dung không phải system/operator đều là *untrusted data*
+- Lời tự xưng "tôi là admin" trong tin nhắn chỉ là dữ liệu, không phải bằng chứng quyền (Q15).
+- Tài liệu retrieve, email body, tool result → coi là dữ liệu, không bao giờ ghi đè system prompt (Q33, Q49, Q133).
+- Phòng prompt injection qua tool (Q133 – chọn hết): system prompt nói rõ tool content là untrusted; **JSON-encode** tool result để giữ ranh giới cấu trúc; **classifier nhẹ** sàng lọc tool output. Sai: cấp quyền rộng; nhét chỉ dẫn của dev vào cùng tool_result.
+- Không nhúng "override phrase" cho phép nới guardrail (Q1).
+
+### 1.3 Ghép rủi ro ↔ biện pháp (hay ra dạng matching)
+| Rủi ro | Biện pháp trực tiếp |
+|---|---|
+| Prompt injection từ tài liệu retrieve | Coi retrieved content là untrusted + input classifier + output validation (Q49) |
+| Data exfiltration qua tool HTTP ra ngoài | Outbound allow-list đích + review từng lần gọi (Q33, Q54) |
+| Silent quality drift sau nâng model | Adversarial eval set **ổn định**, điểm gắn theo version, chạy trước khi promote (Q54, Q61) – không xoay vòng input ngẫu nhiên |
+| Hallucination / không grounded | Chỉ dùng nội dung có nguồn + bắt citation + bước verification (Q40) |
+| Dùng chung một API key | Per-user OAuth token có scope (Q60) |
+| Log tool không có người khởi tạo | Actor attribution trong log (Q60) |
+
+### 1.4 Kiểm soát truy cập
+- **RBAC ở tầng retrieval, trước khi dữ liệu vào prompt/model** (Q62, Q92). Lọc sau khi sinh hoặc dặn trong prompt = quá muộn / không cưỡng chế.
+- AuthN/AuthZ trước retrieval vì bộ lọc cần danh tính (Q70).
+- **Credential**: lấy runtime từ secret store phía server; không bao giờ trong prompt, log, hay file commit (`.claude/settings.json`) (Q89, Q92).
+- Không log số định danh/PII chưa che (Q70).
+
+### 1.5 Least privilege
+- Allow-list **chính xác** các tool cần, theo vai trò, cưỡng chế ở orchestration (Q3).
+- Giữ tool loại (1) bắt buộc cho nhiệm vụ và (2) thường dùng giúp giảm hand-off; bỏ (3) "đôi khi hữu ích cho việc khác" và (4) "có thể dùng trong tương lai" (Q64).
+- Agent soạn đề nghị mua: giữ catalog lookup, policy lookup, draft-write; bỏ gửi email cho vendor (bỏ qua bước duyệt) và DB admin (Q125).
+- Production DB: credential **read-only** mặc định + subagent chỉ có tool đọc + **xác nhận của người** cho thao tác ghi (Q27).
+- Bash không giới hạn → thay bằng pattern hẹp + deny rule cho thao tác nhạy cảm (Q29).
+- Nhưng **không** tắt hết tool đến mức không làm được việc (Q3).
+
+### 1.6 Phân chia trách nhiệm Skill vs Application layer
+- Skill: nội dung, văn phong, disclaimer, danh sách từ cấm.
+- Application layer phải giữ: **xác minh người dùng có quyền**, **ghi audit trail** – những thứ phải cưỡng chế dù Skill chạy sai (Q51).
+
+### 1.7 Lỗi đặc thù của LLM (khác lỗi phần mềm thường)
+- Từ chối nhầm (over-refusal) do đặc điểm bề mặt; trả lời nghe hợp lý nhưng không có nguồn (hallucination) (Q23).
+- Load balancer, timeout DB, TLS hết hạn = lỗi phần mềm chung.
+
+---
+
+## PHẦN 2 – Compliance, Đạo đức, Năng lực AI Fluency (4D)
+
+### 2.1 Quy định
+- **HIPAA**: RBAC cho PHI; không đưa dữ liệu bệnh nhân vào vòng huấn luyện khi chưa có BAA (Q21). Cấu hình: Claude Enterprise + **BAA** + **Zero Data Retention** + **audit logging** (Q94). Tài khoản cá nhân/Free = sai.
+- **GDPR**: gói doanh nghiệp + **DPA** + cấu hình retention + **redaction/data minimization** + quy trình **data-subject rights** (Q96).
+- max_tokens, streaming, model mạnh nhất không liên quan compliance (Q21).
+
+### 2.2 Fairness & Bias
+- Approval-rate parity **không** đo error-rate parity (false approve/deny) giữa các nhóm (Q37).
+- Khớp 94% với underwriter không chứng minh không bias – có thể đang lặp lại bias của người (Q37).
+- Không train trên dữ liệu công ty ≠ không bias → bias từ pretraining; phải đo **outcome disparity** giữa nhóm được bảo vệ trước triển khai (Q87).
+- **Paired-scenario evaluation**: cùng nội dung, khác nhóm → so tone/chi tiết (Q150).
+- Eval set phải **bao phủ quần thể mục tiêu** (vùng, thâm niên…) rồi chấm lại trước khi mở rộng (Q48).
+- Transparency (Q150 – chọn 3): paired-scenario eval; tài liệu hóa các yếu tố được cân nhắc; cho mỗi nhân viên yêu cầu xem yếu tố ảnh hưởng bản của mình.
+
+### 2.3 Đạo đức & Minh bạch
+- Checklist đạo đức: không khái quát hóa về con người mà dữ liệu không hỗ trợ; quyết định tác động lớn **giữ trách nhiệm giải trình của con người** (Q44).
+- Minh bạch: **thông báo có AI tham gia** cho người dùng cuối + **đường đến người thật** (Q95).
+
+### 2.4 Bốn năng lực (4D) trong đề
+| Năng lực | Ý nghĩa | Câu mẫu |
+|---|---|---|
+| **Delegation** | Quyết định giao gì cho AI, phạm vi giao quyền dựa trên **loại rủi ro**, không chỉ kích thước giao dịch; làm rõ vấn đề trước khi giao | Q11 (refund < 50 USD), Q106 (discovery trước) |
+| **Discernment** | Đánh giá phê phán bằng chứng/metric: metric này có thực sự đo điều cần đo? | Q37 (fairness), Q81 (acceptance ≠ correctness; tiêu chí bị thiếu = scope gap) |
+| **Diligence** | Trách nhiệm, kiểm chứng, điều tra dựa trên bằng chứng | Q10 (kiểm tra citation-grounding + lấy mẫu ước tính tần suất), Q90 (line count là proxy kém; bỏ review là bỏ cơ chế kiểm chứng) |
+| Description | Mô tả rõ yêu cầu/ngữ cảnh cho AI | (ẩn trong các câu prompt/discovery) |
+
+---
+
+## PHẦN 3 – Chọn model, Chi phí & Độ trễ
+
+### 3.1 Quy trình chọn model
+1. Định nghĩa **quality bar, latency tolerance, volume, capability cần có, budget** (Q69, Q151 – chọn cả capability, tốc độ phản hồi, ngân sách).
+2. Chọn ứng viên theo profile → **chạy mẫu đại diện** của workload thật (Q76).
+3. Chọn **model nhẹ nhất đạt chuẩn ổn định**; retest khi có version mới.
+- Phân loại volume lớn, nhãn rõ, latency chặt → **Haiku** (Q5).
+- **Tiered routing**: truy vấn đơn giản → model nhỏ, phức tạp → model lớn (Q76, Q82).
+- Bằng chứng **capability mismatch** (cần thử model mạnh hơn) (Q147 – chọn hết): accuracy reasoning nhiều bước dưới ngưỡng **sau khi đã sửa prompt**; cần hiểu chuỗi bước phụ thuộc dài; lỗi là lỗi suy luận thật, không phải thiếu/cắt input. *Không phải*: chi phí vượt, timeout mạng, prompt cũ chưa cập nhật.
+
+### 3.2 Effort parameter
+- Đổi intelligence ↔ latency/cost **trong cùng một model** → thử hạ effort **trước khi** đổi sang model nhỏ (Q144, Q156).
+- Effort thấp cho lượt dễ, cao cho lượt khó; phải benchmark lại chất lượng.
+
+### 3.3 Prompt caching – công cụ tối ưu số 1 trong đề
+- Áp dụng cho **phần tĩnh, lặp lại**: system prompt dài, tool definitions, tài liệu tham chiếu, hồ sơ được hỏi nhiều lần (Q25, Q35, Q43, Q131, Q155).
+- **Xếp nội dung cacheable trước nội dung thay đổi** theo request (Q72).
+- Ưu điểm so với tóm tắt / RAG / đổi model nhỏ: **không thay đổi đầu vào → giữ nguyên chất lượng** (Q25, Q43).
+- Ràng buộc: phải có cache hit trong TTL, prefix khớp; nếu có yêu cầu tenancy thì kiểm tra cache nằm trong ranh giới cho phép (Q25).
+
+### 3.4 Các đòn bẩy khác
+- Cắt retrieved context chỉ còn đoạn liên quan / top-k đã chứng minh đủ (Q35, Q84).
+- Tóm tắt lịch sử hội thoại không còn cần nguyên văn (Q72 – thuộc Input Preparation).
+- Vòng đời request (Q72): **Input Preparation** (cắt passage, tóm tắt history) → **Prompt Construction** (prefix cache, sắp thứ tự) → **Output Handling** (validate schema, persist).
+
+### 3.5 Ra quyết định khi có ưu tiên / ràng buộc cứng
+- **Ràng buộc cứng lọc trước, tối ưu sau**: SLA < 3s → loại kiến trúc 4.2s, rồi so chi phí năm + tác động chất lượng của phương án còn lại (Q110). Ranh giới mạng/dữ liệu là điều kiện tiên quyết khi cân nhắc managed agents (Q123).
+- Ưu tiên đã nêu rõ (accuracy trước, latency sau) → giữ cấu hình không giảm accuracy (Q122).
+- Stakeholder lo latency → đưa **p50/p95 đo thực tế so với SLA**, và cùng sửa SLA nếu không khả thi (Q20).
+
+### 3.6 Theo dõi chi phí & vòng đời model
+- Chi phí tăng nhanh hơn volume → **Usage and Cost Admin API** group theo workspace & model (Q154).
+- Model retirement áp dụng theo nền tảng: Claude API phải migrate trước hạn; Bedrock/Google Cloud theo lịch riêng (Q153).
+
+---
+
+## PHẦN 4 – Mẫu kiến trúc (Building effective agents)
+
+### 4.1 Workflow vs Agent
+| Tình huống | Mẫu |
+|---|---|
+| Các bước cố định, dự đoán được (extract → classify → summarize → persist) | **Workflow** – chi phí dự đoán được (Q65) |
+| Q&A chính sách cần citation, ưu tiên latency/cost/audit | **Augmented LLM + RAG** trên corpus có thẩm quyền + citation (Q66) |
+| Cần xem/log bước trung gian (generate → review → refine) | **Prompt chaining** – các API call riêng (Q136) |
+| Phân loại rồi gửi đến prompt chuyên biệt | **Routing** |
+| Subtask biết trước, tách rõ | **Parallelization – sectioning** |
+| Nhiều phiếu bầu trên cùng input | **Parallelization – voting** |
+| Subtask chỉ biết khi chạy (số file cần sửa chưa biết) | **Orchestrator-workers** (Q128, Q132) |
+| Nhiều miền, mỗi miền cần tool & focus riêng | Orchestrator + **subagent chuyên biệt** qua Agent tool, mỗi cái có tool set & description riêng (Q129) |
+
+- Q128 (chọn hết): orchestrator xác định subtask lúc runtime / sectioning định nghĩa trước; orchestrator hợp với subtask thay đổi khó đoán, sectioning hợp với việc chia sẵn.
+- Agent 34 tools, accuracy giảm → **tách năng lực theo miền nghiệp vụ** trước khi thêm router (router thêm một lượt gọi model mỗi request) (Q7).
+
+### 4.2 Nhiều tool
+- **Progressive tool discovery / Tool Search**: tập ban đầu nhỏ, tải thêm theo nhu cầu (Q16, Q118).
+- Muốn tìm tool bằng embeddings sẵn có → **custom tool** chạy embeddings search, trả `tool_reference` blocks trong tool_result (Q137).
+
+### 4.3 Cơ chế tích hợp
+- 1 lời gọi stateless, latency thấp, đã có HTTP API ổn định → **gọi API trực tiếp** với credential có scope (Q78).
+- Yếu tố chọn MCP / API trực tiếp / agent-to-agent: **stateless & nhạy latency vs stateful & chạy lâu**; **cần portable qua nhiều AI client không** (Q77).
+- **Skill vs MCP**: Skill = **kiến thức quy trình** (procedure, ví dụ), không gọi hệ thống live, portable giữa claude.ai/API/Claude Code. MCP = **truy cập tool/dữ liệu bên ngoài live** (Q8).
+- Quy trình dùng chung nhiều workflow, cập nhật thường xuyên → **một Skill do team chuyên môn sở hữu**, mọi workflow tham chiếu cùng Skill (Q46). Không copy vào từng system prompt.
+
+### 4.4 Phân tầng pipeline (Q71)
+- **Pre-processing**: OCR, PII redaction trước khi gọi model.
+- **Model stage**: phân loại, trích xuất bằng Claude.
+- **Post-processing**: schema validation, persist vào system of record.
+- Quy tắc tính toán chính xác (thuế…) → **code có test**, không giao system prompt (Q70).
+- Hàng đợi bất đồng bộ để hấp thụ burst (Q70).
+
+### 4.5 Khi nào Claude KHÔNG phải giải pháp chính (Q121)
+- Có: soạn báo cáo cho người duyệt, review hợp đồng dài, route ticket.
+- Không: chấm fraud < 50 ms, thay thế vector index.
+
+---
+
+## PHẦN 5 – RAG, Retrieval, Citations, Context
+
+### 5.1 Chiến lược retrieval (Q74)
+- **Dense vector**: ý định diễn đạt khác (paraphrase).
+- **Sparse/BM25**: thuật ngữ chính xác, ID, từ hiếm.
+- **Structured query**: lọc & tổng hợp trên DB quan hệ.
+- **Hybrid** ≠ dense-only.
+
+### 5.2 Chunking
+| Corpus | Chiến lược (Q73) |
+|---|---|
+| Code / spec phân cấp | Function/section-level, tree-aware |
+| Tài liệu dài có cấu trúc | Semantic (theo điều khoản/đoạn), hierarchical theo section |
+| Bản ghi ngắn | Per-record; fixed-size + overlap cho bản ghi ngắn cùng độ dài |
+- Chunk bị cắt giữa câu → **chia theo ranh giới tự nhiên + overlap nhỏ** (Q139).
+
+### 5.3 Citations vs Search results
+- **Citations**: tài liệu được đưa vào trực tiếp, cần trỏ đến **đúng câu/đoạn** nguồn (Q152).
+- **Search results content blocks**: RAG trên **knowledge base riêng** (không phải web), mỗi block có source + title → citation tự nhiên, không gửi lại cả corpus (Q126, Q138).
+- Web search / web fetch = cho web công khai, không dùng cho kho nội bộ.
+
+### 5.4 Grounding
+- Tài liệu dài, model bịa số điều khoản → **trích nguyên văn quote trước, rồi phân tích dựa trên quote** (Q148).
+- Prompt mâu thuẫn ("không suy đoán" vs "tự tin lấp chỗ trống") → **xóa/sửa chỉ dẫn mâu thuẫn** (Q67).
+- Model trả lời mâu thuẫn nguồn dù retrieval không đổi → **thử lại trên model version trước** + **kiểm tra chỉ dẫn grounding trong system prompt** (Q80).
+
+### 5.5 Quản lý context trong phiên dài
+| Nhu cầu | Cơ chế |
+|---|---|
+| Tự xóa tool result cũ khi gần ngưỡng token | **Context editing** – `clear_tool_uses_20250919`, `trigger` input_tokens, `keep` tool_uses, `exclude_tools` (Q127, Q135) |
+| Tóm tắt lịch sử khi gần đầy context | **Server-side compaction** (Q143) |
+| Nhớ thông tin **qua nhiều phiên/ngày** | **Memory tool** (Q127, Q143) |
+- Q127 & Q143 (chọn hết): context editing + memory tool (+ compaction ở Q143).
+- Claude Code "Autocompact is thrashing" khi đọc log 40.000 dòng → **đọc theo khoảng dòng hoặc giao cho subagent** (Q159).
+
+---
+
+## PHẦN 6 – Prompt Engineering
+- Phân loại tập đóng có mô tả nhãn → **zero-shot** + mô tả nhãn + định dạng output làm điểm bắt đầu (Q68, Q75).
+- **Few-shot** với đúng tên trường giúp neo format trích xuất (Q75).
+- **Chain-of-thought không phải mặc định** cho mọi tác vụ (Q68, Q75).
+- Câu hỏi dẫn dắt → yêu cầu so sánh cân bằng theo tiêu chí rõ (Q75).
+- Prompt đã validate trên một version **vẫn phải đánh giá lại** khi đổi model (Q75).
+- **Prompt template** với placeholder `{{text}}` – version chỉ dẫn tách khỏi dữ liệu (Q134).
+
+---
+
+## PHẦN 7 – Đánh giá & Kiểm thử
+
+### 7.1 Các loại test
+| Loại | Phát hiện |
+|---|---|
+| **Regression** (so với reference set known-good) | Hỏng sau khi đổi prompt/model (Q34) |
+| **Integration** | Sai khi phối hợp giữa các thành phần (Q18) |
+| **Adversarial** | Prompt injection, input sai dạng (Q18) |
+| Smoke | Chỉ kiểm tra đường chính còn sống |
+
+### 7.2 Thiết kế eval
+- Thứ tự: định nghĩa metric & **slice (representative, edge, adversarial)** → curate & label dataset → chạy → chấm & tổng hợp → dashboard/gate release → review lỗi với SME (Q86).
+- **Held-out test set** không dùng khi tinh chỉnh trước khi chốt phiên bản (Q146).
+- Success criteria theo **SMART**: cụ thể, đo được (vd. ≥ 4/5 trên rubric completeness với mẫu 500 claim) (Q141).
+- Mục tiêu phải **khả thi**, dựa trên benchmark/thí nghiệm/ngành – không đòi 100% (Q145).
+- Metric phải **nối trực tiếp với yêu cầu** (trần chi phí → cost/query; không lộ dữ liệu → tỷ lệ cưỡng chế RBAC trên red-team set) (Q45).
+- Acceptance rate cao ≠ đúng (Q81).
+- Sự cố lẻ (citation bịa) → kiểm tra pipeline có kiểm soát grounding không + **lấy mẫu để ước lượng tần suất** (Q10).
+
+### 7.3 Vòng lặp cải tiến
+- Iteration phase: telemetry + đánh giá mẫu output + feedback stakeholder → chọn thay đổi tác động lớn nhất → đo bằng eval framework (Q38).
+- **Mang eval framework + reference set qua các vòng**; lessons learned của phase trước là input phase sau (Q107).
+- Cần **thiết kế lại** khi yêu cầu mới buộc thay đổi trách nhiệm thành phần hoặc contract cốt lõi (Q28).
+
+---
+
+## PHẦN 8 – Human-in-the-loop
+- Đặt người **giữa output và hành động tác động lớn / không đảo ngược**, có **tiêu chí duyệt rõ** (Q88).
+- **Risk-stratified sampling**: duyệt toàn bộ output low-confidence + high-impact, cộng một mẫu ngẫu nhiên nhỏ từ nhóm routine (Q79, Q83).
+- Quyết định của reviewer → **dữ liệu có nhãn** bổ sung eval set (Q79).
+- Escalation criteria: ngưỡng confidence, loại quyết định high-impact, cờ mơ hồ từ classifier, user yêu cầu (Q93).
+- PR workflow: Claude Code **comment phân tích**, người **phê duyệt** theo branch protection (Q42). Không bỏ review cho PR nhỏ (Q90).
+- Docs do AI sinh: subagent **đọc code thật** + đi qua quy trình review (Q59).
+
+---
+
+## PHẦN 9 – Vận hành: SLA, Monitoring, Chẩn đoán
+
+### 9.1 Yêu cầu & SLA
+- **NFR** = chất lượng thực thi (p95 < 800 ms ở tải dự kiến); FR = chức năng (classify, extract, draft) (Q41).
+- SLA có ý nghĩa: **metric + ngưỡng + cửa sổ đo + hệ quả khi vi phạm** (Q52).
+
+### 9.2 Observability
+- Thiếu sót cần chỉ ra: **correlation ID không truyền qua agent/tool**; **không ghi model identity & version mỗi lượt** (Q85).
+- Runbook: **alert + triage, escalation, rollback, dashboard/log** – đủ cả bốn (Q22).
+- Claude Code telemetry: `CLAUDE_CODE_ENABLE_TELEMETRY=1` chưa đủ, phải đặt **`OTEL_METRICS_EXPORTER` / `OTEL_LOGS_EXPORTER`** (vd. otlp) + endpoint (Q142).
+
+### 9.3 Quy trình chẩn đoán
+1. **Minimal reproduction**, đổi một biến mỗi lần (Q32, Q114).
+2. Giả thuyết từ triệu chứng + cấu hình + **thay đổi gần đây** (Q114).
+3. **So với bản tốt gần nhất** (system prompt, schema trước bảo trì) (Q31).
+4. **Replay request cũ, xem raw output trước parser** (Q31).
+5. Kiểm tra lớp tool: liệt kê MCP server & trạng thái (Q32).
+- Sai: đổi model, xóa cache, retry mù quáng, mở ticket vendor trước khi thu bằng chứng, rollback ngay.
+
+---
+
+## PHẦN 10 – Claude Code: cấu hình, quyền, MCP
+
+### 10.1 Scope & thứ tự ưu tiên
+**Managed > Command-line args > Local > Project > User** (Q39)
+
+| Scope | Dùng cho |
+|---|---|
+| **Managed** | Chính sách bảo mật **không được ghi đè** (Q4, Q115, Q117). Không có MDM / cần áp cho cả web → **server-managed settings** từ admin console (Q157) |
+| **Project** (commit vào repo) | MCP chung (`.mcp.json`), permissions (`.claude/settings.json`), ngữ cảnh dự án (`CLAUDE.md`) (Q4, Q58, Q115, Q116, Q119) |
+| **Local** | Cá nhân trong một dự án, không commit |
+| **User** (`~/.claude`) | Sở thích cá nhân đi theo người qua mọi dự án: theme, ngôn ngữ trả lời (Q9) |
+- **Secret không bao giờ nằm trong settings.json** (Q89, Q115).
+- Q157 (chọn 3): Teams/Enterprise làm provider; analytics dashboard để theo dõi; server-managed settings cho policy.
+
+### 10.2 Permissions
+- Bị deny bất ngờ → **kiểm tra quy tắc ở mọi scope** để tìm rule gây deny (Q6).
+- Permission modes: **plan** (chỉ đọc + đề xuất), **acceptEdits** (tự duyệt sửa file), **auto** (classifier), **dontAsk** (tự từ chối thứ không được allow → **CI không có người**) (Q158), **bypassPermissions**.
+- Bắt buộc người duyệt một tool nguy hiểm bất kể mode → **PreToolUse hook** trả `permissionDecision: "ask"` cho tool đó (Q149).
+
+### 10.3 Subagents, Skills, CLAUDE.md
+- **Subagent** khi có tác vụ chuyên biệt **lặp lại** cần prompt riêng, tool hẹp, model riêng (Q47).
+- Kỹ sư phải giải thích lại quy ước mỗi phiên → **CLAUDE.md cấp project** (Q58).
+- Skill có side effect bị tự kích hoạt → `disable-model-invocation: true` trong frontmatter (Q140).
+- Hỗ trợ trong **IDE** tốt hơn qua Slack bot (ít context switch) (Q112).
+
+### 10.4 Xử lý sự cố MCP
+| Triệu chứng | Bước đầu |
+|---|---|
+| Server mới không xuất hiện | `claude mcp list` xác nhận đã đăng ký → restart/reconnect (Q120) |
+| Connected nhưng 0 tool | Reconnect trong `/mcp` → nếu vẫn 0 thì `claude --debug mcp` xem stderr (Q160) |
+| Lỗi lần đầu, có hộp thoại quyền OS | Do cấp quyền lần đầu → xác nhận lần sau chạy được, ghi vào onboarding (Q13) |
+| 60+ tool MCP làm hết context | Bật **Tool Search** (Q118) |
+
+---
+
+## PHẦN 11 – Discovery, Giao tiếp, Tài liệu, Giá trị kinh doanh
+
+### 11.1 Discovery & Requirements
+- Yêu cầu mơ hồ ("AI sửa escalations", "cải thiện CX") → **phân rã bằng câu hỏi**: ai, trigger gì, kết quả tốt trông thế nào, ràng buộc (latency, cost, audit, dữ liệu) → xác định decision đang thất bại + metric mục tiêu (Q105, Q106).
+- Discovery có cấu trúc: **workshop** tìm ràng buộc; **success criteria + failure threshold** làm cổng production (Q57).
+- Không chọn model theo kinh nghiệm cũ, không prototype trước khi có yêu cầu, không hoãn ràng buộc.
+
+### 11.2 Giao tiếp theo đối tượng
+| Đối tượng | Nội dung |
+|---|---|
+| Executive sponsor | **Business outcome, trade-off đã chấp nhận, rủi ro cấp cao** (Q124) |
+| Engineering | Rationale kỹ thuật, alternatives, implementation implications |
+| Security/Compliance | **Threat model, control mapping, residual-risk acceptance, audit traceability** (Q26, Q98) |
+| Product manager | Capabilities, scope, roadmap dependencies (Q98) |
+| Ủy ban hỗn hợp (CFO, GC, CIO) | **Nêu quyết định trước**, rồi trả lời mối quan tâm chính của từng người (Q12, Q17) |
+
+### 11.3 Quản lý kỳ vọng
+- Yêu cầu thêm scope → ghi nhận nhu cầu, nói rõ tác động scope/timeline, đưa **lựa chọn** (hoãn, bỏ bớt, dời mốc) cho stakeholder quyết (Q50).
+- Feedback session: agenda tập trung, **gửi tài liệu trước**, ghi quyết định & follow-up, **owner + ngày** (Q36).
+- Routine alignment: **lịch định kỳ** xem lại giả định; **giải quyết công khai** quan điểm khác nhau (Q103).
+
+### 11.4 Tài liệu
+- **ADR** = context, decision, **alternatives considered**, consequences/**trade-offs**, ngày, tác giả (Q99, Q111); thêm **owner + lịch xem lại** và **tiêu chí đánh giá alternatives** (Q108).
+- **Gói bàn giao**: architecture overview, ADRs, component contracts/diagrams, **eval framework + reference set**, runbooks, on-call playbook, **known limitations** (Q53, Q101).
+- Đủ để triển khai không cần architect: **decision log** + **integration contracts, config schema, input/output shapes** (Q109).
+- Implementation guide cho delivery team: trách nhiệm thành phần, contracts, sequence diagram, tham số cấu hình + mặc định, runbook (Q104).
+- Risk assessment: asset + độ nhạy, threat actor + vector → ghép & ước lượng likelihood/impact → mitigation → tài liệu (Q19).
+
+### 11.5 Business value pillars (Q30, Q55, Q102, Q110)
+| Pillar | Nhận diện |
+|---|---|
+| **Efficiency** | Ít thời gian/công sức hơn cho cùng một đơn vị việc (47→6 phút; 3× đơn/analyst theo khóa). Thời gian sửa lỗi thêm = **efficiency loss** |
+| **Productivity** | **Đầu ra thực tế tăng** (billable output). Thời gian giảm mà output không tăng = productivity **chưa đạt** |
+| **Transformation** | Thay đổi cách tổ chức công việc (bỏ vai trò, chuyển nhân sự sang việc mới) |
+| **Solution cost** | Chi phí API/hạ tầng vượt dự toán |
+| **Performance SLA** | So với cam kết latency/uptime (11 s vs 5 s) |
+
+---
+
+## PHẦN 12 – Bảng tra nhanh "nếu thấy… thì chọn…"
+
+| Từ khóa trong đề | Hướng đáp án |
+|---|---|
+| Phần nội dung lớn, tĩnh, lặp lại | Prompt caching |
+| Cùng model, cần giảm latency/cost | Hạ effort |
+| Volume lớn, tác vụ đơn giản | Haiku / routing tầng |
+| Nhiều tool làm tốn context | Tool Search / progressive discovery |
+| Bước cố định | Workflow |
+| Không biết trước subtask | Orchestrator-workers |
+| Cần log bước trung gian | Prompt chaining (call riêng) |
+| Gọi 1 lần stateless, có sẵn API | Direct API |
+| Quy trình/kiến thức tái sử dụng | Skill |
+| Hệ thống/dữ liệu live bên ngoài | MCP |
+| KB nội bộ cần citation | Search result blocks |
+| Trỏ đúng câu trong tài liệu | Citations |
+| Model bịa trong tài liệu dài | Trích quote trước rồi phân tích |
+| Nhớ qua nhiều phiên | Memory tool |
+| Xóa tool result cũ | Context editing (clear_tool_uses) |
+| Retrieved/tool content | Untrusted data + classifier + validation |
+| Tool ra ngoài internet | Allow-list đích + review |
+| Nâng model | Adversarial eval set ổn định, gắn version |
+| Phân quyền tài liệu | RBAC ở tầng retrieval |
+| Secret | Secret store phía server |
+| Hành động không đảo ngược | Người duyệt trước, có tiêu chí |
+| Không thể duyệt hết | Risk-stratified sampling |
+| Chính sách không được ghi đè | Managed settings |
+| Team dùng chung MCP/permissions | Project scope, commit |
+| Sở thích cá nhân | User scope |
+| CI không có người | dontAsk mode |
+| Luôn hỏi trước một tool | PreToolUse hook "ask" |
+| Đổi prompt làm hỏng ca cũ | Regression test |
+| Chốt prompt cuối | Held-out test set |
+| Exec | Outcome + trade-off + risk |
+| Security reviewer | Threat model + control mapping + residual risk + audit |
+| Thêm scope giữa chừng | Minh bạch tác động + đưa lựa chọn |
+</script>
+<script type="application/json" id="src-quiz">[{"part": "C", "q": "A legal research tool sends a 60,000-token case file with every attorney question. Telemetry shows each case file receives about 12 questions, but they are spread across 3-4 working days with gaps of several hours. The CFO asks whether enabling prompt caching with the default 5-minute TTL will cut input cost by roughly 80%. What is the most accurate response?", "o": ["Yes, because cache reads cost about 10% of the base input price, so savings approach 90% regardless of query timing.", "No, the projected savings depend on cache hits within the TTL; with multi-hour gaps most requests would pay cache-write cost again, so measure the query cadence and evaluate a longer TTL or session-batching before committing to the estimate.", "No, prompt caching only applies to system prompts and cannot be used for user-supplied documents.", "Yes, but only after moving the case file into the Files API so it is cached server-side permanently."], "a": [1], "e": "Tiết kiệm của caching chỉ có khi có cache hit trong TTL. Câu hỏi rải rác nhiều giờ thì gần như mỗi lần đều ghi cache lại (1.25×), có thể đắt hơn không cache. Đáp án đúng ở P luôn gắn điều kiện và đề xuất đo nhịp truy vấn. Files API không phải cache; caching áp dụng cho mọi prefix (tools, system, messages), không chỉ system prompt."}, {"part": "C", "q": "A nightly job re-classifies 400,000 support tickets for a reporting warehouse. Results are needed by 7 a.m.; the job starts at 8 p.m. The team wants the largest cost reduction with no change to prompt or model. Which change fits best?", "o": ["Route the job through the Message Batches API.", "Lower the effort parameter to the minimum for every request.", "Switch the job to streaming responses to reduce per-request overhead.", "Increase max_tokens so fewer requests are truncated and retried."], "a": [0], "e": "Việc không gấp, có cửa sổ 11 giờ, không đổi prompt/model → Batch API (giảm khoảng 50%, hoàn tất trong tối đa 24h, thường nhanh hơn nhiều). Hạ effort thay đổi hành vi model và cần eval; streaming không giảm chi phí."}, {"part": "C", "q": "After a quarter in production, a claims assistant report shows: (1) handling time per claim fell from 22 to 9 minutes; (2) claims closed per adjuster per week are unchanged; (3) two adjuster roles were reassigned to fraud investigation; (4) monthly API spend is 30% above forecast. Which mapping to value pillars is correct?", "o": ["1 Productivity, 2 Efficiency, 3 Transformation, 4 Solution cost", "1 Efficiency, 2 Productivity not yet realized, 3 Transformation, 4 Solution cost", "1 Efficiency, 2 Performance SLA, 3 Productivity, 4 Solution cost", "1 Transformation, 2 Efficiency, 3 Productivity, 4 Performance SLA"], "a": [1], "e": "Thời gian/đơn vị giảm = Efficiency. Đầu ra không tăng = Productivity chưa đạt. Chuyển vai trò = Transformation. Chi tiêu vượt dự toán = Solution cost. Không có cam kết latency nào được nêu nên không có Performance SLA."}, {"part": "C", "q": "Two architectures are proposed for an internal assistant with a stated SLA of p95 under 2.5 seconds and priorities of accuracy first, cost second. Architecture P: p95 3.4 s, accuracy 93%, $0.04/request. Architecture Q: p95 1.9 s, accuracy 91%, $0.02/request. Architecture R: p95 2.2 s, accuracy 92.5%, $0.05/request. What should you recommend?", "o": ["P, because accuracy is the first priority.", "Q, because it is cheapest and fastest.", "R, because it meets the SLA and has the highest accuracy among compliant options, assuming the 1.5-point accuracy gap over Q is confirmed as significant on the evaluation set.", "A hybrid of P and Q with no further analysis."], "a": [2], "e": "Lọc theo ràng buộc cứng trước (P vi phạm SLA), rồi áp ưu tiên đã nêu (accuracy trước cost) cho các phương án còn lại → R. Vẫn phải xác nhận chênh lệch có ý nghĩa thống kê trước khi trả thêm chi phí."}, {"part": "D", "q": "A chat assistant's p95 latency is 9 seconds. Profiling shows input is 3,000 tokens (mostly a stable system prompt) and responses average 1,400 output tokens of verbose explanation. Quality reviewers say a 300-token answer would be equally useful. Which change most directly reduces latency?", "o": ["Enable prompt caching on the system prompt.", "Constrain the response format and length so typical answers are around 300 tokens.", "Move to a model with a larger context window.", "Add more few-shot examples to improve answer quality."], "a": [1], "e": "Thời gian sinh tỷ lệ với số output token (sinh tuần tự), nên 1.400 output token là nguyên nhân chính. Caching 3.000 token input chỉ giảm TTFT một chút. Đây là bẫy 'caching là đáp án cho mọi thứ'."}, {"part": "D", "q": "Users complain that a drafting tool 'feels frozen' for 6 seconds before any text appears, although total generation time is acceptable to the business. What is the most targeted change?", "o": ["Enable streaming so tokens render as they are generated.", "Switch to the Message Batches API.", "Reduce max_tokens to 200.", "Increase the effort parameter for better drafts."], "a": [0], "e": "Vấn đề là độ trễ cảm nhận, tổng thời gian đã chấp nhận được. Streaming hiển thị chữ ngay khi sinh. Batch thì chậm hơn; cắt max_tokens làm hỏng bản nháp."}, {"part": "D", "q": "Production code calls a model alias rather than a pinned version. After a provider update, an extraction pipeline's schema-validity rate drops from 99.2% to 95.8% overnight with no code changes. Which two actions best address the root cause and prevent recurrence? (Select two.)", "o": ["Pin the specific model version in production configuration and promote new versions only after regression evaluation.", "Log the model identity and version on every request so behavior changes can be correlated.", "Raise temperature to make outputs more diverse.", "Increase the retrieval top-k to give the model more context.", "Disable schema validation to stop downstream failures."], "a": [0, 1], "e": "Alias có thể trỏ sang phiên bản mới, làm hành vi đổi âm thầm. Pin phiên bản + regression gate trước khi promote ngăn tái diễn; ghi model version mỗi request giúp gắn thay đổi hành vi với nguyên nhân."}, {"part": "E", "q": "A support RAG system often fails on queries containing product SKUs like 'XR-4471-B', while paraphrased troubleshooting questions work well. Retrieval is dense-embedding only. Which change most directly addresses the failure?", "o": ["Add sparse/BM25 retrieval and fuse results with the dense retriever (hybrid retrieval).", "Increase the embedding dimension.", "Increase chunk size to 4,000 tokens.", "Switch the generation model to a larger tier."], "a": [0], "e": "Dense embedding mạnh về ngữ nghĩa nhưng yếu với mã định danh chính xác. Sparse/BM25 bắt khớp chính xác; hybrid giữ được cả hai."}, {"part": "E", "q": "Chunks from quarterly reports such as 'Revenue grew 3% over the previous quarter' are retrieved for the wrong company and period. Which technique most directly targets this?", "o": ["Prepend a short, document-specific context (company, period, section) to each chunk before embedding and BM25 indexing.", "Reduce chunk overlap to zero.", "Ask the generator to ignore chunks that seem irrelevant.", "Store all reports in a single long-context prompt."], "a": [0], "e": "Đây là bài toán Contextual Retrieval: chunk mất nghĩa khi tách khỏi tài liệu. Thêm ngữ cảnh vào mỗi chunk (có thể dùng Claude + prompt caching để sinh) trước khi embed và index."}, {"part": "E", "q": "A RAG assistant gives a wrong answer. Logs show the passage containing the correct answer was ranked 2nd in the retrieved context passed to the model. Where should investigation focus first?", "o": ["Generation: prompt grounding instructions, conflicting passages, and whether the model is required to cite and use retrieved evidence.", "Retrieval: re-embed the corpus with a new model.", "Chunking: switch to fixed-size chunks.", "Indexing: increase top-k to 50."], "a": [0], "e": "Đoạn đúng đã có trong context nên retrieval đã làm đúng việc; lỗi nằm ở tầng generation/prompt. Tách hai tầng giúp không sửa nhầm chỗ."}, {"part": "E", "q": "Which pair of metrics evaluates the two layers of a RAG system separately? (Select two.)", "o": ["Recall@k of gold passages for the retrieval layer.", "Faithfulness/groundedness of answers to retrieved passages for the generation layer.", "Total monthly token spend.", "BLEU score against a single reference answer.", "Average response length."], "a": [0, 1], "e": "Retrieval đo bằng recall@k/precision@k/MRR; generation đo bằng faithfulness, answer relevance, citation accuracy. BLEU kém ý nghĩa với câu trả lời mở."}, {"part": "F", "q": "A team must evaluate tone and completeness of 5,000 customer-email drafts per release. Human review capacity is 150 drafts. Which grading design is most appropriate?", "o": ["LLM-as-judge with an explicit rubric, calibrated against human labels on a subset, with humans reviewing disagreements and a sample of judge decisions.", "Human review of 150 randomly chosen drafts as the only signal.", "Exact string match against reference emails.", "BLEU score against the previous release's emails."], "a": [0], "e": "Tiêu chí ngữ nghĩa (tone, completeness) không chấm được bằng exact match. LLM-judge có rubric cho phép chấm toàn bộ; hiệu chuẩn với nhãn người và dùng người cho ca bất đồng giữ độ tin cậy."}, {"part": "F", "q": "Prompt v7 scores 86.4% and v6 scores 84.9% on a 120-example dev set used throughout iteration. The product owner wants to ship v7 today. What should you require first?", "o": ["Evaluate both on a held-out test set not used during iteration, with enough samples to tell whether the difference is meaningful.", "Ship v7 because a higher score is always better.", "Remove examples v7 fails from the dev set and re-score.", "Run three more rounds of tuning on the same dev set."], "a": [0], "e": "Dev set đã bị 'học' qua nhiều vòng tinh chỉnh; chênh lệch 1,5 điểm trên 120 mẫu có thể chỉ là nhiễu. Cần held-out set và cỡ mẫu đủ lớn."}, {"part": "F", "q": "Which success criterion is best formed for a contract-clause extraction feature?", "o": ["Extraction should be accurate and helpful to lawyers.", "At least 95% field-level F1 on a 400-contract held-out set stratified by contract type, measured before the Q3 release, with no critical-field (party, term, liability cap) accuracy below 98%.", "The model must never make an extraction error.", "Lawyers should feel confident in the outputs."], "a": [1], "e": "SMART: cụ thể (F1 theo trường), đo được, có tập dữ liệu và phân tầng, có thời hạn, có ngưỡng riêng cho trường quan trọng. 'Never' là không khả thi; 'feel confident' không đo được."}, {"part": "F", "q": "An evaluation set for a multilingual HR assistant contains only English queries from headquarters staff. The tool will serve 14 countries. Which slices most directly need to be added before broader release? (Select two.)", "o": ["Queries in each supported language and locale.", "Queries representing the job levels and regions the tool will serve.", "More English headquarters queries to tighten confidence intervals.", "Synthetic queries unrelated to HR to test robustness.", "Queries that the current prompt already answers correctly."], "a": [0, 1], "e": "Eval set phải bao phủ quần thể mục tiêu. Thêm dữ liệu của slice đã có không phát hiện được lỗi ở nhóm chưa có."}, {"part": "G", "q": "An agent can read a user's inbox, browse arbitrary web pages, and send email. A security review flags exfiltration risk. Which design change most directly reduces it without removing the agent's core reading capability?", "o": ["Require explicit human approval for outbound email to recipients outside an allow-list, and restrict outbound destinations.", "Add a sentence to the system prompt telling the model never to leak data.", "Lower temperature to make the agent more deterministic.", "Increase logging verbosity."], "a": [0], "e": "Agent có đủ bộ ba: dữ liệu nhạy cảm + nội dung không tin cậy + kênh gửi ra ngoài. Cắt hoặc kiểm soát kênh ra ngoài (allow-list + người duyệt) phá chuỗi tấn công. Dặn trong prompt không phải kiểm soát cưỡng chế."}, {"part": "G", "q": "During threat modeling for a document-QA deployment, which two steps must be completed before estimating likelihood and impact? (Select two.)", "o": ["Inventory the assets the system touches and their sensitivity.", "Enumerate relevant threat actors and attack vectors.", "Assign owners for residual-risk acceptance.", "Publish the risk register to the steering committee.", "Schedule remediation work for identified gaps."], "a": [0, 1], "e": "Cần biết cái gì có thể bị hại (asset) và bị hại bằng cách nào (actor/vector) trước khi ghép và ước lượng. Gán owner, publish, remediation là các bước sau."}, {"part": "G", "q": "A finance assistant serves analysts and external auditors with different document entitlements. The current design retrieves top-k from the full index, then instructs Claude to omit documents the user may not see. What is the key flaw?", "o": ["Access control is enforced by model instruction after restricted content has entered the context; filtering must happen at retrieval based on authenticated identity.", "Top-k is too small.", "Auditors should use a different model tier.", "The system prompt is too long to cache."], "a": [0], "e": "RBAC phải cưỡng chế trong code tại tầng retrieval, trước khi nội dung vào context. Dặn model 'bỏ qua' không phải kiểm soát truy cập."}, {"part": "H", "q": "A hospital wants Claude to summarize clinical notes containing PHI. Which set of prerequisites most directly supports HIPAA obligations?", "o": ["A signed BAA covering the specific services used, use of only BAA-covered features, role-based access to PHI, audit logging, and appropriate data-retention settings.", "A strong system prompt instructing Claude not to repeat patient names.", "Using the most capable model to minimize clinical errors.", "Disabling all logs so no PHI is stored anywhere."], "a": [0], "e": "HIPAA cần nền tảng hợp đồng (BAA, đúng phạm vi tính năng) và kiểm soát kỹ thuật (RBAC, audit, retention). Tắt hết log làm mất audit trail."}, {"part": "H", "q": "A loan pre-screening assistant shows equal approval rates across demographic groups. Which additional analysis most directly tests whether errors are distributed fairly?", "o": ["Compare false-positive and false-negative rates across groups against verified outcomes.", "Increase the total sample size and recompute approval rates.", "Measure agreement with historical underwriter decisions.", "Survey applicants about perceived fairness."], "a": [0], "e": "Approval parity không nói gì về error-rate parity. Khớp với quyết định lịch sử có thể lặp lại bias cũ."}, {"part": "H", "q": "An EU deployment processes customer support transcripts. Which measure most directly implements GDPR data minimization?", "o": ["Redact personal data not required for the task before it is sent to the model.", "Store transcripts indefinitely for future model improvement.", "Encrypt data in transit with TLS.", "Use the largest context window so no data needs to be dropped."], "a": [0], "e": "Data minimization = chỉ xử lý dữ liệu cá nhân cần thiết cho mục đích. TLS là bảo mật truyền tải, không phải tối thiểu hóa."}, {"part": "I", "q": "An accounts-payable agent drafts and executes vendor payments. Which human-in-the-loop placement is most appropriate?", "o": ["Require approval before payment execution for payments above a risk threshold or to new/changed bank details, with explicit check criteria; auto-execute routine low-risk payments with sampled review.", "Review a random 5% of payments after execution.", "Require approval on every draft, including internal notes, to maximize oversight.", "Let the model decide when to ask for approval."], "a": [0], "e": "Chuyển tiền là hành động khó đảo ngược. Người duyệt đặt trước khi thực thi cho ca rủi ro cao (số tiền lớn, đổi tài khoản ngân hàng – vector gian lận phổ biến), có tiêu chí rõ. Ca routine thì lấy mẫu. Review sau khi đã chi là quá muộn."}, {"part": "I", "q": "Reviewers in a content-moderation HITL loop approve 99.6% of model decisions, and spot audits find reviewers missed several clear violations. What is the most likely issue and response?", "o": ["Automation bias; add specific check criteria, seed known-violation test items to measure reviewer accuracy, and route low-confidence items to reviewers with richer context.", "The model is perfect; remove human review.", "Reviewers need more items per hour to stay engaged.", "Hide the model's decision from reviewers entirely in all cases without measuring impact."], "a": [0], "e": "Tỷ lệ đồng ý gần 100% kèm lỗi bị bỏ sót là dấu hiệu automation bias. Cần tiêu chí rõ và đo chất lượng reviewer bằng ca đã biết đáp án."}, {"part": "J", "q": "An assistant has an SLO of 99.5% successful responses over 28 days. Halfway through the window, 80% of the error budget is consumed due to repeated 529 overloaded errors at peak. Which response best follows SLO practice?", "o": ["Pause risky releases, implement retry with exponential backoff and jitter plus a fallback path, and separate batch traffic from interactive traffic.", "Ignore it until the window ends.", "Remove retries to reduce load and let requests fail fast.", "Change the SLO to 95% without consulting stakeholders."], "a": [0], "e": "Error budget sắp cạn → đóng băng thay đổi rủi ro, xử lý nguyên nhân: retry có backoff + jitter, fallback, tách lưu lượng batch khỏi interactive. Sửa SLO phải làm cùng stakeholder."}, {"part": "J", "q": "A multi-agent pipeline produces an incorrect invoice total. Engineers cannot tell which agent, tool call, or model version produced the bad value. Which two instrumentation gaps should be fixed first? (Select two.)", "o": ["Propagate a request-scoped correlation ID across all agent and tool spans.", "Record model identity/version and prompt version on every turn.", "Increase log retention from 30 to 90 days.", "Add a weekly usage email to leadership.", "Emit CPU metrics for every container."], "a": [0, 1], "e": "Không có correlation ID thì trace bị đứt giữa các agent; không có model/prompt version thì không tái hiện được. Đây là hai lỗ hổng observability đặc thù của hệ LLM."}, {"part": "J", "q": "Monthly Claude spend rose 45% while request volume rose 10%. Which first step most directly locates the driver?", "o": ["Break down usage and cost by workspace, model, and token type (input, output, cache read/write) over time.", "Switch all traffic to the cheapest model.", "Re-run the launch evaluation set.", "Ask each team to estimate their usage."], "a": [0], "e": "Chi phí tăng nhanh hơn volume → token/request hoặc cơ cấu model đã đổi. Phân rã theo workspace, model, loại token (cache có bị miss không? output có dài ra không?) chỉ ra nguyên nhân."}, {"part": "K", "q": "A company without MDM is rolling Claude Code out to 300 engineers who use both local terminals and Claude Code on the web. Security needs a non-overridable policy applied everywhere. Which mechanism fits?", "o": ["Server-managed settings configured from the organization admin console.", "A .claude/settings.json committed to every repository.", "Instructions in each repository's CLAUDE.md.", "User-scope settings distributed by a setup script."], "a": [0], "e": "Không có MDM và phải áp cho cả web → server-managed settings. Project settings và CLAUDE.md có thể bị sửa và chỉ áp trong repo đó, không phải chính sách tổ chức."}, {"part": "K", "q": "A regulated bank requires that all Claude Code traffic stay within its AWS account and use existing IAM controls and CloudTrail logging. Which provider configuration best fits?", "o": ["Amazon Bedrock as the provider (CLAUDE_CODE_USE_BEDROCK=1) with IAM-scoped credentials.", "Personal Claude Pro subscriptions for each engineer.", "A shared Claude API key stored in each repository.", "Claude Code on the web only."], "a": [0], "e": "Yêu cầu dữ liệu và quyền nằm trong tài khoản AWS → Bedrock, dùng IAM và log sẵn có của tổ chức. Key dùng chung trong repo là lỗi bảo mật."}, {"part": "K", "q": "Leadership asks for per-team cost and adoption reporting for Claude Code. Engineers have set CLAUDE_CODE_ENABLE_TELEMETRY=1, but the collector receives nothing. What is missing?", "o": ["Exporter configuration such as OTEL_METRICS_EXPORTER and OTEL_LOGS_EXPORTER (e.g., otlp) with the collector endpoint, plus resource attributes for team attribution.", "An Admin API key embedded in CLAUDE.md.", "Running Claude Code in plan mode.", "Switching to the Message Batches API."], "a": [0], "e": "Biến bật telemetry chỉ bật thu thập; cần chọn exporter và endpoint. Thêm thuộc tính (team, cost center) để quy chi phí theo nhóm."}, {"part": "L", "q": "You must present a decision to adopt a managed agent platform to a steering committee (CFO, CISO, VP Engineering) in 15 minutes. Which structure is most effective?", "o": ["Open with the decision and its business outcome, then address cost (CFO), data boundary and residual risk (CISO), and migration/operations impact (VP Eng), with detail in appendices.", "Start with a full component diagram and walk through every service.", "Present only the cost model since the CFO holds the budget.", "Present a single narrative with equal technical depth for everyone."], "a": [0], "e": "Mở bằng quyết định, rồi trả lời mối quan tâm chính của từng người; chi tiết để phụ lục. Đây là khung giao tiếp đa đối tượng mà đề hỏi lặp đi lặp lại."}, {"part": "L", "q": "An ADR for choosing hybrid retrieval states the decision and configuration but nothing else. What should a reviewer ask to add first?", "o": ["The alternatives considered with the evaluation criteria and results, the trade-offs accepted, and the owner and review trigger for revisiting the decision.", "A longer configuration listing.", "The names of every engineer who attended the meeting.", "A marketing summary for customers."], "a": [0], "e": "ADR có giá trị ở chỗ giải thích vì sao: alternatives + tiêu chí, trade-off, và ai/khi nào xem lại khi điều kiện thay đổi."}, {"part": "B", "q": "A COO asks for 'AI to reduce churn' and wants a design next week. Which discovery output is most important before choosing an architecture?", "o": ["A defined decision the AI will support (e.g., which at-risk accounts to prioritize for outreach), the target metric and baseline, the data available, constraints, and where humans keep authority.", "A list of Claude models ranked by benchmark score.", "A working chatbot prototype for customers.", "A vendor comparison of vector databases."], "a": [0], "e": "Biến yêu cầu mơ hồ thành quyết định cụ thể + metric + baseline + ràng buộc + phạm vi giao quyền. Chọn model hay vector DB là bước sau."}, {"part": "B", "q": "Which proposed use is least appropriate for Claude as the primary component?", "o": ["Calculating payroll tax withholding that must match statutory tables exactly.", "Summarizing long vendor contracts for lawyer review.", "Classifying inbound tickets with a rationale for routing.", "Drafting first-pass incident postmortems for engineers to edit."], "a": [0], "e": "Tính toán xác định phải khớp chính xác bảng luật → nên làm bằng code có test; Claude có thể giải thích hoặc hỗ trợ nhưng không làm thành phần tính toán chính."}]</script>
+<script>
+/**
+ * marked v12.0.2 - a markdown parser
+ * Copyright (c) 2011-2024, Christopher Jeffrey. (MIT Licensed)
+ * https://github.com/markedjs/marked
+ */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self).marked={})}(this,(function(e){"use strict";function t(){return{async:!1,breaks:!1,extensions:null,gfm:!0,hooks:null,pedantic:!1,renderer:null,silent:!1,tokenizer:null,walkTokens:null}}function n(t){e.defaults=t}e.defaults={async:!1,breaks:!1,extensions:null,gfm:!0,hooks:null,pedantic:!1,renderer:null,silent:!1,tokenizer:null,walkTokens:null};const s=/[&<>"']/,r=new RegExp(s.source,"g"),i=/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,l=new RegExp(i.source,"g"),o={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},a=e=>o[e];function c(e,t){if(t){if(s.test(e))return e.replace(r,a)}else if(i.test(e))return e.replace(l,a);return e}const h=/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/gi;function p(e){return e.replace(h,((e,t)=>"colon"===(t=t.toLowerCase())?":":"#"===t.charAt(0)?"x"===t.charAt(1)?String.fromCharCode(parseInt(t.substring(2),16)):String.fromCharCode(+t.substring(1)):""))}const u=/(^|[^\[])\^/g;function k(e,t){let n="string"==typeof e?e:e.source;t=t||"";const s={replace:(e,t)=>{let r="string"==typeof t?t:t.source;return r=r.replace(u,"$1"),n=n.replace(e,r),s},getRegex:()=>new RegExp(n,t)};return s}function g(e){try{e=encodeURI(e).replace(/%25/g,"%")}catch(e){return null}return e}const f={exec:()=>null};function d(e,t){const n=e.replace(/\|/g,((e,t,n)=>{let s=!1,r=t;for(;--r>=0&&"\\"===n[r];)s=!s;return s?"|":" |"})).split(/ \|/);let s=0;if(n[0].trim()||n.shift(),n.length>0&&!n[n.length-1].trim()&&n.pop(),t)if(n.length>t)n.splice(t);else for(;n.length<t;)n.push("");for(;s<n.length;s++)n[s]=n[s].trim().replace(/\\\|/g,"|");return n}function x(e,t,n){const s=e.length;if(0===s)return"";let r=0;for(;r<s;){const i=e.charAt(s-r-1);if(i!==t||n){if(i===t||!n)break;r++}else r++}return e.slice(0,s-r)}function b(e,t,n,s){const r=t.href,i=t.title?c(t.title):null,l=e[1].replace(/\\([\[\]])/g,"$1");if("!"!==e[0].charAt(0)){s.state.inLink=!0;const e={type:"link",raw:n,href:r,title:i,text:l,tokens:s.inlineTokens(l)};return s.state.inLink=!1,e}return{type:"image",raw:n,href:r,title:i,text:c(l)}}class w{options;rules;lexer;constructor(t){this.options=t||e.defaults}space(e){const t=this.rules.block.newline.exec(e);if(t&&t[0].length>0)return{type:"space",raw:t[0]}}code(e){const t=this.rules.block.code.exec(e);if(t){const e=t[0].replace(/^ {1,4}/gm,"");return{type:"code",raw:t[0],codeBlockStyle:"indented",text:this.options.pedantic?e:x(e,"\n")}}}fences(e){const t=this.rules.block.fences.exec(e);if(t){const e=t[0],n=function(e,t){const n=e.match(/^(\s+)(?:```)/);if(null===n)return t;const s=n[1];return t.split("\n").map((e=>{const t=e.match(/^\s+/);if(null===t)return e;const[n]=t;return n.length>=s.length?e.slice(s.length):e})).join("\n")}(e,t[3]||"");return{type:"code",raw:e,lang:t[2]?t[2].trim().replace(this.rules.inline.anyPunctuation,"$1"):t[2],text:n}}}heading(e){const t=this.rules.block.heading.exec(e);if(t){let e=t[2].trim();if(/#$/.test(e)){const t=x(e,"#");this.options.pedantic?e=t.trim():t&&!/ $/.test(t)||(e=t.trim())}return{type:"heading",raw:t[0],depth:t[1].length,text:e,tokens:this.lexer.inline(e)}}}hr(e){const t=this.rules.block.hr.exec(e);if(t)return{type:"hr",raw:t[0]}}blockquote(e){const t=this.rules.block.blockquote.exec(e);if(t){let e=t[0].replace(/\n {0,3}((?:=+|-+) *)(?=\n|$)/g,"\n    $1");e=x(e.replace(/^ *>[ \t]?/gm,""),"\n");const n=this.lexer.state.top;this.lexer.state.top=!0;const s=this.lexer.blockTokens(e);return this.lexer.state.top=n,{type:"blockquote",raw:t[0],tokens:s,text:e}}}list(e){let t=this.rules.block.list.exec(e);if(t){let n=t[1].trim();const s=n.length>1,r={type:"list",raw:"",ordered:s,start:s?+n.slice(0,-1):"",loose:!1,items:[]};n=s?`\\d{1,9}\\${n.slice(-1)}`:`\\${n}`,this.options.pedantic&&(n=s?n:"[*+-]");const i=new RegExp(`^( {0,3}${n})((?:[\t ][^\\n]*)?(?:\\n|$))`);let l="",o="",a=!1;for(;e;){let n=!1;if(!(t=i.exec(e)))break;if(this.rules.block.hr.test(e))break;l=t[0],e=e.substring(l.length);let s=t[2].split("\n",1)[0].replace(/^\t+/,(e=>" ".repeat(3*e.length))),c=e.split("\n",1)[0],h=0;this.options.pedantic?(h=2,o=s.trimStart()):(h=t[2].search(/[^ ]/),h=h>4?1:h,o=s.slice(h),h+=t[1].length);let p=!1;if(!s&&/^ *$/.test(c)&&(l+=c+"\n",e=e.substring(c.length+1),n=!0),!n){const t=new RegExp(`^ {0,${Math.min(3,h-1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ \t][^\\n]*)?(?:\\n|$))`),n=new RegExp(`^ {0,${Math.min(3,h-1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`),r=new RegExp(`^ {0,${Math.min(3,h-1)}}(?:\`\`\`|~~~)`),i=new RegExp(`^ {0,${Math.min(3,h-1)}}#`);for(;e;){const a=e.split("\n",1)[0];if(c=a,this.options.pedantic&&(c=c.replace(/^ {1,4}(?=( {4})*[^ ])/g,"  ")),r.test(c))break;if(i.test(c))break;if(t.test(c))break;if(n.test(e))break;if(c.search(/[^ ]/)>=h||!c.trim())o+="\n"+c.slice(h);else{if(p)break;if(s.search(/[^ ]/)>=4)break;if(r.test(s))break;if(i.test(s))break;if(n.test(s))break;o+="\n"+c}p||c.trim()||(p=!0),l+=a+"\n",e=e.substring(a.length+1),s=c.slice(h)}}r.loose||(a?r.loose=!0:/\n *\n *$/.test(l)&&(a=!0));let u,k=null;this.options.gfm&&(k=/^\[[ xX]\] /.exec(o),k&&(u="[ ] "!==k[0],o=o.replace(/^\[[ xX]\] +/,""))),r.items.push({type:"list_item",raw:l,task:!!k,checked:u,loose:!1,text:o,tokens:[]}),r.raw+=l}r.items[r.items.length-1].raw=l.trimEnd(),r.items[r.items.length-1].text=o.trimEnd(),r.raw=r.raw.trimEnd();for(let e=0;e<r.items.length;e++)if(this.lexer.state.top=!1,r.items[e].tokens=this.lexer.blockTokens(r.items[e].text,[]),!r.loose){const t=r.items[e].tokens.filter((e=>"space"===e.type)),n=t.length>0&&t.some((e=>/\n.*\n/.test(e.raw)));r.loose=n}if(r.loose)for(let e=0;e<r.items.length;e++)r.items[e].loose=!0;return r}}html(e){const t=this.rules.block.html.exec(e);if(t){return{type:"html",block:!0,raw:t[0],pre:"pre"===t[1]||"script"===t[1]||"style"===t[1],text:t[0]}}}def(e){const t=this.rules.block.def.exec(e);if(t){const e=t[1].toLowerCase().replace(/\s+/g," "),n=t[2]?t[2].replace(/^<(.*)>$/,"$1").replace(this.rules.inline.anyPunctuation,"$1"):"",s=t[3]?t[3].substring(1,t[3].length-1).replace(this.rules.inline.anyPunctuation,"$1"):t[3];return{type:"def",tag:e,raw:t[0],href:n,title:s}}}table(e){const t=this.rules.block.table.exec(e);if(!t)return;if(!/[:|]/.test(t[2]))return;const n=d(t[1]),s=t[2].replace(/^\||\| *$/g,"").split("|"),r=t[3]&&t[3].trim()?t[3].replace(/\n[ \t]*$/,"").split("\n"):[],i={type:"table",raw:t[0],header:[],align:[],rows:[]};if(n.length===s.length){for(const e of s)/^ *-+: *$/.test(e)?i.align.push("right"):/^ *:-+: *$/.test(e)?i.align.push("center"):/^ *:-+ *$/.test(e)?i.align.push("left"):i.align.push(null);for(const e of n)i.header.push({text:e,tokens:this.lexer.inline(e)});for(const e of r)i.rows.push(d(e,i.header.length).map((e=>({text:e,tokens:this.lexer.inline(e)}))));return i}}lheading(e){const t=this.rules.block.lheading.exec(e);if(t)return{type:"heading",raw:t[0],depth:"="===t[2].charAt(0)?1:2,text:t[1],tokens:this.lexer.inline(t[1])}}paragraph(e){const t=this.rules.block.paragraph.exec(e);if(t){const e="\n"===t[1].charAt(t[1].length-1)?t[1].slice(0,-1):t[1];return{type:"paragraph",raw:t[0],text:e,tokens:this.lexer.inline(e)}}}text(e){const t=this.rules.block.text.exec(e);if(t)return{type:"text",raw:t[0],text:t[0],tokens:this.lexer.inline(t[0])}}escape(e){const t=this.rules.inline.escape.exec(e);if(t)return{type:"escape",raw:t[0],text:c(t[1])}}tag(e){const t=this.rules.inline.tag.exec(e);if(t)return!this.lexer.state.inLink&&/^<a /i.test(t[0])?this.lexer.state.inLink=!0:this.lexer.state.inLink&&/^<\/a>/i.test(t[0])&&(this.lexer.state.inLink=!1),!this.lexer.state.inRawBlock&&/^<(pre|code|kbd|script)(\s|>)/i.test(t[0])?this.lexer.state.inRawBlock=!0:this.lexer.state.inRawBlock&&/^<\/(pre|code|kbd|script)(\s|>)/i.test(t[0])&&(this.lexer.state.inRawBlock=!1),{type:"html",raw:t[0],inLink:this.lexer.state.inLink,inRawBlock:this.lexer.state.inRawBlock,block:!1,text:t[0]}}link(e){const t=this.rules.inline.link.exec(e);if(t){const e=t[2].trim();if(!this.options.pedantic&&/^</.test(e)){if(!/>$/.test(e))return;const t=x(e.slice(0,-1),"\\");if((e.length-t.length)%2==0)return}else{const e=function(e,t){if(-1===e.indexOf(t[1]))return-1;let n=0;for(let s=0;s<e.length;s++)if("\\"===e[s])s++;else if(e[s]===t[0])n++;else if(e[s]===t[1]&&(n--,n<0))return s;return-1}(t[2],"()");if(e>-1){const n=(0===t[0].indexOf("!")?5:4)+t[1].length+e;t[2]=t[2].substring(0,e),t[0]=t[0].substring(0,n).trim(),t[3]=""}}let n=t[2],s="";if(this.options.pedantic){const e=/^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(n);e&&(n=e[1],s=e[3])}else s=t[3]?t[3].slice(1,-1):"";return n=n.trim(),/^</.test(n)&&(n=this.options.pedantic&&!/>$/.test(e)?n.slice(1):n.slice(1,-1)),b(t,{href:n?n.replace(this.rules.inline.anyPunctuation,"$1"):n,title:s?s.replace(this.rules.inline.anyPunctuation,"$1"):s},t[0],this.lexer)}}reflink(e,t){let n;if((n=this.rules.inline.reflink.exec(e))||(n=this.rules.inline.nolink.exec(e))){const e=t[(n[2]||n[1]).replace(/\s+/g," ").toLowerCase()];if(!e){const e=n[0].charAt(0);return{type:"text",raw:e,text:e}}return b(n,e,n[0],this.lexer)}}emStrong(e,t,n=""){let s=this.rules.inline.emStrongLDelim.exec(e);if(!s)return;if(s[3]&&n.match(/[\p{L}\p{N}]/u))return;if(!(s[1]||s[2]||"")||!n||this.rules.inline.punctuation.exec(n)){const n=[...s[0]].length-1;let r,i,l=n,o=0;const a="*"===s[0][0]?this.rules.inline.emStrongRDelimAst:this.rules.inline.emStrongRDelimUnd;for(a.lastIndex=0,t=t.slice(-1*e.length+n);null!=(s=a.exec(t));){if(r=s[1]||s[2]||s[3]||s[4]||s[5]||s[6],!r)continue;if(i=[...r].length,s[3]||s[4]){l+=i;continue}if((s[5]||s[6])&&n%3&&!((n+i)%3)){o+=i;continue}if(l-=i,l>0)continue;i=Math.min(i,i+l+o);const t=[...s[0]][0].length,a=e.slice(0,n+s.index+t+i);if(Math.min(n,i)%2){const e=a.slice(1,-1);return{type:"em",raw:a,text:e,tokens:this.lexer.inlineTokens(e)}}const c=a.slice(2,-2);return{type:"strong",raw:a,text:c,tokens:this.lexer.inlineTokens(c)}}}}codespan(e){const t=this.rules.inline.code.exec(e);if(t){let e=t[2].replace(/\n/g," ");const n=/[^ ]/.test(e),s=/^ /.test(e)&&/ $/.test(e);return n&&s&&(e=e.substring(1,e.length-1)),e=c(e,!0),{type:"codespan",raw:t[0],text:e}}}br(e){const t=this.rules.inline.br.exec(e);if(t)return{type:"br",raw:t[0]}}del(e){const t=this.rules.inline.del.exec(e);if(t)return{type:"del",raw:t[0],text:t[2],tokens:this.lexer.inlineTokens(t[2])}}autolink(e){const t=this.rules.inline.autolink.exec(e);if(t){let e,n;return"@"===t[2]?(e=c(t[1]),n="mailto:"+e):(e=c(t[1]),n=e),{type:"link",raw:t[0],text:e,href:n,tokens:[{type:"text",raw:e,text:e}]}}}url(e){let t;if(t=this.rules.inline.url.exec(e)){let e,n;if("@"===t[2])e=c(t[0]),n="mailto:"+e;else{let s;do{s=t[0],t[0]=this.rules.inline._backpedal.exec(t[0])?.[0]??""}while(s!==t[0]);e=c(t[0]),n="www."===t[1]?"http://"+t[0]:t[0]}return{type:"link",raw:t[0],text:e,href:n,tokens:[{type:"text",raw:e,text:e}]}}}inlineText(e){const t=this.rules.inline.text.exec(e);if(t){let e;return e=this.lexer.state.inRawBlock?t[0]:c(t[0]),{type:"text",raw:t[0],text:e}}}}const m=/^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,y=/(?:[*+-]|\d{1,9}[.)])/,$=k(/^(?!bull |blockCode|fences|blockquote|heading|html)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g,y).replace(/blockCode/g,/ {4}/).replace(/fences/g,/ {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g,/ {0,3}>/).replace(/heading/g,/ {0,3}#{1,6}/).replace(/html/g,/ {0,3}<[^\n>]+>\n/).getRegex(),z=/^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,T=/(?!\s*\])(?:\\.|[^\[\]\\])+/,R=k(/^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/).replace("label",T).replace("title",/(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex(),_=k(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g,y).getRegex(),A="address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul",S=/<!--(?:-?>|[\s\S]*?(?:-->|$))/,I=k("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))","i").replace("comment",S).replace("tag",A).replace("attribute",/ +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(),E=k(z).replace("hr",m).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("|lheading","").replace("|table","").replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",A).getRegex(),q={blockquote:k(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph",E).getRegex(),code:/^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,def:R,fences:/^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,heading:/^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,hr:m,html:I,lheading:$,list:_,newline:/^(?: *(?:\n|$))+/,paragraph:E,table:f,text:/^[^\n]+/},Z=k("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr",m).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("blockquote"," {0,3}>").replace("code"," {4}[^\\n]").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",A).getRegex(),L={...q,table:Z,paragraph:k(z).replace("hr",m).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("|lheading","").replace("table",Z).replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list"," {0,3}(?:[*+-]|1[.)]) ").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",A).getRegex()},P={...q,html:k("^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))").replace("comment",S).replace(/tag/g,"(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),def:/^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,heading:/^(#{1,6})(.*)(?:\n+|$)/,fences:f,lheading:/^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,paragraph:k(z).replace("hr",m).replace("heading"," *#{1,6} *[^\n]").replace("lheading",$).replace("|table","").replace("blockquote"," {0,3}>").replace("|fences","").replace("|list","").replace("|html","").replace("|tag","").getRegex()},Q=/^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,v=/^( {2,}|\\)\n(?!\s*$)/,B="\\p{P}\\p{S}",C=k(/^((?![*_])[\spunctuation])/,"u").replace(/punctuation/g,B).getRegex(),M=k(/^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/,"u").replace(/punct/g,B).getRegex(),O=k("^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)[punct](\\*+)(?=[\\s]|$)|[^punct\\s](\\*+)(?!\\*)(?=[punct\\s]|$)|(?!\\*)[punct\\s](\\*+)(?=[^punct\\s])|[\\s](\\*+)(?!\\*)(?=[punct])|(?!\\*)[punct](\\*+)(?!\\*)(?=[punct])|[^punct\\s](\\*+)(?=[^punct\\s])","gu").replace(/punct/g,B).getRegex(),D=k("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\\s]|$)|[^punct\\s](_+)(?!_)(?=[punct\\s]|$)|(?!_)[punct\\s](_+)(?=[^punct\\s])|[\\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])","gu").replace(/punct/g,B).getRegex(),j=k(/\\([punct])/,"gu").replace(/punct/g,B).getRegex(),H=k(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme",/[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email",/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex(),U=k(S).replace("(?:--\x3e|$)","--\x3e").getRegex(),X=k("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment",U).replace("attribute",/\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex(),F=/(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/,N=k(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label",F).replace("href",/<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title",/"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex(),G=k(/^!?\[(label)\]\[(ref)\]/).replace("label",F).replace("ref",T).getRegex(),J=k(/^!?\[(ref)\](?:\[\])?/).replace("ref",T).getRegex(),K={_backpedal:f,anyPunctuation:j,autolink:H,blockSkip:/\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g,br:v,code:/^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,del:f,emStrongLDelim:M,emStrongRDelimAst:O,emStrongRDelimUnd:D,escape:Q,link:N,nolink:J,punctuation:C,reflink:G,reflinkSearch:k("reflink|nolink(?!\\()","g").replace("reflink",G).replace("nolink",J).getRegex(),tag:X,text:/^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,url:f},V={...K,link:k(/^!?\[(label)\]\((.*?)\)/).replace("label",F).getRegex(),reflink:k(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label",F).getRegex()},W={...K,escape:k(Q).replace("])","~|])").getRegex(),url:k(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,"i").replace("email",/[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),_backpedal:/(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,del:/^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,text:/^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/},Y={...W,br:k(v).replace("{2,}","*").getRegex(),text:k(W.text).replace("\\b_","\\b_| {2,}\\n").replace(/\{2,\}/g,"*").getRegex()},ee={normal:q,gfm:L,pedantic:P},te={normal:K,gfm:W,breaks:Y,pedantic:V};class ne{tokens;options;state;tokenizer;inlineQueue;constructor(t){this.tokens=[],this.tokens.links=Object.create(null),this.options=t||e.defaults,this.options.tokenizer=this.options.tokenizer||new w,this.tokenizer=this.options.tokenizer,this.tokenizer.options=this.options,this.tokenizer.lexer=this,this.inlineQueue=[],this.state={inLink:!1,inRawBlock:!1,top:!0};const n={block:ee.normal,inline:te.normal};this.options.pedantic?(n.block=ee.pedantic,n.inline=te.pedantic):this.options.gfm&&(n.block=ee.gfm,this.options.breaks?n.inline=te.breaks:n.inline=te.gfm),this.tokenizer.rules=n}static get rules(){return{block:ee,inline:te}}static lex(e,t){return new ne(t).lex(e)}static lexInline(e,t){return new ne(t).inlineTokens(e)}lex(e){e=e.replace(/\r\n|\r/g,"\n"),this.blockTokens(e,this.tokens);for(let e=0;e<this.inlineQueue.length;e++){const t=this.inlineQueue[e];this.inlineTokens(t.src,t.tokens)}return this.inlineQueue=[],this.tokens}blockTokens(e,t=[]){let n,s,r,i;for(e=this.options.pedantic?e.replace(/\t/g,"    ").replace(/^ +$/gm,""):e.replace(/^( *)(\t+)/gm,((e,t,n)=>t+"    ".repeat(n.length)));e;)if(!(this.options.extensions&&this.options.extensions.block&&this.options.extensions.block.some((s=>!!(n=s.call({lexer:this},e,t))&&(e=e.substring(n.raw.length),t.push(n),!0)))))if(n=this.tokenizer.space(e))e=e.substring(n.raw.length),1===n.raw.length&&t.length>0?t[t.length-1].raw+="\n":t.push(n);else if(n=this.tokenizer.code(e))e=e.substring(n.raw.length),s=t[t.length-1],!s||"paragraph"!==s.type&&"text"!==s.type?t.push(n):(s.raw+="\n"+n.raw,s.text+="\n"+n.text,this.inlineQueue[this.inlineQueue.length-1].src=s.text);else if(n=this.tokenizer.fences(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.heading(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.hr(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.blockquote(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.list(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.html(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.def(e))e=e.substring(n.raw.length),s=t[t.length-1],!s||"paragraph"!==s.type&&"text"!==s.type?this.tokens.links[n.tag]||(this.tokens.links[n.tag]={href:n.href,title:n.title}):(s.raw+="\n"+n.raw,s.text+="\n"+n.raw,this.inlineQueue[this.inlineQueue.length-1].src=s.text);else if(n=this.tokenizer.table(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.lheading(e))e=e.substring(n.raw.length),t.push(n);else{if(r=e,this.options.extensions&&this.options.extensions.startBlock){let t=1/0;const n=e.slice(1);let s;this.options.extensions.startBlock.forEach((e=>{s=e.call({lexer:this},n),"number"==typeof s&&s>=0&&(t=Math.min(t,s))})),t<1/0&&t>=0&&(r=e.substring(0,t+1))}if(this.state.top&&(n=this.tokenizer.paragraph(r)))s=t[t.length-1],i&&"paragraph"===s.type?(s.raw+="\n"+n.raw,s.text+="\n"+n.text,this.inlineQueue.pop(),this.inlineQueue[this.inlineQueue.length-1].src=s.text):t.push(n),i=r.length!==e.length,e=e.substring(n.raw.length);else if(n=this.tokenizer.text(e))e=e.substring(n.raw.length),s=t[t.length-1],s&&"text"===s.type?(s.raw+="\n"+n.raw,s.text+="\n"+n.text,this.inlineQueue.pop(),this.inlineQueue[this.inlineQueue.length-1].src=s.text):t.push(n);else if(e){const t="Infinite loop on byte: "+e.charCodeAt(0);if(this.options.silent){console.error(t);break}throw new Error(t)}}return this.state.top=!0,t}inline(e,t=[]){return this.inlineQueue.push({src:e,tokens:t}),t}inlineTokens(e,t=[]){let n,s,r,i,l,o,a=e;if(this.tokens.links){const e=Object.keys(this.tokens.links);if(e.length>0)for(;null!=(i=this.tokenizer.rules.inline.reflinkSearch.exec(a));)e.includes(i[0].slice(i[0].lastIndexOf("[")+1,-1))&&(a=a.slice(0,i.index)+"["+"a".repeat(i[0].length-2)+"]"+a.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex))}for(;null!=(i=this.tokenizer.rules.inline.blockSkip.exec(a));)a=a.slice(0,i.index)+"["+"a".repeat(i[0].length-2)+"]"+a.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);for(;null!=(i=this.tokenizer.rules.inline.anyPunctuation.exec(a));)a=a.slice(0,i.index)+"++"+a.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);for(;e;)if(l||(o=""),l=!1,!(this.options.extensions&&this.options.extensions.inline&&this.options.extensions.inline.some((s=>!!(n=s.call({lexer:this},e,t))&&(e=e.substring(n.raw.length),t.push(n),!0)))))if(n=this.tokenizer.escape(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.tag(e))e=e.substring(n.raw.length),s=t[t.length-1],s&&"text"===n.type&&"text"===s.type?(s.raw+=n.raw,s.text+=n.text):t.push(n);else if(n=this.tokenizer.link(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.reflink(e,this.tokens.links))e=e.substring(n.raw.length),s=t[t.length-1],s&&"text"===n.type&&"text"===s.type?(s.raw+=n.raw,s.text+=n.text):t.push(n);else if(n=this.tokenizer.emStrong(e,a,o))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.codespan(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.br(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.del(e))e=e.substring(n.raw.length),t.push(n);else if(n=this.tokenizer.autolink(e))e=e.substring(n.raw.length),t.push(n);else if(this.state.inLink||!(n=this.tokenizer.url(e))){if(r=e,this.options.extensions&&this.options.extensions.startInline){let t=1/0;const n=e.slice(1);let s;this.options.extensions.startInline.forEach((e=>{s=e.call({lexer:this},n),"number"==typeof s&&s>=0&&(t=Math.min(t,s))})),t<1/0&&t>=0&&(r=e.substring(0,t+1))}if(n=this.tokenizer.inlineText(r))e=e.substring(n.raw.length),"_"!==n.raw.slice(-1)&&(o=n.raw.slice(-1)),l=!0,s=t[t.length-1],s&&"text"===s.type?(s.raw+=n.raw,s.text+=n.text):t.push(n);else if(e){const t="Infinite loop on byte: "+e.charCodeAt(0);if(this.options.silent){console.error(t);break}throw new Error(t)}}else e=e.substring(n.raw.length),t.push(n);return t}}class se{options;constructor(t){this.options=t||e.defaults}code(e,t,n){const s=(t||"").match(/^\S*/)?.[0];return e=e.replace(/\n$/,"")+"\n",s?'<pre><code class="language-'+c(s)+'">'+(n?e:c(e,!0))+"</code></pre>\n":"<pre><code>"+(n?e:c(e,!0))+"</code></pre>\n"}blockquote(e){return`<blockquote>\n${e}</blockquote>\n`}html(e,t){return e}heading(e,t,n){return`<h${t}>${e}</h${t}>\n`}hr(){return"<hr>\n"}list(e,t,n){const s=t?"ol":"ul";return"<"+s+(t&&1!==n?' start="'+n+'"':"")+">\n"+e+"</"+s+">\n"}listitem(e,t,n){return`<li>${e}</li>\n`}checkbox(e){return"<input "+(e?'checked="" ':"")+'disabled="" type="checkbox">'}paragraph(e){return`<p>${e}</p>\n`}table(e,t){return t&&(t=`<tbody>${t}</tbody>`),"<table>\n<thead>\n"+e+"</thead>\n"+t+"</table>\n"}tablerow(e){return`<tr>\n${e}</tr>\n`}tablecell(e,t){const n=t.header?"th":"td";return(t.align?`<${n} align="${t.align}">`:`<${n}>`)+e+`</${n}>\n`}strong(e){return`<strong>${e}</strong>`}em(e){return`<em>${e}</em>`}codespan(e){return`<code>${e}</code>`}br(){return"<br>"}del(e){return`<del>${e}</del>`}link(e,t,n){const s=g(e);if(null===s)return n;let r='<a href="'+(e=s)+'"';return t&&(r+=' title="'+t+'"'),r+=">"+n+"</a>",r}image(e,t,n){const s=g(e);if(null===s)return n;let r=`<img src="${e=s}" alt="${n}"`;return t&&(r+=` title="${t}"`),r+=">",r}text(e){return e}}class re{strong(e){return e}em(e){return e}codespan(e){return e}del(e){return e}html(e){return e}text(e){return e}link(e,t,n){return""+n}image(e,t,n){return""+n}br(){return""}}class ie{options;renderer;textRenderer;constructor(t){this.options=t||e.defaults,this.options.renderer=this.options.renderer||new se,this.renderer=this.options.renderer,this.renderer.options=this.options,this.textRenderer=new re}static parse(e,t){return new ie(t).parse(e)}static parseInline(e,t){return new ie(t).parseInline(e)}parse(e,t=!0){let n="";for(let s=0;s<e.length;s++){const r=e[s];if(this.options.extensions&&this.options.extensions.renderers&&this.options.extensions.renderers[r.type]){const e=r,t=this.options.extensions.renderers[e.type].call({parser:this},e);if(!1!==t||!["space","hr","heading","code","table","blockquote","list","html","paragraph","text"].includes(e.type)){n+=t||"";continue}}switch(r.type){case"space":continue;case"hr":n+=this.renderer.hr();continue;case"heading":{const e=r;n+=this.renderer.heading(this.parseInline(e.tokens),e.depth,p(this.parseInline(e.tokens,this.textRenderer)));continue}case"code":{const e=r;n+=this.renderer.code(e.text,e.lang,!!e.escaped);continue}case"table":{const e=r;let t="",s="";for(let t=0;t<e.header.length;t++)s+=this.renderer.tablecell(this.parseInline(e.header[t].tokens),{header:!0,align:e.align[t]});t+=this.renderer.tablerow(s);let i="";for(let t=0;t<e.rows.length;t++){const n=e.rows[t];s="";for(let t=0;t<n.length;t++)s+=this.renderer.tablecell(this.parseInline(n[t].tokens),{header:!1,align:e.align[t]});i+=this.renderer.tablerow(s)}n+=this.renderer.table(t,i);continue}case"blockquote":{const e=r,t=this.parse(e.tokens);n+=this.renderer.blockquote(t);continue}case"list":{const e=r,t=e.ordered,s=e.start,i=e.loose;let l="";for(let t=0;t<e.items.length;t++){const n=e.items[t],s=n.checked,r=n.task;let o="";if(n.task){const e=this.renderer.checkbox(!!s);i?n.tokens.length>0&&"paragraph"===n.tokens[0].type?(n.tokens[0].text=e+" "+n.tokens[0].text,n.tokens[0].tokens&&n.tokens[0].tokens.length>0&&"text"===n.tokens[0].tokens[0].type&&(n.tokens[0].tokens[0].text=e+" "+n.tokens[0].tokens[0].text)):n.tokens.unshift({type:"text",text:e+" "}):o+=e+" "}o+=this.parse(n.tokens,i),l+=this.renderer.listitem(o,r,!!s)}n+=this.renderer.list(l,t,s);continue}case"html":{const e=r;n+=this.renderer.html(e.text,e.block);continue}case"paragraph":{const e=r;n+=this.renderer.paragraph(this.parseInline(e.tokens));continue}case"text":{let i=r,l=i.tokens?this.parseInline(i.tokens):i.text;for(;s+1<e.length&&"text"===e[s+1].type;)i=e[++s],l+="\n"+(i.tokens?this.parseInline(i.tokens):i.text);n+=t?this.renderer.paragraph(l):l;continue}default:{const e='Token with "'+r.type+'" type was not found.';if(this.options.silent)return console.error(e),"";throw new Error(e)}}}return n}parseInline(e,t){t=t||this.renderer;let n="";for(let s=0;s<e.length;s++){const r=e[s];if(this.options.extensions&&this.options.extensions.renderers&&this.options.extensions.renderers[r.type]){const e=this.options.extensions.renderers[r.type].call({parser:this},r);if(!1!==e||!["escape","html","link","image","strong","em","codespan","br","del","text"].includes(r.type)){n+=e||"";continue}}switch(r.type){case"escape":{const e=r;n+=t.text(e.text);break}case"html":{const e=r;n+=t.html(e.text);break}case"link":{const e=r;n+=t.link(e.href,e.title,this.parseInline(e.tokens,t));break}case"image":{const e=r;n+=t.image(e.href,e.title,e.text);break}case"strong":{const e=r;n+=t.strong(this.parseInline(e.tokens,t));break}case"em":{const e=r;n+=t.em(this.parseInline(e.tokens,t));break}case"codespan":{const e=r;n+=t.codespan(e.text);break}case"br":n+=t.br();break;case"del":{const e=r;n+=t.del(this.parseInline(e.tokens,t));break}case"text":{const e=r;n+=t.text(e.text);break}default:{const e='Token with "'+r.type+'" type was not found.';if(this.options.silent)return console.error(e),"";throw new Error(e)}}}return n}}class le{options;constructor(t){this.options=t||e.defaults}static passThroughHooks=new Set(["preprocess","postprocess","processAllTokens"]);preprocess(e){return e}postprocess(e){return e}processAllTokens(e){return e}}class oe{defaults={async:!1,breaks:!1,extensions:null,gfm:!0,hooks:null,pedantic:!1,renderer:null,silent:!1,tokenizer:null,walkTokens:null};options=this.setOptions;parse=this.#e(ne.lex,ie.parse);parseInline=this.#e(ne.lexInline,ie.parseInline);Parser=ie;Renderer=se;TextRenderer=re;Lexer=ne;Tokenizer=w;Hooks=le;constructor(...e){this.use(...e)}walkTokens(e,t){let n=[];for(const s of e)switch(n=n.concat(t.call(this,s)),s.type){case"table":{const e=s;for(const s of e.header)n=n.concat(this.walkTokens(s.tokens,t));for(const s of e.rows)for(const e of s)n=n.concat(this.walkTokens(e.tokens,t));break}case"list":{const e=s;n=n.concat(this.walkTokens(e.items,t));break}default:{const e=s;this.defaults.extensions?.childTokens?.[e.type]?this.defaults.extensions.childTokens[e.type].forEach((s=>{const r=e[s].flat(1/0);n=n.concat(this.walkTokens(r,t))})):e.tokens&&(n=n.concat(this.walkTokens(e.tokens,t)))}}return n}use(...e){const t=this.defaults.extensions||{renderers:{},childTokens:{}};return e.forEach((e=>{const n={...e};if(n.async=this.defaults.async||n.async||!1,e.extensions&&(e.extensions.forEach((e=>{if(!e.name)throw new Error("extension name required");if("renderer"in e){const n=t.renderers[e.name];t.renderers[e.name]=n?function(...t){let s=e.renderer.apply(this,t);return!1===s&&(s=n.apply(this,t)),s}:e.renderer}if("tokenizer"in e){if(!e.level||"block"!==e.level&&"inline"!==e.level)throw new Error("extension level must be 'block' or 'inline'");const n=t[e.level];n?n.unshift(e.tokenizer):t[e.level]=[e.tokenizer],e.start&&("block"===e.level?t.startBlock?t.startBlock.push(e.start):t.startBlock=[e.start]:"inline"===e.level&&(t.startInline?t.startInline.push(e.start):t.startInline=[e.start]))}"childTokens"in e&&e.childTokens&&(t.childTokens[e.name]=e.childTokens)})),n.extensions=t),e.renderer){const t=this.defaults.renderer||new se(this.defaults);for(const n in e.renderer){if(!(n in t))throw new Error(`renderer '${n}' does not exist`);if("options"===n)continue;const s=n,r=e.renderer[s],i=t[s];t[s]=(...e)=>{let n=r.apply(t,e);return!1===n&&(n=i.apply(t,e)),n||""}}n.renderer=t}if(e.tokenizer){const t=this.defaults.tokenizer||new w(this.defaults);for(const n in e.tokenizer){if(!(n in t))throw new Error(`tokenizer '${n}' does not exist`);if(["options","rules","lexer"].includes(n))continue;const s=n,r=e.tokenizer[s],i=t[s];t[s]=(...e)=>{let n=r.apply(t,e);return!1===n&&(n=i.apply(t,e)),n}}n.tokenizer=t}if(e.hooks){const t=this.defaults.hooks||new le;for(const n in e.hooks){if(!(n in t))throw new Error(`hook '${n}' does not exist`);if("options"===n)continue;const s=n,r=e.hooks[s],i=t[s];le.passThroughHooks.has(n)?t[s]=e=>{if(this.defaults.async)return Promise.resolve(r.call(t,e)).then((e=>i.call(t,e)));const n=r.call(t,e);return i.call(t,n)}:t[s]=(...e)=>{let n=r.apply(t,e);return!1===n&&(n=i.apply(t,e)),n}}n.hooks=t}if(e.walkTokens){const t=this.defaults.walkTokens,s=e.walkTokens;n.walkTokens=function(e){let n=[];return n.push(s.call(this,e)),t&&(n=n.concat(t.call(this,e))),n}}this.defaults={...this.defaults,...n}})),this}setOptions(e){return this.defaults={...this.defaults,...e},this}lexer(e,t){return ne.lex(e,t??this.defaults)}parser(e,t){return ie.parse(e,t??this.defaults)}#e(e,t){return(n,s)=>{const r={...s},i={...this.defaults,...r};!0===this.defaults.async&&!1===r.async&&(i.silent||console.warn("marked(): The async option was set to true by an extension. The async: false option sent to parse will be ignored."),i.async=!0);const l=this.#t(!!i.silent,!!i.async);if(null==n)return l(new Error("marked(): input parameter is undefined or null"));if("string"!=typeof n)return l(new Error("marked(): input parameter is of type "+Object.prototype.toString.call(n)+", string expected"));if(i.hooks&&(i.hooks.options=i),i.async)return Promise.resolve(i.hooks?i.hooks.preprocess(n):n).then((t=>e(t,i))).then((e=>i.hooks?i.hooks.processAllTokens(e):e)).then((e=>i.walkTokens?Promise.all(this.walkTokens(e,i.walkTokens)).then((()=>e)):e)).then((e=>t(e,i))).then((e=>i.hooks?i.hooks.postprocess(e):e)).catch(l);try{i.hooks&&(n=i.hooks.preprocess(n));let s=e(n,i);i.hooks&&(s=i.hooks.processAllTokens(s)),i.walkTokens&&this.walkTokens(s,i.walkTokens);let r=t(s,i);return i.hooks&&(r=i.hooks.postprocess(r)),r}catch(e){return l(e)}}}#t(e,t){return n=>{if(n.message+="\nPlease report this to https://github.com/markedjs/marked.",e){const e="<p>An error occurred:</p><pre>"+c(n.message+"",!0)+"</pre>";return t?Promise.resolve(e):e}if(t)return Promise.reject(n);throw n}}}const ae=new oe;function ce(e,t){return ae.parse(e,t)}ce.options=ce.setOptions=function(e){return ae.setOptions(e),ce.defaults=ae.defaults,n(ce.defaults),ce},ce.getDefaults=t,ce.defaults=e.defaults,ce.use=function(...e){return ae.use(...e),ce.defaults=ae.defaults,n(ce.defaults),ce},ce.walkTokens=function(e,t){return ae.walkTokens(e,t)},ce.parseInline=ae.parseInline,ce.Parser=ie,ce.parser=ie.parse,ce.Renderer=se,ce.TextRenderer=re,ce.Lexer=ne,ce.lexer=ne.lex,ce.Tokenizer=w,ce.Hooks=le,ce.parse=ce;const he=ce.options,pe=ce.setOptions,ue=ce.use,ke=ce.walkTokens,ge=ce.parseInline,fe=ce,de=ie.parse,xe=ne.lex;e.Hooks=le,e.Lexer=ne,e.Marked=oe,e.Parser=ie,e.Renderer=se,e.TextRenderer=re,e.Tokenizer=w,e.getDefaults=t,e.lexer=xe,e.marked=ce,e.options=he,e.parse=fe,e.parseInline=ge,e.parser=de,e.setOptions=pe,e.use=ue,e.walkTokens=ke}));
+
+</script>
+<script>
+(function () {
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const $ = id => document.getElementById(id);
+  const fold = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  const done = new Set(store.get('ccap-done', []));
+  const cards = [];
+  const docs = {};
+
+  function buildDoc(key, label) {
+    const root = $('view-' + key);
+    let html = marked.parse($('src-' + key).textContent);
+    html = html.replace(/\bQ(\d{1,3})\b/g, '<span class="q">Q$1</span>');
+    const tmp = document.createElement('div'); tmp.innerHTML = html;
+    const parts = []; let cur = null;
+    [...tmp.children].forEach(el => {
+      if (el.tagName === 'H1' || el.tagName === 'HR') return;
+      if (el.tagName === 'BLOCKQUOTE' && !cur) { root.querySelector('[data-intro]').textContent = el.textContent.trim(); return; }
+      if (el.tagName === 'H2') {
+        const t = el.textContent.trim();
+        const m = t.match(/^PHẦN\s+([0-9A-Z]+)\s*[–-]\s*(.*)$/i);
+        cur = { num: m ? m[1] : String(parts.length), title: m ? m[2] : t, nodes: [] };
+        parts.push(cur); return;
+      }
+      if (cur) cur.nodes.push(el);
+    });
+    const partsEl = root.querySelector('[data-parts]');
+    parts.forEach(p => {
+      p.id = key + '-' + p.num;
+      const s = document.createElement('section'); s.className = 'part'; s.id = p.id;
+      s.innerHTML = '<div class="part-head"><h2><small>Phần ' + p.num + '</small>' + p.title + '</h2><button class="done-btn" type="button"></button></div><div class="body"></div>';
+      const body = s.querySelector('.body');
+      p.nodes.forEach(n => {
+        if (n.tagName === 'TABLE') {
+          const ths = [...n.querySelectorAll('thead th')].map(x => x.textContent.trim());
+          if (ths.length === 2) {
+            let prev = n.previousElementSibling;
+            while (prev && prev.tagName !== 'H3') prev = prev.previousElementSibling;
+            const sub = prev ? prev.textContent.trim() : '';
+            n.querySelectorAll('tbody tr').forEach(tr => {
+              const td = tr.querySelectorAll('td');
+              if (td.length === 2) cards.push({ id: p.id + '|' + td[0].textContent.trim(), deck: label + ' · Phần ' + p.num + ' – ' + p.title, sub, fl: ths[0], bl: ths[1], front: td[0].innerHTML, back: td[1].innerHTML });
+            });
+          }
+          const w = document.createElement('div'); w.className = 'tbl'; w.appendChild(n); body.appendChild(w);
+        } else body.appendChild(n);
+      });
+      p.el = s; p.body = body; p.orig = body.innerHTML;
+      partsEl.appendChild(s);
+      s.querySelector('.done-btn').addEventListener('click', () => { done.has(p.id) ? done.delete(p.id) : done.add(p.id); store.set('ccap-done', [...done]); paintDone(); });
+    });
+    root.querySelectorAll('[data-toc]').forEach(ol => {
+      parts.forEach(p => {
+        const li = document.createElement('li');
+        li.innerHTML = '<a href="#' + p.id + '" data-id="' + p.id + '"><span class="n">' + p.num.padStart(2, '0') + '</span><span>' + p.title + '</span><span class="ok">✓</span></a>';
+        ol.appendChild(li);
+      });
+      ol.addEventListener('click', e => {
+        const a = e.target.closest('a'); if (!a) return; e.preventDefault();
+        $(a.dataset.id).scrollIntoView({ behavior: 'smooth' });
+        const d = root.querySelector('details.toc-m'); if (d) d.open = false;
+      });
+    });
+    docs[key] = { root, parts };
+  }
+  buildDoc('delta', 'Trọng tâm');
+  buildDoc('base', 'Nguyên lý');
+
+  let view = 'delta';
+  function paintDone() {
+    Object.values(docs).forEach(d => d.parts.forEach(p => {
+      const on = done.has(p.id);
+      p.el.classList.toggle('done', on);
+      p.el.querySelector('.done-btn').textContent = on ? '✓ Đã ôn' : 'Đánh dấu đã ôn';
+      d.root.querySelectorAll('a[data-id="' + p.id + '"]').forEach(a => a.classList.toggle('done', on));
+    }));
+    const d = docs[view]; if (!d) return;
+    const n = d.parts.filter(p => done.has(p.id)).length;
+    $('progTxt').textContent = n + '/' + d.parts.length + ' phần đã ôn';
+    $('progBar').style.width = (100 * n / d.parts.length) + '%';
+  }
+
+  // Search (applies to the active doc)
+  const qEl = $('q'); let tId;
+  qEl.addEventListener('input', () => { clearTimeout(tId); tId = setTimeout(runSearch, 150); });
+  function runSearch() {
+    const d = docs[view]; if (!d) return;
+    const q = qEl.value.trim(), fq = fold(q);
+    let hits = 0;
+    d.parts.forEach(p => {
+      p.body.innerHTML = p.orig;
+      const match = !q || fold(p.el.textContent).includes(fq);
+      p.el.hidden = !match;
+      d.root.querySelectorAll('a[data-id="' + p.id + '"]').forEach(a => a.classList.toggle('dim', !match));
+      if (q && match) { hits++; highlight(p.body, fq); }
+    });
+    d.root.querySelector('[data-nohit]').hidden = !q || hits > 0;
+  }
+  function highlight(root, fq) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = []; let n; while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(t => {
+      const raw = t.nodeValue;
+      const f = [...raw].map(c => fold(c).charAt(0) || c).join('');
+      if (f.length !== raw.length) return;
+      let idx = f.indexOf(fq); if (idx < 0) return;
+      const frag = document.createDocumentFragment(); let last = 0;
+      while (idx >= 0) {
+        frag.appendChild(document.createTextNode(raw.slice(last, idx)));
+        const m = document.createElement('mark'); m.textContent = raw.slice(idx, idx + fq.length); frag.appendChild(m);
+        last = idx + fq.length; idx = f.indexOf(fq, last);
+      }
+      frag.appendChild(document.createTextNode(raw.slice(last)));
+      t.parentNode.replaceChild(frag, t);
+    });
+  }
+
+  // Tabs
+  const tabs = [...document.querySelectorAll('.tabs button')];
+  function show(v) {
+    view = v;
+    tabs.forEach(b => b.setAttribute('aria-selected', b.dataset.view === v));
+    document.querySelectorAll('.view').forEach(el => el.hidden = el.id !== 'view-' + v);
+    const isDoc = !!docs[v];
+    $('searchBox').hidden = !isDoc; $('progWrap').hidden = !isDoc;
+    if (isDoc) { paintDone(); runSearch(); }
+    if (v === 'cards') renderCard();
+    if (v === 'quiz') renderQ();
+    store.set('ccap-view', v);
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(b => b.addEventListener('click', () => show(b.dataset.view)));
+
+  // Flashcards
+  const known = new Set(store.get('ccap-known', []));
+  const deckSel = $('deck');
+  const decks = [...new Set(cards.map(c => c.deck))];
+  const escH = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  deckSel.innerHTML = '<option value="">Tất cả bộ thẻ (' + cards.length + ')</option>' + decks.map(d => '<option>' + escH(d) + '</option>').join('');
+  let order = cards.map((_, i) => i), pos = 0, flipped = false, onlyNew = false;
+  const pool = () => order.filter(i => (!deckSel.value || cards[i].deck === deckSel.value) && (!onlyNew || !known.has(cards[i].id)));
+  function renderCard() {
+    const pl = pool();
+    const inDeck = cards.filter(c => !deckSel.value || c.deck === deckSel.value);
+    $('fcStats').textContent = 'Đã thuộc ' + inDeck.filter(c => known.has(c.id)).length + '/' + inDeck.length;
+    if (!pl.length) {
+      $('cDeck').textContent = ''; $('cFL').textContent = '';
+      $('cFront').textContent = 'Bạn đã thuộc hết thẻ trong bộ này.';
+      $('cBack').hidden = true;
+      $('cHint').textContent = 'Tắt "Chỉ thẻ chưa thuộc" hoặc chọn bộ khác để ôn tiếp.';
+      return;
+    }
+    if (pos >= pl.length) pos = 0; if (pos < 0) pos = pl.length - 1;
+    const c = cards[pl[pos]];
+    $('cDeck').textContent = c.deck + (c.sub ? ' › ' + c.sub : '') + (known.has(c.id) ? '  ✓' : '');
+    $('cFL').textContent = c.fl + ' · thẻ ' + (pos + 1) + '/' + pl.length;
+    $('cFront').innerHTML = c.front;
+    $('cBL').textContent = c.bl;
+    $('cBackTxt').innerHTML = c.back;
+    $('cBack').hidden = !flipped;
+    $('cHint').textContent = flipped ? 'Bạn nhớ đúng không? Chọn "Đã thuộc" hoặc "Chưa thuộc".' : 'Chạm vào thẻ hoặc nhấn Space để xem đáp án';
+  }
+  const flip = () => { flipped = !flipped; renderCard(); };
+  const go = d => { pos += d; flipped = false; renderCard(); };
+  function markCard(isKnown) {
+    const pl = pool(); if (!pl.length) return;
+    const c = cards[pl[pos]];
+    isKnown ? known.add(c.id) : known.delete(c.id);
+    store.set('ccap-known', [...known]);
+    flipped = false; if (!(onlyNew && isKnown)) pos++;
+    renderCard();
+  }
+  $('card').addEventListener('click', flip);
+  $('bPrev').onclick = () => go(-1); $('bNext').onclick = () => go(1);
+  $('bKnow').onclick = () => markCard(true); $('bAgain').onclick = () => markCard(false);
+  $('bShuffle').onclick = () => { for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; } pos = 0; flipped = false; renderCard(); };
+  $('bOnlyNew').onclick = e => { onlyNew = !onlyNew; e.target.textContent = 'Chỉ thẻ chưa thuộc: ' + (onlyNew ? 'bật' : 'tắt'); pos = 0; flipped = false; renderCard(); };
+  function armed(btn, label, action) {
+    if (btn.dataset.armed) { delete btn.dataset.armed; btn.textContent = label; action(); }
+    else { btn.dataset.armed = '1'; btn.textContent = 'Nhấn lần nữa để xác nhận'; setTimeout(() => { delete btn.dataset.armed; btn.textContent = label; }, 3000); }
+  }
+  $('bReset').onclick = e => armed(e.target, 'Xóa đánh dấu', () => { known.clear(); store.set('ccap-known', []); renderCard(); });
+  deckSel.onchange = () => { pos = 0; flipped = false; renderCard(); };
+
+  // Quiz
+  const quiz = JSON.parse($('src-quiz').textContent);
+  const partTitle = {}; docs.delta.parts.forEach(p => partTitle[p.num] = p.title);
+  const qres = store.get('ccap-quiz', {}); // idx -> 'r' | 'w'
+  const qpart = $('qpart');
+  const partsInQuiz = [...new Set(quiz.map(x => x.part))].sort();
+  qpart.innerHTML = '<option value="">Tất cả phần (' + quiz.length + ' câu)</option>' + partsInQuiz.map(p => '<option value="' + p + '">Phần ' + p + ' – ' + escH(partTitle[p] || '') + ' (' + quiz.filter(x => x.part === p).length + ')</option>').join('');
+  let qorder = quiz.map((_, i) => i), qpos = 0, qsel = new Set(), qchecked = false, onlyWrong = false;
+  const qpool = () => qorder.filter(i => (!qpart.value || quiz[i].part === qpart.value) && (!onlyWrong || qres[i] === 'w'));
+  function renderQ() {
+    const pl = qpool();
+    const scope = quiz.map((_, i) => i).filter(i => !qpart.value || quiz[i].part === qpart.value);
+    const r = scope.filter(i => qres[i] === 'r').length, w = scope.filter(i => qres[i] === 'w').length;
+    $('qStats').textContent = 'Đúng ' + r + ' · Sai ' + w + ' · Chưa làm ' + (scope.length - r - w);
+    const dots = $('qDots'); dots.innerHTML = '';
+    pl.forEach((qi, k) => {
+      const b = document.createElement('button');
+      b.textContent = k + 1; b.title = 'Câu ' + (k + 1);
+      if (qres[qi]) b.className = qres[qi];
+      if (k === qpos) b.classList.add('cur');
+      b.onclick = () => { qpos = k; resetQ(); };
+      dots.appendChild(b);
+    });
+    if (!pl.length) {
+      $('qPartName').textContent = ''; $('qStem').textContent = onlyWrong ? 'Không còn câu sai nào trong phần này.' : 'Không có câu hỏi.';
+      $('qOpts').innerHTML = ''; $('qMulti').hidden = true; $('qResult').hidden = true; $('qCheck').disabled = true;
+      return;
+    }
+    if (qpos >= pl.length) qpos = 0; if (qpos < 0) qpos = pl.length - 1;
+    const qi = pl[qpos], it = quiz[qi], multi = it.a.length > 1;
+    $('qPartName').textContent = 'Câu ' + (qpos + 1) + '/' + pl.length + ' · Phần ' + it.part + ' – ' + (partTitle[it.part] || '');
+    $('qStem').textContent = it.q;
+    $('qMulti').hidden = !multi; $('qMulti').textContent = 'Chọn ' + it.a.length + ' đáp án';
+    const opts = $('qOpts'); opts.innerHTML = '';
+    it.o.forEach((txt, k) => {
+      const b = document.createElement('button'); b.className = 'opt'; b.type = 'button';
+      b.innerHTML = '<span class="k">' + 'ABCDE'[k] + '</span><span></span>';
+      b.lastChild.textContent = txt;
+      if (qsel.has(k)) b.classList.add('sel');
+      if (qchecked) {
+        b.disabled = true;
+        if (it.a.includes(k)) b.classList.add('right');
+        else if (qsel.has(k)) b.classList.add('wrong');
+      }
+      b.onclick = () => {
+        if (qchecked) return;
+        if (multi) { qsel.has(k) ? qsel.delete(k) : (qsel.size < it.a.length && qsel.add(k)); }
+        else { qsel = new Set([k]); }
+        renderQ();
+      };
+      opts.appendChild(b);
+    });
+    $('qCheck').disabled = !qchecked && qsel.size !== it.a.length;
+    $('qCheck').textContent = qchecked ? 'Câu tiếp theo' : 'Kiểm tra';
+    $('qResult').hidden = !qchecked;
+    if (qchecked) {
+      const ok = qres[qi] === 'r';
+      $('qVerdict').className = 'verdict ' + (ok ? 'ok' : 'no');
+      $('qVerdict').textContent = ok ? '✓ Chính xác' : '✗ Chưa đúng · Đáp án: ' + it.a.map(k => 'ABCDE'[k]).join(', ');
+      $('qExpl').textContent = it.e;
+    }
+  }
+  function resetQ() { qsel = new Set(); qchecked = false; renderQ(); }
+  $('qCheck').onclick = () => {
+    const pl = qpool(); if (!pl.length) return;
+    if (qchecked) { if (!(onlyWrong && qres[pl[qpos]] === 'r')) qpos++; resetQ(); return; }
+    const qi = pl[qpos], it = quiz[qi];
+    const ok = it.a.length === qsel.size && it.a.every(k => qsel.has(k));
+    qres[qi] = ok ? 'r' : 'w'; store.set('ccap-quiz', qres);
+    qchecked = true; renderQ();
+  };
+  $('qPrev').onclick = () => { qpos--; resetQ(); };
+  $('qNext').onclick = () => { qpos++; resetQ(); };
+  qpart.onchange = () => { qpos = 0; resetQ(); };
+  $('qOnlyWrong').onclick = e => { onlyWrong = !onlyWrong; e.target.textContent = 'Chỉ câu sai: ' + (onlyWrong ? 'bật' : 'tắt'); qpos = 0; resetQ(); };
+  $('qShuffle').onclick = () => { for (let i = qorder.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [qorder[i], qorder[j]] = [qorder[j], qorder[i]]; } qpos = 0; resetQ(); };
+  $('qReset').onclick = e => armed(e.target, 'Làm lại từ đầu', () => { Object.keys(qres).forEach(k => delete qres[k]); store.set('ccap-quiz', qres); qpos = 0; resetQ(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT') return;
+    if (view === 'cards') {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); }
+      else if (e.key === 'ArrowRight') go(1);
+      else if (e.key === 'ArrowLeft') go(-1);
+      else if (e.key.toLowerCase() === 'k') markCard(true);
+      else if (e.key.toLowerCase() === 'j') markCard(false);
+    }
+  });
+
+  const saved = store.get('ccap-view', 'delta');
+  show(['delta', 'base', 'cards', 'quiz'].includes(saved) ? saved : 'delta');
+})();
+</script>
